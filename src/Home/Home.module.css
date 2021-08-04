@@ -27,3 +27,7 @@
   margin-top: 2em;
   color: hotpink;
 }
+
+ul {
+  list-style-type: lower-greek;
+}

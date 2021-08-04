@@ -15,7 +15,12 @@ const Home = () => {
                 <code className={`${styles.universe}`}>Welcome to my universe. <TikTik /></code>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <p>View<ToRepos linkClass={`${styles.to_repos}`} /> <span><small>yep it is uesEffect</small></span></p>
-                <small style={{ width: "80%", textAlign: "center", padding: "10px", fontSize: "13px" }}>
+                <ul>
+                This page is also avaiable at...
+                    <li><Alink to="https://minlaxz.github.io" text="on Github Pages"/></li>
+                    <li><Alink to="https://gh-minlaxz.pages.dev" text="on Cloudflare Pages (not yet)"/></li>
+                </ul>
+                <small style={{ width: "80%", textAlign: "center", padding: "10px", fontSize: "14px" }}>
                     Reactjs with Vite build tool, hosted on github pages with actions, SSL/TLS by Cloudflare with proxies.
                 </small>
             </div>
