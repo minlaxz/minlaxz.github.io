@@ -1,9 +1,14 @@
 import React from 'react';
-import Home from './Home';
+import { HashRouter as Router } from 'react-router-dom';
+import SwitchedRoutes from './routes';
 
+// Needs hash router for frontend routing
 function App() {
   return (
-    <Home />
+    <Router basename='/'>
+      <SwitchedRoutes />
+    </Router>
+
   )
 }
 
