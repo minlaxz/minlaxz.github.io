@@ -5,6 +5,9 @@ import TikTik from '../Clock';
 import { Alink } from '../Units';
 // A simple home component
 const Home = () => {
+    React.useEffect(() => {
+        window.document.title = 'minlaxz | Home'
+    }, []);
     return (
         <>
             <div className={`${styles.root_container}`}>
@@ -12,7 +15,7 @@ const Home = () => {
                 <code className={`${styles.universe}`}>Welcome to my universe. <TikTik /></code>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <p>View<ToRepos linkClass={`${styles.to_repos}`} /> <span><small>yep it is uesEffect</small></span></p>
-                <small style={{width:"80%", textAlign: "center", padding: "10px", fontSize: "13px"}}>
+                <small style={{ width: "80%", textAlign: "center", padding: "10px", fontSize: "13px" }}>
                     Reactjs with Vite build tool, hosted on github pages with actions, SSL/TLS by Cloudflare with proxies.
                 </small>
             </div>

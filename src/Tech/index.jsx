@@ -4,6 +4,9 @@ import { Alink } from '../Units';
 import { ToHome } from '../routes';
 
 const TechList = () => {
+    React.useEffect(() => {
+        window.document.title = 'minlaxz | About';
+    }, []);
     return (
         <div>
             <ul className={`${styles.ulstyles}`}>

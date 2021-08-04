@@ -4,6 +4,9 @@ import styles from './Oops.module.css';
 
 const Oops = () => {
     const location = useLocation();
+    React.useEffect(() => {
+        window.document.title = 'minlaxz | Oops!';
+    }, []);
     return (
         <div className={`${styles.root_container}`}>
             <p className={`${styles.oops}`}>
