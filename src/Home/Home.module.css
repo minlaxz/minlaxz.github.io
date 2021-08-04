@@ -10,6 +10,7 @@
 
 .hidden_container {
   margin: 0;
+  margin-bottom: 0.5em;
   padding: 0;
   height: 100vh;
   display: flex;
