@@ -11,7 +11,7 @@ const SwitchedRoutes = () => {
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/repos" component={Repos} />
-            <Route exact path="/tech" component={TechList} />
+            <Route exact path="/about" component={TechList} />
             <Route component={Oops} />
         </Switch>
     )
@@ -35,7 +35,7 @@ export const ToRepos = ({ linkClass }) => {
 export const ToTech = ({ linkClass }) => {
     return (
         <span>
-            &nbsp; <Link to="/tech" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔 
+            &nbsp; <Link to="/about" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔 
         </span>
     )
 }
