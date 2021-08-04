@@ -4,12 +4,14 @@ import { Link, Switch } from 'react-router-dom';
 import Home from '../Home';
 import Oops from '../Oops';
 import Repos from '../Repos';
+import TechList from '../Tech';
 
 const SwitchedRoutes = () => {
     return (
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/repos" component={Repos} />
+            <Route exact path="/tech" component={TechList} />
             <Route component={Oops} />
         </Switch>
     )
@@ -21,10 +23,23 @@ export const ToHome = () => {
     )
 }
 
-export const ToRepos = ({linkClass}) => {
+export const ToRepos = ({ linkClass }) => {
     return (
-        <Link to="/repos"className={linkClass}>Here is my repos 🤓</Link>
+        <span>
+            &nbsp; <Link to="/repos" className={linkClass}>repo lists </Link> &nbsp; 🤓
+        </span>
+        
     )
 }
+
+export const ToTech = ({ linkClass }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/tech" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔 
+        </span>
+    )
+}
+
+
 
 export default SwitchedRoutes;
