@@ -5,17 +5,20 @@ import { ToHome } from '../routes';
 
 const TechList = () => {
     return (
-        <div className={styles.container}>
-        Shhh, I'm a secret!
+        <div>
             <ul className={`${styles.ulstyles}`}>
                 <li><Alink to="https://reactjs.org" text="React" /></li>
-                <li><Alink to="https://example.com" text="CNAME" /></li>
+                <pre>Javascript Frontend Framework</pre>
+                <li><Alink to="https://github.com/minlaxz/minlaxz.github.io/blob/ac1740f95bceac92041a74184bb2d928755e91a5/CNAME#L1" text="CNAME" /></li>
+                <pre>pointing to minlaxz.github.io</pre>
                 <li><Alink to="https://github.com/minlaxz/minlaxz.github.io/blob/main/.github/workflows/deploy-pages-on-pr-to-main.yml" text="CI (github actions)" /></li>
-                <li><Alink to="https://example.com" text="CNAME" /></li>
-                <li><Alink to="https://example.com" text="CNAME" /></li>
-                <li><Alink to="https://example.com" text="CNAME" /></li>
+                <pre>Continuos Integration and Deployment</pre>
+                <li><Alink to="https://github.com/css-modules/css-modules" text="CSS Modules" /></li>
+                <pre>CSS as Modules</pre>
+                <li><Alink to="https://github.com/vitejs/vite" text="Vite is fast" /></li>
+                <pre>Vite as build tool</pre>
             </ul>
-            <ToHome />  
+            <ToHome />
         </div>
     );
 }
