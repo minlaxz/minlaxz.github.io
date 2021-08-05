@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Repos.module.css';
 import { ToHome } from '../routes';
 import axios from 'axios';
+import { Alink } from '../Units';
 // import produce from 'immer';
 
 // const isOutdated = (timestamp) => {
@@ -52,7 +53,7 @@ const Repos = () => {
         //     })
 
         // }
-        
+
         // const localData = JSON.stringify(localStorage.getItem(domain))
         // setLocalRepos(localData.repos)
     }, []);
@@ -63,13 +64,24 @@ const Repos = () => {
 
     return (
         <div className={`${styles.root}`}>
-            This is repos route.
+            Recently updated repositories ...
             <ToHome />
             {
                 repos ?
                     <ul>
                         {
-                            repos.map((repo) => <li key={repo.id}>{repo.name}</li>)
+                            repos.map((repo) => {
+                                return (
+                                    <React.Fragment key={repo.id}>
+                                        <li >{repo.name} <Alink to={repo.html_url} text="View" />
+                                            <p>{repo.description}</p>
+                                            <small>Size : {repo.size}Kb, Language: {repo.language}, Issue: {repo.open_issues}</small>
+                                        </li>
+                                        <hr />
+                                    </React.Fragment>
+
+                                )
+                            })
                         }
                     </ul>
                     :
