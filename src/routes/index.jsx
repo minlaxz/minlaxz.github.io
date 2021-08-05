@@ -5,6 +5,7 @@ import Home from '../Home';
 import Oops from '../Oops';
 import Repos from '../Repos';
 import TechList from '../Tech';
+import Detail from '../Detail';
 
 const SwitchedRoutes = () => {
     return (
@@ -12,6 +13,7 @@ const SwitchedRoutes = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/repos" component={Repos} />
             <Route exact path="/about" component={TechList} />
+            <Route path="/repos/:name" component={Detail} />
             <Route component={Oops} />
         </Switch>
     )
