@@ -36,8 +36,17 @@ const Home = () => {
                 <p>View<ToRepos linkClass={`${styles.to_repos}`} /> <span><small>yep it is uesEffect</small></span></p>
                 <ul>
                     This page is also avaiable at...
-                    <li><Alink to="https://minlaxz.github.io" text="on Github Pages" /></li>
-                    <li><Alink to="https://gh-minlaxz.pages.dev" text="on Cloudflare Pages (not yet)" /></li>
+                    <li>
+                        <Alink to="https://minlaxz.github.io" text="on Github Pages" />
+                        {
+                            window.location.hostname === 'minlaxz.github.io' ? <span>
+                                Current
+                            </span> : <span></span>
+                        }
+                    </li>
+                    <li>
+                        <Alink to="https://gh-minlaxz.pages.dev" text="on Cloudflare Pages (not yet)" />
+                    </li>
                 </ul>
                 <small style={{ width: "80%", textAlign: "center", padding: "10px", fontSize: "14px" }}>
                     Reactjs with Vite build tool, hosted on github pages with actions, SSL/TLS by Cloudflare with proxies.
