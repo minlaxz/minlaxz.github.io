@@ -3,6 +3,7 @@ import styles from './Repos.module.css';
 import { ToHome } from '../routes';
 import axios from 'axios';
 import { Alink } from '../Units';
+import { Link } from 'react-router-dom';
 // import produce from 'immer';
 
 // const isOutdated = (timestamp) => {
@@ -73,9 +74,11 @@ const Repos = () => {
                             repos.map((repo) => {
                                 return (
                                     <React.Fragment key={repo.id}>
-                                        <li >{repo.name} <Alink to={repo.html_url} text="View" />
-                                            <p>{repo.description}</p>
-                                            <small>Size : {repo.size}Kb, Language: {repo.language}, Issue: {repo.open_issues}</small>
+                                        <li >{repo.name} <Alink to={repo.html_url} text="View on github" />
+                                            <p>{`${repo.description}`.slice(0,250)}...</p>
+                                            <small>Size : {repo.size}Kb, Language: {repo.language}</small>
+                                            &nbsp;
+                                            <Link to={`/repos/${repo.name}`}>Detail</Link>
                                         </li>
                                         <hr />
                                     </React.Fragment>
