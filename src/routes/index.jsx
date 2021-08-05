@@ -19,25 +19,25 @@ const SwitchedRoutes = () => {
     )
 }
 
-export const ToHome = () => {
+export const ToHome = ({ cusName }) => {
     return (
-        <Link to="/">Home 🏠</Link>
+        <Link to="/">{cusName || `Home 🏠`}</Link>
     )
 }
 
-export const ToRepos = ({ linkClass }) => {
+export const ToRepos = ({ linkClass, cusName }) => {
     return (
         <span>
-            &nbsp; <Link to="/repos" className={linkClass}>repo lists </Link> &nbsp; 🤓
+            &nbsp; <Link to="/repos" className={linkClass}>{cusName || `repo list 🤓`}</Link>
         </span>
-        
+
     )
 }
 
 export const ToTech = ({ linkClass }) => {
     return (
         <span>
-            &nbsp; <Link to="/about" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔 
+            &nbsp; <Link to="/about" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔
         </span>
     )
 }
