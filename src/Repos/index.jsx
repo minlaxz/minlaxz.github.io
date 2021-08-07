@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Repos.module.css';
-import { ToHome } from '../routes';
+import { ToHome, ToHuman } from '../routes';
 import axios from 'axios';
 import { Alink } from '../Units';
 import { Link } from 'react-router-dom';
@@ -66,7 +66,10 @@ const Repos = () => {
     return (
         <div className={`${styles.root}`}>
             Recently updated repositories ...
-            <ToHome />
+            <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginBottom: '1em' }}>
+                <ToHome cusName="Back to Home 🏡" />
+                <ToHuman cusName="Go to markdown 🥶" />
+            </div>
             {
                 repos ?
                     <ul>
@@ -75,10 +78,10 @@ const Repos = () => {
                                 return (
                                     <React.Fragment key={repo.id}>
                                         <li >{repo.name} <Alink to={repo.html_url} text="View on github" />
-                                            <p>{`${repo.description}`.slice(0,250)}...</p>
+                                            <p>{`${repo.description}`.slice(0, 250)}...</p>
                                             <small>Size : {repo.size}Kb, Language: {repo.language}</small>
                                             &nbsp;
-                                            <Link to={`/repos/${repo.name}`}>Detail</Link>
+                                            <Link to={`/repos/${repo.name}`}>Detail =&gt;</Link>
                                         </li>
                                         <hr />
                                     </React.Fragment>
