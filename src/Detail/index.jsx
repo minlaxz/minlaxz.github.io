@@ -37,9 +37,9 @@ const Detail = () => {
             fetchData();
         } else {
             // a personal repo, do not fetch
-            setDetail({name});           
+            setDetail({ name });
         }
-        
+
     }, []);
 
     if (detail) {
@@ -59,13 +59,10 @@ const Detail = () => {
                     )
                     }
                     <hr />
-                    <span>
-                        <ToRepos cusName="Back 🔙" />
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        <ToHome cusName="Hommmme 🏠" />
-                    </span>
+                    <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginBottom: '1em' }}>
+                        <ToRepos cusName="Back to Repo List 👻" />
+                        <ToHome cusName="Go to Home 🏡" />
+                    </div>
                 </MainView>
             </>
         )

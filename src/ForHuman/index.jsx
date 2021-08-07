@@ -85,6 +85,10 @@ const DamnImage = styled.img`
 const ForHuman = () => {
     return (
         <MainView>
+            <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginTop: '1em' }}>
+                <ToHome cusName="Back to Home 🏡" />
+                <ToRepos cusName="Go to Repo List 👻" />
+            </div>
             <HeadView>
                 <Markdown>
                     ### Howdy 😶‍🌫️ I am Min Min Latt (minlaxz) ☕
@@ -97,13 +101,8 @@ const ForHuman = () => {
             <HeadIcon name="programming" />
             <HeadIcon name="others" />
             <HeadIcon name="osiot" />
-            <DamnImage src="https://metrics.lecoq.io/minlaxz" alt="Github Metrics"/>
-            <DamnImage src="https://github-readme-streak-stats.herokuapp.com/?user=minlaxz" alt="Github Streak Stats"/>
-            <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginBottom: '1em' }}>
-                <ToHome cusName="Back to Home 🏡" />
-                <ToRepos cusName="Go to Repo List 👻" />
-            </div>
-
+            <DamnImage src="https://metrics.lecoq.io/minlaxz" alt="Github Metrics" />
+            <DamnImage src="https://github-readme-streak-stats.herokuapp.com/?user=minlaxz" alt="Github Streak Stats" />
         </MainView>
     );
 }
