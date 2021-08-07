@@ -7,6 +7,7 @@ import Repos from '../Repos';
 import TechList from '../Tech';
 // import Detail from '../Detail';
 import Detail from '../Detail/index.jsx';
+import ForHuman from '../ForHuman';
 
 const SwitchedRoutes = () => {
     return (
@@ -15,6 +16,7 @@ const SwitchedRoutes = () => {
             <Route exact path="/repos" component={Repos} />
             <Route exact path="/about" component={TechList} />
             <Route path="/repos/:name" component={Detail} />
+            <Route exact path="/forhuman" component={ForHuman} />
             <Route component={Oops} />
         </Switch>
     )
