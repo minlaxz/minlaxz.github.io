@@ -13,6 +13,10 @@ const Home = () => {
         // const domain = 'minlaxz.github.io'
         const minlaxzData = localStorage.getItem(domain);
 
+        // return from markdown component, scroll top
+        window.scrollTo(0, 0)
+        // cuz I set view height to 200vh to hide something
+
         if (minlaxzData) { // visted user
             const newState = produce(JSON.parse(minlaxzData), (draft) => {
                 draft.lastVisitedTime = Date.now()
@@ -34,7 +38,7 @@ const Home = () => {
                 <code className={`${styles.universe}`}>Welcome to my universe. <TikTik /></code>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <p>View<ToRepos linkClass={`${styles.to_repos}`} /> <span><small>yep it is uesEffect</small></span></p>
-                <p>View how I rendered <ToHuman /></p>
+                <p>View how I rendered <ToHuman cusName="markdown for human"/></p>
                 <ul>
                     This page is also avaiable at...
                     <li>
