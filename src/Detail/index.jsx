@@ -2,8 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ToHome, ToRepos } from '../routes';
-import { Alink } from '../Units';
+// import { Alink } from '../Units';
 import styled from 'styled-components';
+
 
 const MainView = styled.div`
     display: flex;
@@ -21,6 +22,7 @@ const PreTag = styled.pre`
     /* word-break: break-all; */
     text-align: center;
 `;
+
 
 const Detail = () => {
     let { name } = useParams();
@@ -65,9 +67,6 @@ const Detail = () => {
                         <ToHome cusName="Hommmme 🏠" />
                     </span>
                 </MainView>
-
-
-
             </>
         )
     } else {

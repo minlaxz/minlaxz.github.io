@@ -5,7 +5,8 @@ import Home from '../Home';
 import Oops from '../Oops';
 import Repos from '../Repos';
 import TechList from '../Tech';
-import Detail from '../Detail';
+// import Detail from '../Detail';
+import Detail from '../Detail/index.jsx';
 
 const SwitchedRoutes = () => {
     return (
