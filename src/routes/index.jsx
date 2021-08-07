@@ -45,6 +45,15 @@ export const ToTech = ({ linkClass }) => {
     )
 }
 
+export const ToHuman = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/forhuman" className={linkClass}>{cusName || `markdown`}</Link>
+        </span>
+
+    )
+}
+
 
 
 export default SwitchedRoutes;
