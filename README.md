@@ -25,5 +25,7 @@ That way for eg. [minlaxz.github.io/repo]() is available at [github.minlaxz.me/r
     - [x] [CNAME](https://github.com/minlaxz/minlaxz.github.io/blob/5b8dc6e5f5cee8b5f51c5a282d9b3c8ca3a64e4c/CNAME#L1) pointed to [minlaxz.github.io]()
 - [x] Listing repos with `axios` and `useEffect` 🤷
 - [x] Some styles
-- [ ] Add detail route for each repo
-
+- [x] Add detail route for each repo
+- [x] Render markdown for ones who think github profile is complicated. 😆
+- [ ] Remove `CSS modules`, replce with `styled-components` 
+- [ ] Add route for currently working on repo, this will need db
