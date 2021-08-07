@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Home.module.css';
 import { ToHuman, ToRepos, ToTech } from '../routes';
 import TikTik from '../Clock';
 import { Alink } from '../Units';
