@@ -9,9 +9,9 @@ const MainView = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;  /*  100vh remove scroll bar but content will be hidden */
     @media only screen and (max-width: 600px) {
-        height: 110vh;
+        height: 100%;
     }
 `;
 
@@ -72,6 +72,16 @@ const HeadIcon = ({ name }) => (
     </>
 )
 
+const DamnImage = styled.img`
+    width: 30vw;
+    @media only screen and (max-width: 1024px) {
+        width: 50vw;
+    }
+    @media only screen and (max-width: 600px) {
+        width: 100vw;
+    }
+`;
+
 const ForHuman = () => {
     return (
         <MainView>
@@ -87,7 +97,9 @@ const ForHuman = () => {
             <HeadIcon name="programming" />
             <HeadIcon name="others" />
             <HeadIcon name="osiot" />
-            <div style={{display: 'flex', width:"100vw", flexDirection: 'row', justifyContent: 'space-evenly'}}>
+            <DamnImage src="https://metrics.lecoq.io/minlaxz" alt="Github Metrics"/>
+            <DamnImage src="https://github-readme-streak-stats.herokuapp.com/?user=minlaxz" alt="Github Streak Stats"/>
+            <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginBottom: '1em' }}>
                 <ToHome cusName="Back to Home 🏡" />
                 <ToRepos cusName="Go to Repo List 👻" />
             </div>
