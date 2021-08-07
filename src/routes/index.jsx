@@ -5,7 +5,9 @@ import Home from '../Home';
 import Oops from '../Oops';
 import Repos from '../Repos';
 import TechList from '../Tech';
-import Detail from '../Detail';
+// import Detail from '../Detail';
+import Detail from '../Detail/index.jsx';
+import ForHuman from '../ForHuman';
 
 const SwitchedRoutes = () => {
     return (
@@ -14,6 +16,7 @@ const SwitchedRoutes = () => {
             <Route exact path="/repos" component={Repos} />
             <Route exact path="/about" component={TechList} />
             <Route path="/repos/:name" component={Detail} />
+            <Route exact path="/forhuman" component={ForHuman} />
             <Route component={Oops} />
         </Switch>
     )
@@ -39,6 +42,15 @@ export const ToTech = ({ linkClass }) => {
         <span>
             &nbsp; <Link to="/about" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔
         </span>
+    )
+}
+
+export const ToHuman = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/forhuman" className={linkClass}>{cusName || `markdown`}</Link>
+        </span>
+
     )
 }
 

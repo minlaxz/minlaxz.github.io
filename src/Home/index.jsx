@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Home.module.css';
-import { ToRepos, ToTech } from '../routes';
+import { ToHuman, ToRepos, ToTech } from '../routes';
 import TikTik from '../Clock';
 import { Alink } from '../Units';
 import produce from 'immer';
@@ -12,6 +12,10 @@ const Home = () => {
         const domain = window.location.hostname;
         // const domain = 'minlaxz.github.io'
         const minlaxzData = localStorage.getItem(domain);
+
+        // return from markdown component, scroll top
+        window.scrollTo(0, 0)
+        // cuz I set view height to 200vh to hide something
 
         if (minlaxzData) { // visted user
             const newState = produce(JSON.parse(minlaxzData), (draft) => {
@@ -34,13 +38,14 @@ const Home = () => {
                 <code className={`${styles.universe}`}>Welcome to my universe. <TikTik /></code>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <p>View<ToRepos linkClass={`${styles.to_repos}`} /> <span><small>yep it is uesEffect</small></span></p>
+                <p>View how I rendered <ToHuman cusName="markdown for human"/></p>
                 <ul>
                     This page is also avaiable at...
                     <li>
                         <Alink to="https://minlaxz.github.io" text="on Github Pages" />
                         {
-                            window.location.hostname === 'minlaxz.github.io' ? <span>
-                                Current
+                            window.location.hostname === 'github.minlaxz.me' ? <span>
+                                Currently viewing
                             </span> : <span></span>
                         }
                     </li>
