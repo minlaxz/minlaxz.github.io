@@ -4,6 +4,43 @@ import { ToHuman, ToRepos, ToTech } from '../routes';
 import TikTik from '../Clock';
 import { Alink } from '../Units';
 import produce from 'immer';
+import styled from 'styled-components';
+
+const ContainerOne = styled.div`
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const ContainerTwo = styled.div`
+    margin: 0;
+    margin-bottom: 0.5em;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;
+`;
+
+const UlView = styled.ul`
+    list-style-type: lower-greek;
+`;
+
+const LiView = styled.li`
+    margin: 0.2em;
+    padding: 0.2em;
+`;
+
+const DivUl = styled.div`
+    margin: 0.5em;
+    padding: 0.5em;
+`;
+
 // A simple home component
 const Home = () => {
     React.useEffect(() => {
@@ -33,38 +70,50 @@ const Home = () => {
 
     return (
         <>
-            <div className={`${styles.root_container}`}>
-                <h3>Hello, world! 👻 &lt;= minlaxz </h3>
-                <code className={`${styles.universe}`}>Welcome to my universe. <TikTik /></code>
+            <ContainerOne>
+                <h3>Hello, world! ((👻) =&gt; (minlaxz)) </h3>
+                <code style={{ fontSize: "13px" }}>Welcome to my universe. <TikTik /></code>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
-                <p>View<ToRepos linkClass={`${styles.to_repos}`} /> <span><small>yep it is uesEffect</small></span></p>
-                <p>View how I rendered <ToHuman cusName="markdown for human"/></p>
-                <ul>
-                    This page is also avaiable at...
-                    <li>
-                        <Alink to="https://minlaxz.github.io" text="on Github Pages" />
-                        {
-                            window.location.hostname === 'github.minlaxz.me' ? <span>
-                                Currently viewing
-                            </span> : <span></span>
-                        }
-                    </li>
-                    <li>
-                        <Alink to="https://gh-minlaxz.pages.dev" text="on Cloudflare Pages (not yet)" />
-                    </li>
-                </ul>
-                <small style={{ width: "80%", textAlign: "center", padding: "10px", fontSize: "14px" }}>
-                    Reactjs with Vite build tool, hosted on github pages with actions, SSL/TLS by Cloudflare with proxies.
-                </small>
-            </div>
+                <DivUl>Available routes:
+                    <UlView>
+                        <LiView>View my<ToRepos cusName="Repo List 🥶" /></LiView>
+                        <LiView>View how I rendered <ToHuman cusName="markdown for human" /></LiView>
+                    </UlView>
+                </DivUl>
+                <DivUl>
+                    This page should also be available at...
+                    <UlView>
+                        <LiView>
+                            <Alink to="https://minlaxz.github.io" text="on Github Pages" />
+                            {
+                                window.location.hostname === 'github.minlaxz.me' ? <span>
+                                    Currently viewing
+                                </span> : <span></span>
+                            }
+                        </LiView>
+                        <LiView>
+                            <Alink to="https://gh-minlaxz.pages.dev" text="on Cloudflare Pages (not yet)" />
+                        </LiView>
+                    </UlView>
+                </DivUl>
 
-            <div className={`${styles.hidden_container}`}>
+                <div style={{ 
+                    width: "80%", 
+                    textAlign: "center", 
+                    padding: "10px", 
+                    fontSize: "14px",
+                    }}>
+                    <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actins</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
+                </div>
+            </ContainerOne>
+
+            <ContainerTwo>
                 <div style={{ border: '2px dotted khaki' }}>
                     <small>Well, actually I am hiding 🤓 not to distrurb you.</small>
                     <ToTech />
                 </div>
 
-            </div>
+            </ContainerTwo>
         </>
     );
 }
