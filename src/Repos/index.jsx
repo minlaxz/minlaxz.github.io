@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Repos.module.css';
 import { ToHome, ToHuman } from '../routes';
 import axios from 'axios';
 import { Alink } from '../Units';
 import { Link } from 'react-router-dom';
+import { Container, UlView, LiView } from './styles';
 // import produce from 'immer';
 
 // const isOutdated = (timestamp) => {
@@ -24,79 +24,41 @@ const Repos = () => {
         }
         window.document.title = 'minlaxz | Repos';
         fetchRecentRepos();
-        // const domain = window.location.hostname;
-        // const domain = 'minlaxz.github.io'
-        // const minlaxzData = JSON.parse(localStorage.getItem(domain)) || {}; // {} for jumpers 🤣
-        // if (minlaxzData.lastVisitedTime) {
-        //     if (isOutdated(minlaxzData.lastVisitedTime)) {
-        //         // data is out of date // fetch data
-        //         fetchRecentRepos().then(() => {
-        //             // patch object without mutating it
-        //             const newData = produce(minlaxzData, draft => {
-        //                 draft.repos = repos;
-        //             });
-        //             // set local storage
-        //             localStorage.setItem(domain, JSON.stringify(newData));
-        //         })
-
-        //     } else {
-        //         // data is up to date // do nothing
-        //     }
-        // } else {
-        //     // home page jumpers 🤣 // fetch data
-        //     fetchRecentRepos().then(() => {
-        //         const data = {
-        //             lastVisitedTime: Date.now(),
-        //             repos: repos
-        //         }
-        //         // set local storage
-        //         localStorage.setItem(domain, JSON.stringify(data));
-        //     })
-
-        // }
-
-        // const localData = JSON.stringify(localStorage.getItem(domain))
-        // setLocalRepos(localData.repos)
     }, []);
 
-
-
-
-
     return (
-        <div className={`${styles.root}`}>
-            Recently updated repositories ...
+        <Container>
+            Recently updated repositories ...            
             <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginBottom: '1em' }}>
                 <ToHome cusName="Back to Home 🏡" />
                 <ToHuman cusName="Go to markdown 🥶" />
             </div>
             {
                 repos ?
-                    <ul>
+                    <UlView>
                         {
                             repos.map((repo) => {
                                 return (
                                     <React.Fragment key={repo.id}>
-                                        <li >{repo.name} <Alink to={repo.html_url} text="View on github" />
+                                        <LiView >{repo.name} <Alink to={repo.html_url} text="View on github" />
                                             <p>{`${repo.description}`.slice(0, 250)}...</p>
                                             <small>Size : {repo.size}Kb, Language: {repo.language}</small>
                                             &nbsp;
                                             <Link to={`/repos/${repo.name}`}>Detail =&gt;</Link>
-                                        </li>
+                                        </LiView>
                                         <hr />
                                     </React.Fragment>
 
                                 )
                             })
                         }
-                    </ul>
+                    </UlView>
                     :
                     <p>
                         Fetching repos...
                     </p>
             }
-
-        </div>
+        </Container>
     );
 }
 
