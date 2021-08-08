@@ -29,3 +29,5 @@ That way for eg. [minlaxz.github.io/repo]() is available at [github.minlaxz.me/r
 - [x] Render markdown for ones who think github profile is complicated. 😆
 - [ ] Remove `CSS modules`, replce with `styled-components` 
 - [ ] Add route for currently working on repo, this may need a db
+- [ ] Other websites
+- [ ] What I got from build this

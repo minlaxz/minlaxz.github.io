@@ -38,7 +38,7 @@ const Home = () => {
             <ContainerOne>
                 <h3>Hello, world! ((👻) =&gt; (minlaxz)) </h3>
                 <code style={{ fontSize: "13px" }}>Welcome to my universe. <TikTik /></code>
-                <Pre>We would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{color:"hotpink"}}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
+                <Pre>You would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{color:"hotpink"}}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
                 <Pre>Suggesstion : if you're presbyopia zoom it please.</Pre>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <DivUl>Available routes:
