@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToHuman, ToRepos, ToTech } from '../routes';
+import { ToHuman, ToOther, ToRepos, ToTech } from '../routes';
 import TikTik from '../Clock';
 import { Alink } from '../Units';
 import produce from 'immer';
@@ -43,8 +43,9 @@ const Home = () => {
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <DivUl>Available routes:
                     <UlView>
-                        <LiView>View my<ToRepos cusName="Repo List 🥶" /></LiView>
+                        <LiView>View my =&gt;<ToRepos cusName="Repo List 🥶" /></LiView>
                         <LiView>Here is markdown =&gt; <ToHuman /></LiView>
+                        <LiView>Other sites =&gt; <ToOther /></LiView>
                         {/* this is extensible */}
                     </UlView>
                 </DivUl>
