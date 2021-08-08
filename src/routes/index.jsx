@@ -5,9 +5,9 @@ import Home from '../Home';
 import Oops from '../Oops';
 import Repos from '../Repos';
 import TechList from '../Tech';
-// import Detail from '../Detail';
 import Detail from '../Detail/index.jsx';
 import ForHuman from '../ForHuman';
+import { MarkdownInRoute } from './styles';
 
 const SwitchedRoutes = () => {
     return (
@@ -24,7 +24,9 @@ const SwitchedRoutes = () => {
 
 export const ToHome = ({ cusName }) => {
     return (
-        <Link to="/">{cusName || `Home 🏠`}</Link>
+        <Link to="/">
+            {cusName || `Default Home 🏠`}
+        </Link>
     )
 }
 
@@ -45,11 +47,14 @@ export const ToTech = ({ linkClass }) => {
     )
 }
 
+
+
 export const ToHuman = ({ linkClass, cusName }) => {
     return (
-        <span>
-            &nbsp; <Link to="/forhuman" className={linkClass}>{cusName || `markdown`}</Link>
-        </span>
+        // <a><img></img></a>
+        <Link to="/forhuman" className={linkClass}>
+            <MarkdownInRoute label={cusName || `View Markdown`} />
+        </Link>
 
     )
 }
