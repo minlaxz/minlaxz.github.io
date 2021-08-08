@@ -28,4 +28,4 @@ That way for eg. [minlaxz.github.io/repo]() is available at [github.minlaxz.me/r
 - [x] Add detail route for each repo
 - [x] Render markdown for ones who think github profile is complicated. 😆
 - [ ] Remove `CSS modules`, replce with `styled-components` 
-- [ ] Add route for currently working on repo, this will need db
+- [ ] Add route for currently working on repo, this may need a db
