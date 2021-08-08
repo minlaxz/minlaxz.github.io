@@ -44,7 +44,7 @@ const Repos = () => {
                                             <p>{`${repo.description}`.slice(0, 250)}...</p>
                                             <small>Size : {repo.size}Kb, Language: {repo.language}</small>
                                             &nbsp;
-                                            <Link to={`/repos/${repo.name}`}>Detail =&gt;</Link>
+                                            <Link to={`/repos/${repo.name}`}>Detail </Link> =&gt;
                                         </LiView>
                                         <hr />
                                     </React.Fragment>
