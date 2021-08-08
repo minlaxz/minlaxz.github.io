@@ -1,44 +1,10 @@
 import React from 'react';
-import { ToHuman, ToRepos, ToTech } from '../routes';
+import { ToHuman, ToOther, ToRepos, ToTech } from '../routes';
 import TikTik from '../Clock';
 import { Alink } from '../Units';
 import produce from 'immer';
-import styled from 'styled-components';
+import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles';
 
-const ContainerOne = styled.div`
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-`;
-
-const ContainerTwo = styled.div`
-    margin: 0;
-    margin-bottom: 0.5em;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: flex-end;
-`;
-
-const UlView = styled.ul`
-    list-style-type: lower-greek;
-`;
-
-const LiView = styled.li`
-    margin: 0.2em;
-    padding: 0.2em;
-`;
-
-const DivUl = styled.div`
-    margin: 0.5em;
-    padding: 0.5em;
-`;
 
 // A simple home component
 const Home = () => {
@@ -46,12 +12,12 @@ const Home = () => {
         window.document.title = 'minlaxz | Home'
 
         const domain = window.location.hostname;
-        // const domain = 'minlaxz.github.io'
         const minlaxzData = localStorage.getItem(domain);
 
-        // return from markdown component, scroll top
+        // if it is redirected from markdown component, 
+        // need to scroll top otherwise it will be empty view
+        // cuz I set total view height to 100vh + 100 vh to hide ContainerTwo
         window.scrollTo(0, 0)
-        // cuz I set view height to 200vh to hide something
 
         if (minlaxzData) { // visted user
             const newState = produce(JSON.parse(minlaxzData), (draft) => {
@@ -72,37 +38,42 @@ const Home = () => {
             <ContainerOne>
                 <h3>Hello, world! ((👻) =&gt; (minlaxz)) </h3>
                 <code style={{ fontSize: "13px" }}>Welcome to my universe. <TikTik /></code>
+                <Pre>We would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{color:"hotpink"}}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
+                <Pre>Suggesstion : if you're presbyopia zoom it please.</Pre>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <DivUl>Available routes:
                     <UlView>
-                        <LiView>View my<ToRepos cusName="Repo List 🥶" /></LiView>
-                        <LiView>View how I rendered <ToHuman cusName="markdown for human" /></LiView>
+                        <LiView>View my =&gt;<ToRepos cusName="Repo List 🥶" /></LiView>
+                        <LiView>Here is markdown =&gt; <ToHuman /></LiView>
+                        <LiView>Other sites =&gt; <ToOther /></LiView>
+                        {/* this is extensible */}
                     </UlView>
                 </DivUl>
                 <DivUl>
                     This page should also be available at...
                     <UlView>
                         <LiView>
-                            <Alink to="https://minlaxz.github.io" text="on Github Pages" />
+                            <Alink to="https://minlaxz.github.io" text="with Github Pages" />
                             {
                                 window.location.hostname === 'github.minlaxz.me' ? <span>
-                                    Currently viewing
-                                </span> : <span></span>
+                                    &nbsp; you're currently viewing
+                                </span> : <span>&nbsp; hostname does not match</span>
                             }
                         </LiView>
                         <LiView>
-                            <Alink to="https://gh-minlaxz.pages.dev" text="on Cloudflare Pages (not yet)" />
+                            <Alink to="https://gh-minlaxz.pages.dev" text="with Cloudflare Pages (not yet)" />
                         </LiView>
+                        {/* this is extensiable */}
                     </UlView>
                 </DivUl>
 
-                <div style={{ 
-                    width: "80%", 
-                    textAlign: "center", 
-                    padding: "10px", 
+                <div style={{
+                    width: "80%",
+                    textAlign: "center",
+                    padding: "10px",
                     fontSize: "14px",
-                    }}>
-                    <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actins</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
+                }}>
+                    <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
                 </div>
             </ContainerOne>
 

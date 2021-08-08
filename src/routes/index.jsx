@@ -1,13 +1,14 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router';
+import { Route } from 'react-router';
 import { Link, Switch } from 'react-router-dom';
 import Home from '../Home';
 import Oops from '../Oops';
 import Repos from '../Repos';
 import TechList from '../Tech';
-// import Detail from '../Detail';
 import Detail from '../Detail/index.jsx';
 import ForHuman from '../ForHuman';
+import OtherSite from '../OtherSite';
+import { MarkdownInRoute } from './styles';
 
 const SwitchedRoutes = () => {
     return (
@@ -17,6 +18,7 @@ const SwitchedRoutes = () => {
             <Route exact path="/about" component={TechList} />
             <Route path="/repos/:name" component={Detail} />
             <Route exact path="/forhuman" component={ForHuman} />
+            <Route exact path="/othersites" component={OtherSite} />
             <Route component={Oops} />
         </Switch>
     )
@@ -24,7 +26,9 @@ const SwitchedRoutes = () => {
 
 export const ToHome = ({ cusName }) => {
     return (
-        <Link to="/">{cusName || `Home 🏠`}</Link>
+        <Link to="/">
+            {cusName || `Default Home 🏠`}
+        </Link>
     )
 }
 
@@ -32,6 +36,15 @@ export const ToRepos = ({ linkClass, cusName }) => {
     return (
         <span>
             &nbsp; <Link to="/repos" className={linkClass}>{cusName || `repo list 🤓`}</Link>
+        </span>
+
+    )
+}
+
+export const ToOther = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/othersites" className={linkClass}>{cusName || `Other websites`}</Link>
         </span>
 
     )
@@ -45,11 +58,14 @@ export const ToTech = ({ linkClass }) => {
     )
 }
 
+
+
 export const ToHuman = ({ linkClass, cusName }) => {
     return (
-        <span>
-            &nbsp; <Link to="/forhuman" className={linkClass}>{cusName || `markdown`}</Link>
-        </span>
+        // <a><img></img></a>
+        <Link to="/forhuman" className={linkClass}>
+            <MarkdownInRoute label={cusName || `View Markdown`} />
+        </Link>
 
     )
 }

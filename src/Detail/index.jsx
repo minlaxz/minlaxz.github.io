@@ -2,27 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ToHome, ToRepos } from '../routes';
-// import { Alink } from '../Units';
-import styled from 'styled-components';
-
-
-const MainView = styled.div`
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background-color: #fff;
-
-`;
-
-const PreTag = styled.pre`
-    white-space: pre-wrap;
-    /* word-break: break-all; */
-    text-align: center;
-`;
-
+import { MainView, PreTag } from './styles';
 
 const Detail = () => {
     let { name } = useParams();
