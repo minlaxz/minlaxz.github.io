@@ -2,7 +2,7 @@ import React from 'react';
 import { ToHome } from '../routes';
 import { Box, Pre, Code } from './styles';
 
-const TechList = () => {
+const About = () => {
     React.useEffect(() => {
         window.document.title = 'minlaxz | About';
     }, []);
@@ -19,4 +19,4 @@ const TechList = () => {
     );
 }
 
-export default TechList;
+export default About;
