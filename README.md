@@ -24,10 +24,9 @@ That way for eg. [minlaxz.github.io/repo]() is available at [github.minlaxz.me/r
     - [x] Added `HashRouter` for front-end routing
     - [x] [CNAME](https://github.com/minlaxz/minlaxz.github.io/blob/5b8dc6e5f5cee8b5f51c5a282d9b3c8ca3a64e4c/CNAME#L1) pointed to [minlaxz.github.io]()
 - [x] Listing repos with `axios` and `useEffect` 🤷
-- [x] Some styles
-- [x] Add detail route for each repo
-- [x] Render markdown for ones who think github profile is complicated. 😆
-- [ ] Remove `CSS modules`, replce with `styled-components` 
-- [ ] Add route for currently working on repo, this may need a db
-- [ ] Other websites
-- [ ] What I got from build this
+- [x] route: Add detail route for each repo
+- [x] route: Render markdown for ones who think github profile is complicated. 😆
+- [x] Remove `CSS modules`, replce with `styled-components` 
+- [ ] route: Add route for currently working on repo, this may need a db
+- [ ] route: Other websites
+- [ ] route: What I got from building this
