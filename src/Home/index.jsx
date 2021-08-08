@@ -3,42 +3,8 @@ import { ToHuman, ToRepos, ToTech } from '../routes';
 import TikTik from '../Clock';
 import { Alink } from '../Units';
 import produce from 'immer';
-import styled from 'styled-components';
+import { ContainerOne, ContainerTwo, UlView, LiView, DivUl } from './styles';
 
-const ContainerOne = styled.div`
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-`;
-
-const ContainerTwo = styled.div`
-    margin: 0;
-    margin-bottom: 0.5em;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: flex-end;
-`;
-
-const UlView = styled.ul`
-    list-style-type: lower-greek;
-`;
-
-const LiView = styled.li`
-    margin: 0.2em;
-    padding: 0.2em;
-`;
-
-const DivUl = styled.div`
-    margin: 0.5em;
-    padding: 0.5em;
-`;
 
 // A simple home component
 const Home = () => {
@@ -46,12 +12,13 @@ const Home = () => {
         window.document.title = 'minlaxz | Home'
 
         const domain = window.location.hostname;
-        // const domain = 'minlaxz.github.io'
         const minlaxzData = localStorage.getItem(domain);
 
-        // return from markdown component, scroll top
+        // if it is redirected from markdown component, 
+        // need to scroll top otherwise it will be empty view
+        // cuz I set total view height to 100vh + 100 vh to hide ContainerTwo
         window.scrollTo(0, 0)
-        // cuz I set view height to 200vh to hide something
+        
 
         if (minlaxzData) { // visted user
             const newState = produce(JSON.parse(minlaxzData), (draft) => {
@@ -76,7 +43,8 @@ const Home = () => {
                 <DivUl>Available routes:
                     <UlView>
                         <LiView>View my<ToRepos cusName="Repo List 🥶" /></LiView>
-                        <LiView>View how I rendered <ToHuman cusName="markdown for human" /></LiView>
+                        <LiView>Here is markdown =&gt; <ToHuman /></LiView>
+                        {/* this is extensible */}
                     </UlView>
                 </DivUl>
                 <DivUl>
@@ -93,15 +61,16 @@ const Home = () => {
                         <LiView>
                             <Alink to="https://gh-minlaxz.pages.dev" text="on Cloudflare Pages (not yet)" />
                         </LiView>
+                        {/* this is extensiable */}
                     </UlView>
                 </DivUl>
 
-                <div style={{ 
-                    width: "80%", 
-                    textAlign: "center", 
-                    padding: "10px", 
+                <div style={{
+                    width: "80%",
+                    textAlign: "center",
+                    padding: "10px",
                     fontSize: "14px",
-                    }}>
+                }}>
                     <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actins</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
                 </div>
             </ContainerOne>
