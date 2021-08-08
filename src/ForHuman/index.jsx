@@ -1,50 +1,14 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
-import styled from 'styled-components';
 import * as data from './data';
 import { ToHome, ToRepos } from '../routes';
+import { MainView, HeadView, IconsView, DivSpan, DamnImage } from './styles';
+import axios from 'axios';
 
-const MainView = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;  /*  100vh remove scroll bar but content will be hidden */
-    @media only screen and (max-width: 600px) {
-        height: 100%;
-    }
-`;
-
-const HeadView = styled.div`
-    display: flex;
-    flex-flow: column;
-
-    align-items: center;
-    align-content: space-between;
-`;
-
-const IconsView = styled.div`
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    width: 100vw;
-    justify-content: center;
-    @media only screen and (max-width: 768px) {
-        justify-content: space-evenly;
-    }
-
-`;
-
-const DivSpan = styled.div`
-    margin-top: 0.5em;
-    padding: 0.5em;
-    @media only screen and (max-width: 768px) {
-        margin-top: 0.1em;
-        padding: 0.1em;
-    }
-
-`;
-
+/**
+ * Individual icon
+ * @param {string} markdown
+*/
 const Icon = ({ markdown }) => (
     <DivSpan>
         <Markdown>
@@ -53,6 +17,10 @@ const Icon = ({ markdown }) => (
     </DivSpan>
 )
 
+/**
+ * Heading with icon
+ * @param {string} name Name of array to render
+*/
 const HeadIcon = ({ name }) => (
     <>
         <HeadView>
@@ -72,17 +40,11 @@ const HeadIcon = ({ name }) => (
     </>
 )
 
-const DamnImage = styled.img`
-    width: 30vw;
-    @media only screen and (max-width: 1024px) {
-        width: 50vw;
-    }
-    @media only screen and (max-width: 600px) {
-        width: 100vw;
-    }
-`;
-
 const ForHuman = () => {
+    React.useEffect(() => {
+        window.document.title = "minlaxz | markdown"
+    }, []);
+    
     return (
         <MainView>
             <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginTop: '1em' }}>
@@ -101,8 +63,19 @@ const ForHuman = () => {
             <HeadIcon name="programming" />
             <HeadIcon name="others" />
             <HeadIcon name="osiot" />
-            <DamnImage src="https://metrics.lecoq.io/minlaxz" alt="Github Metrics" />
-            <DamnImage src="https://github-readme-streak-stats.herokuapp.com/?user=minlaxz" alt="Github Streak Stats" />
+
+            <DamnImage
+                src="https://metrics.lecoq.io/minlaxz"
+                alt="Github Metrics"
+            />
+
+            <DamnImage
+                src="https://github-readme-streak-stats.herokuapp.com/?user=minlaxz"
+                alt="Github Streak Stats"
+            />
+
+
+
         </MainView>
     );
 }
