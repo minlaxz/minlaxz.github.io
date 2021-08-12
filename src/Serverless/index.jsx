@@ -1,13 +1,26 @@
 import React from 'react';
 import { ToHome, ToRepos, ToHuman } from '../routes';
-import { Container } from './styles';
+import { Container, ImageContainer, SearchButton, StyledImage, TextInput, UserInput } from './styles';
+import axios from 'axios';
+
+const getImages = async ({ query }) => {
+    const api = "https://lessapi.minlaxz.workers.dev"
+    const resp = await axios.post(`${api}`, {
+        headers: { 'Content-type': 'application/json;charset=UTF-8' },
+        query: query
+    });
+    return resp.data;
+}
 
 const ServerlessApi = () => {
-    /** fetch using axios to serverless api
-     * @param {string} query The query to be searched on `unsplash`
-     * cuz this is a frontend app, i need to deal with CORS headers
-    */
 
+    const [query, setQuery] = React.useState("");
+    const [images, setImages] = React.useState([]);
+
+    const search = async () => {
+        const results = await getImages({ query: query });
+        setImages(results);
+    }
 
     return (
         <Container>
@@ -18,6 +31,19 @@ const ServerlessApi = () => {
                 <ToHuman cusName="To markdown 🥶" />
                 <ToRepos cusName="To Repos 📑" />
             </div>
+            <UserInput>
+                <TextInput type="text" placeholder="Search images" onChange={e => setQuery(e.target.value)} />
+                <SearchButton onClick={search}>{`Search ${query} images`}</SearchButton>
+            </UserInput>
+            <ImageContainer>
+                {
+                    images.map(image => (
+                        <a key={image.id} href={`https://unsplash.com/photos/${image.id}`} target="_blank" rel="noopener noreferrer">
+                            <StyledImage src={image.src} alt={image.alt} />
+                        </a>
+                    ))
+                }
+            </ImageContainer>
         </Container>
     );
 }
