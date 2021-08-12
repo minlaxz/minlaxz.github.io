@@ -8,6 +8,7 @@ import About from '../About';
 import Detail from '../Detail/index.jsx';
 import ForHuman from '../ForHuman';
 import OtherSite from '../OtherSite';
+import ServerlessApi from '../Serverless';
 import { MarkdownInRoute } from './styles';
 
 const SwitchedRoutes = () => {
@@ -19,6 +20,7 @@ const SwitchedRoutes = () => {
             <Route path="/repos/:name" component={Detail} />
             <Route exact path="/forhuman" component={ForHuman} />
             <Route exact path="/othersites" component={OtherSite} />
+            <Route exact path="/serverless" component={ServerlessApi} />
             <Route component={Oops} />
         </Switch>
     )
@@ -47,6 +49,14 @@ export const ToOther = ({ linkClass, cusName }) => {
             &nbsp; <Link to="/othersites" className={linkClass}>{cusName || `Other websites`}</Link>
         </span>
 
+    )
+}
+
+export const ToServerless = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/serverless" className={linkClass}>{cusName || `Serverless API`}</Link>
+        </span>
     )
 }
 
