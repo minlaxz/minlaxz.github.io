@@ -15,9 +15,12 @@ const getImages = async ({ query }) => {
 const ServerlessApi = () => {
 
     const [query, setQuery] = React.useState("");
-    const [images, setImages] = React.useState([]);
+    const [current, setCurrent] = React.useState("");
+    const [images, setImages] = React.useState(null);
 
     const search = async () => {
+        setImages(null)
+        setCurrent("Pwease wait 👻 ... ")
         const results = await getImages({ query: query });
         setImages(results);
     }
@@ -36,12 +39,14 @@ const ServerlessApi = () => {
                 <SearchButton onClick={search}>{`Search ${query} images`}</SearchButton>
             </UserInput>
             <ImageContainer>
-                {
+                {images ?
                     images.map(image => (
                         <a key={image.id} href={`https://unsplash.com/photos/${image.id}`} target="_blank" rel="noopener noreferrer">
                             <StyledImage src={image.src} alt={image.alt} />
                         </a>
                     ))
+                    :
+                    <p>{current}</p>
                 }
             </ImageContainer>
         </Container>
