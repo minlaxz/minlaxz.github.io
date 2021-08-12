@@ -192,7 +192,7 @@ justify-content: center;
     text-align: center;
     text-transform: capitalize;
 `,le=t.button`
-    background-color: grey;
+    background-color: #5FC9F8;
     border: none;
     outline: none;
     font-size: 0.7;
@@ -210,7 +210,9 @@ justify-content: center;
         background-color: #fafafa;
         color: #000;
     }
-`,ae=()=>{const[t,l]=e.useState(""),[a,o]=e.useState(""),[i,r]=e.useState(null);return e.createElement(Q,null,e.createElement("h3",null,"You're gonna make serverless api request 👻"),e.createElement("div",{style:{display:"flex",width:"100vw",flexDirection:"row",justifyContent:"space-evenly",marginBottom:"1em"}},e.createElement(re,{cusName:"Return Home 😭"}),e.createElement(ge,{cusName:"To markdown 🥶"}),e.createElement(se,{cusName:"To Repos 📑"})),e.createElement(ee,null,e.createElement(te,{type:"text",placeholder:"Search images",onChange:e=>l(e.target.value)}),e.createElement(le,{onClick:async()=>{r(null),o("Pwease wait 👻 ... ");const e=await(async({query:e})=>(await n.post("https://lessapi.minlaxz.workers.dev",{headers:{"Content-type":"application/json;charset=UTF-8"},query:e})).data)({query:t});r(e)}},`Search ${t} images`)),e.createElement(X,null,i?i.map((t=>e.createElement("a",{key:t.id,href:`https://unsplash.com/photos/${t.id}`,target:"_blank",rel:"noopener noreferrer"},e.createElement(Z,{src:t.src,alt:t.alt})))):e.createElement("p",null,a)))},oe=t.img`
+
+    ${({danger:e})=>e&&"background-color: red;"}
+`,ae=()=>{const[t,l]=e.useState(""),[a,o]=e.useState(""),[i,r]=e.useState(null),[s,m]=e.useState(!1);return e.useEffect((()=>{console.log(t);["fuck","sex","nude"].includes(t)?m(!0):m(!1)}),[t]),e.createElement(Q,null,e.createElement("h3",null,"You're gonna make serverless api request 👻"),e.createElement("div",{style:{display:"flex",width:"100vw",flexDirection:"row",justifyContent:"space-evenly",marginBottom:"1em"}},e.createElement(re,{cusName:"Return Home 😭"}),e.createElement(ge,{cusName:"To markdown 🥶"}),e.createElement(se,{cusName:"To Repos 📑"})),e.createElement(ee,null,e.createElement(te,{type:"text",placeholder:"Search images",onChange:e=>l(e.target.value)}),e.createElement(le,{danger:s,onClick:async()=>{r(null),o("Pwease wait 👻 ... ");const e=await(async({query:e})=>(await n.post("https://lessapi.minlaxz.workers.dev",{headers:{"Content-type":"application/json;charset=UTF-8"},query:e})).data)({query:t});r(e)}},`Search ${t} images`)),e.createElement(X,null,i?i.map((t=>e.createElement("a",{key:t.id,href:`https://unsplash.com/photos/${t.id}`,target:"_blank",rel:"noopener noreferrer"},e.createElement(Z,{src:t.src,alt:t.alt})))):e.createElement("p",null,a)))},oe=t.img`
     width: 120px;
     @media only screen and (max-width: 768px) {
         width: 90px;
