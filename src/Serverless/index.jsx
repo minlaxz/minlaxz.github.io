@@ -4,7 +4,7 @@ import { Container, ImageContainer, SearchButton, StyledImage, TextInput, UserIn
 import axios from 'axios';
 
 const getImages = async ({ query }) => {
-    const api = "https://lessapi.minlaxz.workers.dev"
+    const api = "https://lessapi.minlaxz.workers.dev/api/images"
     const resp = await axios.post(`${api}`, {
         headers: { 'Content-type': 'application/json;charset=UTF-8' },
         query: query
