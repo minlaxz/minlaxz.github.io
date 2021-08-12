@@ -30,7 +30,6 @@ export const StyledImage = styled.img`
 
 `;
 
-
 export const UserInput = styled.div`
     display: flex;
     flex-direction: column;
@@ -54,7 +53,7 @@ export const TextInput = styled.input`
 
 
 export const SearchButton = styled.button`
-    background-color: grey;
+    background-color: #5FC9F8;
     border: none;
     outline: none;
     font-size: 0.7;
@@ -72,4 +71,6 @@ export const SearchButton = styled.button`
         background-color: #fafafa;
         color: #000;
     }
+
+    ${({ danger }) => danger && `background-color: red;`}
 `;

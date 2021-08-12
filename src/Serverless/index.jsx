@@ -17,6 +17,7 @@ const ServerlessApi = () => {
     const [query, setQuery] = React.useState("");
     const [current, setCurrent] = React.useState("");
     const [images, setImages] = React.useState(null);
+    const [danger, setDanger] = React.useState(false);
 
     const search = async () => {
         setImages(null)
@@ -24,6 +25,12 @@ const ServerlessApi = () => {
         const results = await getImages({ query: query });
         setImages(results);
     }
+
+    React.useEffect(() => {
+        console.log(query);
+        const offensive = ["fuck", "sex", "nude"]
+        offensive.includes(query) ? setDanger(true) : setDanger(false); /* 👻 */
+    }, [query]);
 
     return (
         <Container>
@@ -36,7 +43,7 @@ const ServerlessApi = () => {
             </div>
             <UserInput>
                 <TextInput type="text" placeholder="Search images" onChange={e => setQuery(e.target.value)} />
-                <SearchButton onClick={search}>{`Search ${query} images`}</SearchButton>
+                <SearchButton danger={danger} onClick={search}>{`Search ${query} images`}</SearchButton>
             </UserInput>
             <ImageContainer>
                 {images ?
