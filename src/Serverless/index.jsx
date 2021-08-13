@@ -12,12 +12,23 @@ const ServerlessApi = () => {
     const [danger, setDanger] = React.useState(false);
 
     const getImages = async ({ query }) => {
-        const api = "https://lessapi.minlaxz.workers.dev/api/images"
-        // const resp = 
-        await axios.post(`${api}`, {
-            headers: { 'Content-type': 'application/json;charset=UTF-8' },
-            query: query
-        }).then(res => (res.data)).catch(err => setCurrent(JSON.stringify(err.message)))
+        try {
+            const api = "https://lessapi.minlaxz.workers.dev/api/images"
+            // const api = "http://localhost:8787/api/images"
+            const resp = await axios.post(`${api}`, {
+                headers: { 'Content-type': 'application/json;charset=UTF-8' },
+                query: query
+            })
+            if (resp.status === 201) {
+                return resp.data
+            }
+            return;
+        } catch (e) {
+            setCurrent(JSON.stringify(e.message));
+            return;
+        }
+
+
     }
 
     const search = async () => {
