@@ -19,10 +19,7 @@ const ServerlessApi = () => {
                 headers: { 'Content-type': 'application/json;charset=UTF-8' },
                 query: query
             })
-            if (resp.status === 201) {
-                return resp.data
-            }
-            return;
+            return resp.data;
         } catch (e) {
             setCurrent(JSON.stringify(e.message));
             return;
