@@ -6,9 +6,16 @@ const SourceVersion = () => {
     const [checksum, setChecksum] = React.useState("");
 
     React.useEffect(() => {
-        const fetchVersion = async () => await axios.get('https://api.github.com/repos/minlaxz/minlaxz.github.io/branches/main')
-            .then(resp => setChecksum(resp.data.commit.sha)).catch(err => console.log(err));
-        fetchVersion();
+        const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:8787/api/github/lastcommit" : "https://lessapi.minlaxz.workers.dev/api/github/lastcommit"
+        const fetchSha = async () => {
+            await axios.get(`${endpoint}`, {
+                headers: { 'Content-type': 'application/json' },
+                params: {
+                    repo: "minlaxz"
+                }
+            }).then(response => setChecksum(response.data)).catch(err => console.log(err));
+        };
+        fetchSha();
     }, []);
 
     return (

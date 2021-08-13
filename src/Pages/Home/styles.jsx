@@ -9,7 +9,7 @@ flex-flow: column;
 align-items: center;
 justify-content: center;
 @media only screen and (max-width: 375px) {
-    height: 110vh;
+    height: 120vh;
 }
 `;
 
