@@ -5,6 +5,7 @@ import { Alink } from '@/Components/Units';
 import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout } from '@/Routes/';
 import produce from 'immer';
 import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles';
+import SourceVersion from '@/Components/SVC';
 
 
 // A simple home component
@@ -40,7 +41,7 @@ const Home = () => {
                 <h3>Hello, world! ((👻) =&gt; (minlaxz)) </h3>
                 <code style={{ fontSize: "13px" }}>Welcome to my universe. <TikTik /></code>
                 <Pre>You would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{ color: "hotpink" }}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
-                <Pre>Suggesstion : if you're presbyopia zoom it please.</Pre>
+                <Pre>I am a so much responsive page! 👻</Pre>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <DivUl>Available routes:
                     <UlView>
@@ -77,6 +78,7 @@ const Home = () => {
                 }}>
                     <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
                 </div>
+                <SourceVersion />
             </ContainerOne>
 
             <ContainerTwo>
