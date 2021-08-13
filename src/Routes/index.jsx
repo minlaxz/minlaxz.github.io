@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import { Link, Switch } from 'react-router-dom';
 import Home from '@/Pages/Home';
+import About from '@/Pages/About';
 import { MarkdownInRoute } from './styles';
 
 
@@ -9,6 +10,7 @@ const SwitchedRoutes = () => {
     return (
         <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
         </Switch>
     )
 }
@@ -47,7 +49,7 @@ export const ToServerless = ({ linkClass, cusName }) => {
     )
 }
 
-export const ToTech = ({ linkClass }) => {
+export const ToAbout = ({ linkClass }) => {
     return (
         <span>
             &nbsp; <Link to="/about" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔
@@ -59,7 +61,6 @@ export const ToTech = ({ linkClass }) => {
 
 export const ToHuman = ({ linkClass, cusName }) => {
     return (
-        // <a><img></img></a>
         <Link to="/forhuman" className={linkClass}>
             <MarkdownInRoute label={cusName || `View Markdown`} />
         </Link>
