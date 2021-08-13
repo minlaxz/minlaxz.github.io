@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToHome } from '../routes';
+import { ToHome } from '@/Routes';
 import { Container, Pre, Code, DivUl, UlView, LiView } from './styles';
 
 const Li = ({ tech }) => <LiView>{tech}</LiView>;
@@ -8,7 +8,7 @@ const UlwithDiv = ({ children, head }) => <DivUl>{head}<UlView>{children}</UlVie
 
 const About = () => {
     React.useEffect(() => {
-        window.document.title = 'minlaxz | About';
+        window.document.title = 'minlaxz | About this';
     }, []);
 
     return (

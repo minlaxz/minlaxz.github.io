@@ -1,9 +1,10 @@
 import React from 'react';
-import { ToHome, ToHuman } from '../routes';
+import { ToHome, ToHuman } from '@/Routes';
+import { Alink } from '@/Components/Units';
 import axios from 'axios';
-import { Alink } from '../Units';
 import { Link } from 'react-router-dom';
 import { Container, UlView, LiView } from './styles';
+import { NavigationButtons } from '@/Components/Buttons';
 // import produce from 'immer';
 
 // const isOutdated = (timestamp) => {
@@ -28,11 +29,11 @@ const Repos = () => {
 
     return (
         <Container>
-            Recently updated repositories ...            
-            <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginBottom: '1em' }}>
+            Recently updated repositories ...
+            <NavigationButtons>
                 <ToHome cusName="Back to Home 🏡" />
                 <ToHuman cusName="Go to markdown 🥶" />
-            </div>
+            </NavigationButtons>
             {
                 repos ?
                     <UlView>

@@ -1,25 +1,25 @@
 import React from 'react';
 import { Route } from 'react-router';
 import { Link, Switch } from 'react-router-dom';
-import Home from '../Home';
-import Oops from '../Oops';
-import Repos from '../Repos';
-import About from '../About';
-import Detail from '../Detail/index.jsx';
-import ForHuman from '../ForHuman';
-import OtherSite from '../OtherSite';
-import ServerlessApi from '../Serverless';
 import { MarkdownInRoute } from './styles';
+import Home from '@/Pages/Home';
+import About from '@/Pages/About';
+import OtherSite from '@/Pages/OtherSite';
+import Oops from '@/Pages/Oops';
+import Repos from '@/Pages/Repos';
+import ForHuman from '@/Pages/ForHuman';
+import RepoDetail from '@/Components/Detail';
+import ServerlessApi from '@/Serverless';
 
 const SwitchedRoutes = () => {
     return (
         <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/repos" component={Repos} />
             <Route exact path="/about" component={About} />
-            <Route path="/repos/:name" component={Detail} />
-            <Route exact path="/forhuman" component={ForHuman} />
             <Route exact path="/othersites" component={OtherSite} />
+            <Route exact path="/repos" component={Repos} />
+            <Route path="/repos/:name" component={RepoDetail} />
+            <Route exact path="/forhuman" component={ForHuman} />
             <Route exact path="/serverless" component={ServerlessApi} />
             <Route component={Oops} />
         </Switch>
@@ -60,7 +60,7 @@ export const ToServerless = ({ linkClass, cusName }) => {
     )
 }
 
-export const ToTech = ({ linkClass }) => {
+export const ToAbout = ({ linkClass }) => {
     return (
         <span>
             &nbsp; <Link to="/about" className={linkClass}>Here</Link> is how this went through &nbsp; 🤔
@@ -72,7 +72,6 @@ export const ToTech = ({ linkClass }) => {
 
 export const ToHuman = ({ linkClass, cusName }) => {
     return (
-        // <a><img></img></a>
         <Link to="/forhuman" className={linkClass}>
             <MarkdownInRoute label={cusName || `View Markdown`} />
         </Link>

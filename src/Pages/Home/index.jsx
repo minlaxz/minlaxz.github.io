@@ -1,7 +1,8 @@
 import React from 'react';
-import { ToHuman, ToOther, ToRepos, ToServerless, ToTech } from '../routes';
-import TikTik from '../Clock';
-import { Alink } from '../Units';
+// import { ToHuman, ToOther, ToRepos, ToServerless, ToTech } from '../Components/routes';
+import TikTik from '@/Components/Clock';
+import { Alink } from '@/Components/Units';
+import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout } from '@/Routes/';
 import produce from 'immer';
 import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles';
 
@@ -81,7 +82,7 @@ const Home = () => {
             <ContainerTwo>
                 <div style={{ border: '2px dotted khaki' }}>
                     <small>Well, actually I am hiding 🤓 not to distrurb you.</small>
-                    <ToTech />
+                    <ToAbout />
                 </div>
 
             </ContainerTwo>
