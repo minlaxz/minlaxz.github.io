@@ -17,7 +17,7 @@ const ServerlessApi = () => {
         await axios.post(`${api}`, {
             headers: { 'Content-type': 'application/json;charset=UTF-8' },
             query: query
-        }).then(res => res.data).catch(err => setCurrent(JSON.stringify(err.message)))
+        }).then(res => (res.data)).catch(err => setCurrent(JSON.stringify(err.message)))
     }
 
     const search = async () => {
