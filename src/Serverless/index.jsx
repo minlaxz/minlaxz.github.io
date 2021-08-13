@@ -1,16 +1,8 @@
 import React from 'react';
-import { ToHome, ToRepos, ToHuman } from '../Routes';
+import { ToHome, ToRepos, ToHuman } from '@/Routes';
 import { Container, ImageContainer, SearchButton, StyledImage, TextInput, UserInput } from './styles';
 import axios from 'axios';
-
-const getImages = async ({ query }) => {
-    const api = "https://lessapi.minlaxz.workers.dev/api/images"
-    const resp = await axios.post(`${api}`, {
-        headers: { 'Content-type': 'application/json;charset=UTF-8' },
-        query: query
-    });
-    return resp.data;
-}
+import { NavigationButtons } from '@/Components/Buttons';
 
 const ServerlessApi = () => {
 
@@ -18,6 +10,15 @@ const ServerlessApi = () => {
     const [current, setCurrent] = React.useState("");
     const [images, setImages] = React.useState(null);
     const [danger, setDanger] = React.useState(false);
+
+    const getImages = async ({ query }) => {
+        const api = "https://lessapi.minlaxz.workers.dev/api/images"
+        // const resp = 
+        await axios.post(`${api}`, {
+            headers: { 'Content-type': 'application/json;charset=UTF-8' },
+            query: query
+        }).then(res => res.data).catch(err => setCurrent(JSON.stringify(err.message)))
+    }
 
     const search = async () => {
         setImages(null)
@@ -36,11 +37,11 @@ const ServerlessApi = () => {
         <Container>
             <h3>You're gonna make serverless api request 👻</h3>
             {/* Render images in responsive size */}
-            <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginBottom: '1em' }}>
+            <NavigationButtons>
                 <ToHome cusName="Return Home 😭" />
                 <ToHuman cusName="To markdown 🥶" />
                 <ToRepos cusName="To Repos 📑" />
-            </div>
+            </NavigationButtons>
             <UserInput>
                 <TextInput type="text" placeholder="Search images" onChange={e => setQuery(e.target.value)} />
                 <SearchButton danger={danger} onClick={search}>{`Search ${query} images`}</SearchButton>

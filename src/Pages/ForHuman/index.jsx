@@ -1,9 +1,10 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 import * as data from './data';
-import { ToHome, ToRepos } from '../Routes';
+import { ToHome, ToRepos } from '@/Routes';
 import { MainView, HeadView, IconsView, DivSpan, DamnImage } from './styles';
-import axios from 'axios';
+import { NavigationButtons } from '@/Components/Buttons';
+// import axios from 'axios';
 
 /**
  * Individual icon
@@ -47,10 +48,10 @@ const ForHuman = () => {
 
     return (
         <MainView>
-            <div style={{ display: 'flex', width: "100vw", flexDirection: 'row', justifyContent: 'space-evenly', marginTop: '1em' }}>
+            <NavigationButtons>
                 <ToHome cusName="Back to Home 🏡" />
                 <ToRepos cusName="Go to Repo List 👻" />
-            </div>
+            </NavigationButtons>
             <HeadView>
                 <Markdown>
                     ### Howdy 😶‍🌫️ I am Min Min Latt (minlaxz) ☕

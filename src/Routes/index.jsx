@@ -6,7 +6,10 @@ import Home from '@/Pages/Home';
 import About from '@/Pages/About';
 import OtherSite from '@/Pages/OtherSite';
 import Oops from '@/Pages/Oops';
-
+import Repos from '@/Pages/Repos';
+import ForHuman from '@/Pages/ForHuman';
+import RepoDetail from '@/Components/Detail';
+import ServerlessApi from '@/Serverless';
 
 const SwitchedRoutes = () => {
     return (
@@ -14,6 +17,10 @@ const SwitchedRoutes = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/othersites" component={OtherSite} />
+            <Route exact path="/repos" component={Repos} />
+            <Route path="/repos/:name" component={RepoDetail} />
+            <Route exact path="/forhuman" component={ForHuman} />
+            <Route exact path="/serverless" component={ServerlessApi} />
             <Route component={Oops} />
         </Switch>
     )
