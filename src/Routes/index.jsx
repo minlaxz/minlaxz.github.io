@@ -5,6 +5,7 @@ import { MarkdownInRoute } from './styles';
 import Home from '@/Pages/Home';
 import About from '@/Pages/About';
 import OtherSite from '@/Pages/OtherSite';
+import Oops from '@/Pages/Oops';
 
 
 const SwitchedRoutes = () => {
@@ -13,6 +14,7 @@ const SwitchedRoutes = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/othersites" component={OtherSite} />
+            <Route component={Oops} />
         </Switch>
     )
 }
