@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router';
 import { Link, Switch } from 'react-router-dom';
+import { MarkdownInRoute } from './styles';
 import Home from '@/Pages/Home';
 import About from '@/Pages/About';
-import { MarkdownInRoute } from './styles';
+import OtherSite from '@/Pages/OtherSite';
 
 
 const SwitchedRoutes = () => {
@@ -11,6 +12,7 @@ const SwitchedRoutes = () => {
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/othersites" component={OtherSite} />
         </Switch>
     )
 }
