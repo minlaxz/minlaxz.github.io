@@ -21,7 +21,7 @@ const SourceVersion = () => {
     return (
         <span style={{ color: 'red' }}>
             <small>
-                <a href={`https://github.com/minlaxz/minlaxz.github.io/commit/${checksum}`} rel="noopener noreferrer" target="_blank">
+                <a href={`https://github.com/minlaxz/minlaxz.github.io/commit/main/${checksum}`} rel="noopener noreferrer" target="_blank">
                     CHECKSUM : {checksum}
                 </a>
             </small>
