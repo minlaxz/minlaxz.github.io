@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToHome, ToRepos, ToHuman } from '../routes';
+import { ToHome, ToRepos, ToHuman } from '../Routes';
 import { Container, ImageContainer, SearchButton, StyledImage, TextInput, UserInput } from './styles';
 import axios from 'axios';
 

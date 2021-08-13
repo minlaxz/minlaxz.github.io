@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToHome } from '../routes';
+import { ToHome } from '../Routes';
 import { Container, Pre, Code, DivUl, UlView, LiView } from './styles';
 
 const Li = ({ tech }) => <LiView>{tech}</LiView>;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { ToHome, ToRepos } from '../routes';
+import { ToHome, ToRepos } from '../Routes';
 import { MainView, PreTag } from './styles';
 
 const Detail = () => {
