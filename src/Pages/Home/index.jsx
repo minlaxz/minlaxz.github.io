@@ -67,7 +67,7 @@ const Home = () => {
                             <Alink to="https://gh-minlaxz.pages.dev" text="with Cloudflare Pages (not yet)" />
                         </LiView>
                         <LiView>
-                            <Alink to="https://lessapi.minlaxz.workers.dev" text="my backend 👻" />
+                            <Alink to="https://lessapi.minlaxz.workers.dev" text="here is my backend 👻" />
                         </LiView>
                         {/* this is extensiable */}
                     </UlView>

@@ -10,7 +10,6 @@ import Repos from '@/Pages/Repos';
 import ForHuman from '@/Pages/ForHuman';
 import RepoDetail from '@/Components/Detail';
 import ServerlessApi from '@/Serverless';
-import CV from '@/Pages/CV';
 
 const SwitchedRoutes = () => {
     return (
@@ -22,7 +21,6 @@ const SwitchedRoutes = () => {
             <Route path="/repos/:name" component={RepoDetail} />
             <Route exact path="/forhuman" component={ForHuman} />
             <Route exact path="/serverless" component={ServerlessApi} />
-            <Route exact path="/cv" component={CV} />
             <Route component={Oops} />
         </Switch>
     )
