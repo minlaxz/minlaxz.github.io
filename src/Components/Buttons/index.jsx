@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container } from './styles';
+import { ButtonContainer } from './styles';
 
 export const NavigationButtons = (props) => {
     return (
-        <Container>
+        <ButtonContainer>
             {props.children}
-        </Container>
+        </ButtonContainer>
     );
 }
