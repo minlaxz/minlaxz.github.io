@@ -9,7 +9,10 @@ const SourceVersion = () => {
     const branch = 'main';
 
     React.useEffect(() => {
-        const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:3001/api/v1/github/lastcommit" : "https://microapi.octocat.tk/api/v1/github/lastcommit"
+        const endpoint = import.meta.env.MODE === "development" && import.meta.env.VITE_BYPASS_CHECK === '0' ?
+            "http://localhost:3001/api/v1/github/lastcommit" :
+            "https://microapi.octocat.tk/api/v1/github/lastcommit"
+        console.log(`API: ${endpoint}`);
         const fetchSha = async () => {
             await axios.get(`${endpoint}`, {
                 headers: { 'Content-type': 'application/json' },

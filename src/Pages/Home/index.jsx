@@ -7,7 +7,6 @@ import produce from 'immer';
 import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles';
 import SourceVersion from '@/Components/SVC';
 
-
 // A simple home component
 const Home = () => {
     React.useEffect(() => {
@@ -59,9 +58,9 @@ const Home = () => {
                         <LiView>
                             <Alink to="https://minlaxz.github.io" text="with Github Pages" />
                             {
-                                window.location.hostname === 'github.minlaxz.me' ? <span>
+                                window.location.hostname === 'minlaxz.github.io' ? <span>
                                     &nbsp; you're currently viewing
-                                </span> : <span>&nbsp; hostname does not match</span>
+                                </span> : <span>...</span>
                             }
                         </LiView>
                         <LiView>
