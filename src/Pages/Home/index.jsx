@@ -53,7 +53,7 @@ const Home = () => {
                     </UlView>
                 </DivUl>
                 <DivUl>
-                    This page should also be available at...
+                    Other sites and backends ...
                     <UlView>
                         <LiView>
                             <Alink to="https://minlaxz.github.io" text="with Github Pages" />
