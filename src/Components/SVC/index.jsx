@@ -9,7 +9,7 @@ const SourceVersion = () => {
     const branch = 'main';
 
     React.useEffect(() => {
-        const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:8787/api/github/lastcommit" : "https://lessapi.minlaxz.workers.dev/api/github/lastcommit"
+        const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:3001/api/v1/github/lastcommit" : "https://microapi.octocat.tk/api/v1/github/lastcommit"
         const fetchSha = async () => {
             await axios.get(`${endpoint}`, {
                 headers: { 'Content-type': 'application/json' },
@@ -17,7 +17,7 @@ const SourceVersion = () => {
                     repo, user, branch
 
                 }
-            }).then(response => setChecksum(response.data.sha)).catch(err => console.log(err));
+            }).then(response => setChecksum(response.data.data)).catch(err => console.log(err));
         };
         fetchSha();
     }, []);
