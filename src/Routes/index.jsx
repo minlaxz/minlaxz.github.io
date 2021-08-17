@@ -10,6 +10,7 @@ import Repos from '@/Pages/Repos';
 import ForHuman from '@/Pages/ForHuman';
 import RepoDetail from '@/Components/Detail';
 import ServerlessApi from '@/Serverless';
+import LinkShortener from '@/Pages/ShortLink';
 
 const SwitchedRoutes = () => {
     return (
@@ -21,6 +22,7 @@ const SwitchedRoutes = () => {
             <Route path="/repos/:name" component={RepoDetail} />
             <Route exact path="/forhuman" component={ForHuman} />
             <Route exact path="/serverless" component={ServerlessApi} />
+            <Route exact path="/shortlink" component={LinkShortener} />
             <Route component={Oops} />
         </Switch>
     )
@@ -52,14 +54,6 @@ export const ToOther = ({ linkClass, cusName }) => {
     )
 }
 
-export const ToServerless = ({ linkClass, cusName }) => {
-    return (
-        <span>
-            &nbsp; <Link to="/serverless" className={linkClass}>{cusName || `Serverless API`}</Link>
-        </span>
-    )
-}
-
 export const ToAbout = ({ linkClass }) => {
     return (
         <span>
@@ -67,8 +61,6 @@ export const ToAbout = ({ linkClass }) => {
         </span>
     )
 }
-
-
 
 export const ToHuman = ({ linkClass, cusName }) => {
     return (
@@ -79,6 +71,21 @@ export const ToHuman = ({ linkClass, cusName }) => {
     )
 }
 
+export const ToServerless = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/serverless" className={linkClass}>{cusName || `Serverless API`}</Link>
+        </span>
+    )
+}
+
+export const ToLinkShortener = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/shortlink" className={linkClass}>{cusName || `LinkShortener API`}</Link>
+        </span>
+    )
+}
 
 
 export default SwitchedRoutes;

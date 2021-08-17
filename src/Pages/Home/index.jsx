@@ -2,7 +2,7 @@ import React from 'react';
 // import { ToHuman, ToOther, ToRepos, ToServerless, ToTech } from '../Components/routes';
 import TikTik from '@/Components/Clock';
 import { Alink } from '@/Components/Units';
-import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout } from '@/Routes/';
+import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout, ToLinkShortener } from '@/Routes/';
 import produce from 'immer';
 import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles';
 import SourceVersion from '@/Components/SVC';
@@ -49,6 +49,7 @@ const Home = () => {
                         <LiView>Here is markdown =&gt; <ToHuman /></LiView>
                         <LiView>Other sites =&gt; <ToOther /></LiView>
                         <LiView>Serverless Api Calls =&gt; <ToServerless /></LiView>
+                        <LiView>Link shortener =&gt; <ToLinkShortener /></LiView>
                         {/* this is extensible */}
                     </UlView>
                 </DivUl>
