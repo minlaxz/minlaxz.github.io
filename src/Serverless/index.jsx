@@ -13,7 +13,7 @@ const ServerlessApi = () => {
 
     const getImages = async ({ query }) => {
         try {
-            const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:8787/api/images" : "https://lessapi.minlaxz.workers.dev/api/images"
+            const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:8787/api/images" : "https://api.octocat.tk/api/images"
             const resp = await axios.post(`${endpoint}`, {
                 headers: { 'Content-type': 'application/json;charset=UTF-8' },
                 query: query

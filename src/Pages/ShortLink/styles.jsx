@@ -11,7 +11,8 @@ export const ShortInput = styled.input`
     }
 `;
 
-export const ShortButton = styled.button`
+/* i like this component 🥴 */
+/* export const ShortButton = styled.button`
     background-color: #4CAF50;
     color: white;
     padding: 0.3em;
@@ -37,4 +38,4 @@ export const ShortButton = styled.button`
         ${({ disabled }) => disabled && `background-color:red`}
     }
     ${({ disabled }) => disabled && `background-color:red`}
-`;
+`; */
