@@ -36,3 +36,8 @@ I've deleted yarn lockfile and change workflow, cuz I am using [yarn workspaces]
 Awsome! this still work for workflow.
 
 Note: to generate lockfile, move project outside of workspaces, and run `npm install --package-lock-only; yarn import`
+
+### Vercel
+
+- [Production](https://minlaxz.vercel.app)
+- [Development](https://devel.minlaxz.vercel.app)
