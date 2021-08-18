@@ -25,6 +25,7 @@ const LinkShortener = () => {
     const handleSubmit = async () => {
         setLoading(true);
         setLink('');
+        setR('');
         const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:8787/r" : "https://api.octocat.tk/r"
         console.log(endpoint)
         try {
@@ -40,7 +41,7 @@ const LinkShortener = () => {
     }
     return (
         <NormalContainer>
-            <h4>it's me link shotener 👻 currently building...</h4>
+            <h3>it's me link shortener 👻 </h3>
             <ShortInput b_points="768" value={link} onChange={(e) => setLink(e.target.value)} />
             <button
                 onClick={handleSubmit}
@@ -48,9 +49,18 @@ const LinkShortener = () => {
                 disabled={disabled}> Shorten</button>
             {
                 r &&
-                <span>
-                    {`https://api.octocat.tk/r/${r}`}
-                </span>
+                <>
+                    {/* 
+                        onClick={(e) => { navigator.clipboard.writeText(e.target.innerText) }}
+                    */}
+                    <p
+                        className={styles.short_link_result}
+                        onClick={(e) => {
+                            navigator.clipboard.writeText(`https://api.octocat.tk/r/${r}`)
+                            e.target.innerHTML = `<b>Copied https://api.octocat.tk/r/${r}</b>`
+                        }}
+                    > {`https://api.octocat.tk/r/${r}`} <b style={{ color: "green" }}>click to copy</b></p>
+                </>
             }
             {
                 loading &&
