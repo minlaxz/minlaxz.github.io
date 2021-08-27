@@ -6,6 +6,7 @@ import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout, ToLinkShortener } fro
 import produce from 'immer';
 import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles';
 import SourceVersion from '@/Components/SVC';
+import { ToLogin } from '@/Routes/';
 
 // A simple home component
 const Home = () => {
@@ -49,6 +50,7 @@ const Home = () => {
                         <LiView>Other sites =&gt; <ToOther /></LiView>
                         <LiView>Serverless Api Calls =&gt; <ToServerless /></LiView>
                         <LiView>Link shortener =&gt; <ToLinkShortener /></LiView>
+                        <LiView>Login =&gt; <ToLogin /></LiView>
                         {/* this is extensible */}
                     </UlView>
                 </DivUl>

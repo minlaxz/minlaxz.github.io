@@ -11,6 +11,8 @@ import ForHuman from '@/Pages/ForHuman';
 import RepoDetail from '@/Components/Detail';
 import ServerlessApi from '@/Serverless';
 import LinkShortener from '@/Pages/ShortLink';
+import Login from '@/Pages/Login';
+import SignUp from '@/Pages/Signup';
 
 const SwitchedRoutes = () => {
     return (
@@ -23,6 +25,8 @@ const SwitchedRoutes = () => {
             <Route exact path="/forhuman" component={ForHuman} />
             <Route exact path="/serverless" component={ServerlessApi} />
             <Route exact path="/shortlink" component={LinkShortener} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
             <Route component={Oops} />
         </Switch>
     )
@@ -87,5 +91,21 @@ export const ToLinkShortener = ({ linkClass, cusName }) => {
     )
 }
 
+export const ToLogin = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/login" className={linkClass}>{cusName || `Login`}</Link>
+        </span>
+    )
+}
+
+
+export const ToSignup = ({ linkClass, cusName }) => {
+    return (
+        <span>
+            &nbsp; <Link to="/signup" className={linkClass}>{cusName || `Signup`}</Link>
+        </span>
+    )
+}
 
 export default SwitchedRoutes;
