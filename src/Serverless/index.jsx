@@ -23,8 +23,6 @@ const ServerlessApi = () => {
             setCurrent(JSON.stringify(e.message));
             return;
         }
-
-
     }
 
     const search = async () => {

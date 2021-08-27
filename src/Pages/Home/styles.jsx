@@ -8,8 +8,8 @@ display: flex;
 flex-flow: column;
 align-items: center;
 justify-content: center;
-@media only screen and (max-width: 375px) {
-    height: 120vh;
+@media only screen and (max-width: 812px) {
+    height: 130%;
 }
 `;
 

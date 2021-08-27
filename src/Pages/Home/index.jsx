@@ -8,8 +8,14 @@ import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles
 import SourceVersion from '@/Components/SVC';
 import { ToLogin } from '@/Routes/';
 
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import PointActions from '@/actions';
+
 // A simple home component
 const Home = () => {
+    const dispatch = useDispatch();
+    const points = useSelector(state => state.points);
     React.useEffect(() => {
         window.document.title = 'minlaxz | Home'
 
@@ -87,6 +93,9 @@ const Home = () => {
                     <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
                 </div>
                 <SourceVersion />
+                <button onClick={() => dispatch(PointActions.increment())}>+</button>
+                {points}
+                <button onClick={() => dispatch(PointActions.decrement())}>-</button>
             </ContainerOne>
 
             <ContainerTwo>
