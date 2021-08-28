@@ -10,12 +10,13 @@ import { ToLogin } from '@/Routes/';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
-import PointActions from '@/actions';
+import { PointActions } from '@/actions';
 
 // A simple home component
 const Home = () => {
     const dispatch = useDispatch();
     const points = useSelector(state => state.points);
+    const user = useSelector(state => state.user);
     React.useEffect(() => {
         window.document.title = 'minlaxz | Home'
 
@@ -90,12 +91,14 @@ const Home = () => {
                     padding: "10px",
                     fontSize: "14px",
                 }}>
-                    <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
+                    <b>React</b> with <b>Redux</b> and <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
                 </div>
                 <SourceVersion />
+                <p>This is about <b>Redux</b></p>
                 <button onClick={() => dispatch(PointActions.increment())}>+</button>
                 {points}
                 <button onClick={() => dispatch(PointActions.decrement())}>-</button>
+                Login : {user.toString()}
             </ContainerOne>
 
             <ContainerTwo>

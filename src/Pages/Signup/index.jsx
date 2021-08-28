@@ -3,15 +3,17 @@ import { ToLogin } from '@/Routes/';
 import { Form, EmailInput, PasswordInput, SignUpButton, UserNameInput } from './styles';
 import React from 'react';
 import { ToHome } from '@/Routes/';
+import UnderConstruct from '@/Components/UnderConstruct';
 
 const SignUp = () => {
     return (
         <NormalContainer>
             <Form onSubmit={() => alert(0)}>
-            <ToHome cusName="Go HOME 🏡"/>
+                <UnderConstruct />
+                <ToHome cusName="Go HOME 🏡" />
                 <div>
                     {/* <label htmlFor="username">Your Name : &nbsp;</label> */}
-                    <UserNameInput type="text" name="username" id="username" placeholder="Your Name"/>
+                    <UserNameInput type="text" name="username" id="username" placeholder="Your Name" />
                 </div>
                 <div>
                     {/* <label htmlFor="exampleInputEmail1">Email address : &nbsp;</label> */}
@@ -25,10 +27,10 @@ const SignUp = () => {
                 <div>
                     <SignUpButton type="submit">Submit</SignUpButton>
                 </div>
-            <ToLogin cusName="Already have an account ?"/>
+                <ToLogin cusName="Already have an account ?" />
             </Form>
         </NormalContainer>
-        
+
     )
 }
 

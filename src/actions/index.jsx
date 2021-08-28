@@ -1,7 +1,5 @@
 import { increment, decrement } from "./points";
 
-const PointActions = {
+export const PointActions = {
     increment, decrement
 }
-
-export default PointActions;
