@@ -1,11 +1,17 @@
+const initialState = {
+    users: [],
+    loading: true
+}
 
-export const user = (state = false, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
-        case 'LOGIN':
-            return state;
-        case 'LOGOUT':
-            return state;
-        default:
-            return state;
+        case "GET_USERS":
+            return {
+                ...state,
+                users: action.payload,
+                loading: false
+            }
+        default: return state
     }
-};
+
+}

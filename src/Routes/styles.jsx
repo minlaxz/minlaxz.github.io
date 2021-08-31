@@ -3,11 +3,14 @@ import styled from "styled-components";
 
 export const MarkdownImg = styled.img`
     width: 120px;
+    height: 20px;
     @media only screen and (max-width: 768px) {
         width: 90px;
+        height: 15px ;
     }
     @media only screen and (max-width: 1024px) {
         width: 100px;
+        height: 16.67px;
     }
 `;
 
