@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const ContainerOne = styled.div`
 margin: 0;
 padding: 0;
-height: 100vh;
+height: 100%;
 display: flex;
 flex-flow: column;
 align-items: center;
 justify-content: center;
-@media only screen and (max-width: 375px) {
-    height: 120vh;
+@media only screen and (max-width: 812px) {
+    height: 130%;
 }
 `;
 
@@ -46,4 +46,12 @@ margin-right: 0.5em;
 white-space: pre-wrap;
 text-align: center;
 /* word-break: break-all; */
+`;
+
+export const ReduxContainer = styled.div`
+text-align:center;
+border:1px dotted gold;
+border-radius:10px;
+margin-top:10px;
+padding:10px;
 `;

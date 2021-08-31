@@ -1,16 +1,29 @@
 import React from 'react';
-// import { ToHuman, ToOther, ToRepos, ToServerless, ToTech } from '../Components/routes';
+import produce from 'immer';
+
 import TikTik from '@/Components/Clock';
 import { Alink } from '@/Components/Units';
-import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout, ToLinkShortener } from '@/Routes/';
-import produce from 'immer';
-import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre } from './styles';
 import SourceVersion from '@/Components/SVC';
+
+import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout, ToLinkShortener, ToLogin } from '@/Routes/';
+import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre, ReduxContainer } from './styles';
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { increment, decrement } from '@/actions/pointActions';
+import { getUsers } from '@/actions/userActions';
 
 // A simple home component
 const Home = () => {
+    const dispatch = useDispatch();
+
+    const points = useSelector(state => state.points);
+    const user = useSelector(state => state.user);
+
     React.useEffect(() => {
         window.document.title = 'minlaxz | Home'
+
+        dispatch(getUsers());
 
         const domain = window.location.hostname;
         const minlaxzData = localStorage.getItem(domain);
@@ -37,22 +50,23 @@ const Home = () => {
     return (
         <>
             <ContainerOne>
-                <h3>Hello, world! ((👻) =&gt; (minlaxz)) </h3>
-                <code style={{ fontSize: "13px" }}>Welcome to my universe. <TikTik /></code>
+                <h3 className="animate__animated animate__flipInX animate__slower">Hello, world! ((👻) =&gt; (minlaxz)) </h3>
+                <code style={{ fontSize: "13px" }} className="animate__animated animate__flipInX">Welcome to my universe. <TikTik /></code>
                 <Pre>You would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{ color: "hotpink" }}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
-                <Pre>I am a so much responsive page! 👻</Pre>
+                <Pre className="animate__animated animate__flipInX animate__faster animate__delay-1.5s">I am a so much responsive page! 👻</Pre>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
-                <DivUl>Available routes:
+                <DivUl className="animate__animated animate__flipInX animate__faster animate__delay-1s">Available routes:
                     <UlView>
                         <LiView>View my =&gt;<ToRepos cusName="Repo List 🥶" /></LiView>
                         <LiView>Here is markdown =&gt; <ToHuman /></LiView>
                         <LiView>Other sites =&gt; <ToOther /></LiView>
                         <LiView>Serverless Api Calls =&gt; <ToServerless /></LiView>
                         <LiView>Link shortener =&gt; <ToLinkShortener /></LiView>
+                        <LiView>Login =&gt; <ToLogin /></LiView>
                         {/* this is extensible */}
                     </UlView>
                 </DivUl>
-                <DivUl>
+                <DivUl className="animate__animated animate__flipInX animate__faster animate__delay-2s">
                     Other sites and backends ...
                     <UlView>
                         <LiView>
@@ -81,10 +95,24 @@ const Home = () => {
                     textAlign: "center",
                     padding: "10px",
                     fontSize: "14px",
-                }}>
-                    <b>React</b> with <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
+                }}
+                className="animate__animated animate__flipInX animate__faster animate__delay-4s">
+                    <b>React</b> with <b>Redux</b> and <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
                 </div>
                 <SourceVersion />
+                <ReduxContainer>
+                    <div>
+                        <p>This is about <b>Redux</b> state management</p>
+                        <button onClick={() => dispatch(increment())}>+</button>
+                        &nbsp; {points} &nbsp;
+                        <button onClick={() => dispatch(decrement())}>-</button>
+                    </div>
+                    <div>
+                        {
+                            user?.users[0]?.name ?? [].toString()
+                        }
+                    </div>
+                </ReduxContainer>
             </ContainerOne>
 
             <ContainerTwo>

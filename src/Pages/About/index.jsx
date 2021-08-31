@@ -15,11 +15,12 @@ const About = () => {
         <Container>
             <UlwithDiv head="I've used the following tools">
                 <Li tech="React for fontend" />
+                <Li tech="Redux for state management"/>
                 <Li tech="styled componenet for CSS" />
                 <Li tech="Vite as build tool" />
                 <Li tech="React hash router for frontend routing" />
             </UlwithDiv>
-            <UlwithDiv head="I've used these for domain">
+            <UlwithDiv head="I've used these for hosting">
                 <Li tech="This is hosted on github pages" />
                 <Li tech="This is also hosted on cloudflare pages" />
                 <Li tech="used CNAME for domain routing" />
@@ -31,7 +32,7 @@ const About = () => {
                 <Li tech="gh-pages package is cool but this used Github actions workflow" />
             </UlwithDiv>
             <Pre>
-                <Code>I will made a backend for this 🤪</Code>
+                <Code>This have two backends 🤪</Code>
             </Pre>
             <ToHome cusName="Back to Home" />
         </Container>

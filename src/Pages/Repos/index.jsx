@@ -25,7 +25,7 @@ const Repos = () => {
         }
         window.document.title = 'minlaxz | Repos';
         fetchRecentRepos();
-    }, []);
+    }, [setRepos]);
 
     return (
         <Container>
@@ -56,7 +56,7 @@ const Repos = () => {
                     </UlView>
                     :
                     <p>
-                        Fetching repos...
+                        If this too long to response please <b>refresh</b> ...
                     </p>
             }
         </Container>

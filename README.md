@@ -30,6 +30,7 @@ That way for eg. [minlaxz.github.io/repo]() is available at [github.minlaxz.me/r
 - [ ] route: Add route for currently working on repo, this may need a db
 - [ ] route: Other websites
 - [ ] route: What I got from building this
+- [x] State Management: `React-Redux`
 
 I've deleted yarn lockfile and change workflow, cuz I am using [yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/).
 
