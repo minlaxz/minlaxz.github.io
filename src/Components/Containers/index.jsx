@@ -23,6 +23,7 @@ export const NormalContainer = styled.div`
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-flow: column;
     align-items: center;

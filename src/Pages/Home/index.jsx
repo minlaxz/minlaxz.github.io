@@ -6,7 +6,7 @@ import { Alink } from '@/Components/Units';
 import SourceVersion from '@/Components/SVC';
 
 import { ToRepos, ToHuman, ToOther, ToServerless, ToAbout, ToLinkShortener, ToLogin } from '@/Routes/';
-import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre, ReduxContainer } from './styles';
+import { ContainerOne, ContainerTwo, UlView, LiView, DivUl, Pre, ReduxContainer, Border } from './styles';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -52,7 +52,9 @@ const Home = () => {
             <ContainerOne>
                 <h3 className="animate__animated animate__flipInX animate__slower">Hello, world! ((👻) =&gt; (minlaxz)) </h3>
                 <code style={{ fontSize: "13px" }} className="animate__animated animate__flipInX">Welcome to my universe. <TikTik /></code>
-                <Pre>You would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{ color: "hotpink" }}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
+                <Border>
+                    <Pre>You would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{ color: "hotpink" }}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
+                </Border>
                 <Pre className="animate__animated animate__flipInX animate__faster animate__delay-1.5s">I am a so much responsive page! 👻</Pre>
                 <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <DivUl className="animate__animated animate__flipInX animate__faster animate__delay-1s">Available routes:
@@ -62,7 +64,7 @@ const Home = () => {
                         <LiView>Other sites =&gt; <ToOther /></LiView>
                         <LiView>Serverless Api Calls =&gt; <ToServerless /></LiView>
                         <LiView>Link shortener =&gt; <ToLinkShortener /></LiView>
-                        <LiView>Login =&gt; <ToLogin /></LiView>
+                        <LiView>Test Login System =&gt; <ToLogin /></LiView>
                         {/* this is extensible */}
                     </UlView>
                 </DivUl>
@@ -96,7 +98,7 @@ const Home = () => {
                     padding: "10px",
                     fontSize: "14px",
                 }}
-                className="animate__animated animate__flipInX animate__faster animate__delay-4s">
+                    className="animate__animated animate__flipInX animate__faster animate__delay-4s">
                     <b>React</b> with <b>Redux</b> and <b>Vite</b> as build tool, hosted on <b>Github Pages</b> with <b>actions</b> on <b>push</b> on <b>main</b>, SSL/TLS by <b>Cloudflare</b> with <b>proxies</b>.
                 </div>
                 <SourceVersion />

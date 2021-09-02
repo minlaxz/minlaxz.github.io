@@ -1,28 +1,56 @@
 import React from 'react';
 import { NormalContainer } from '@/Components/Containers';
-import { Form, EmailInput, PasswordInput, LoginButton } from './styles';
+import { Form, Input, LoginButton } from './styles';
 import { ToSignup } from '@/Routes/';
 import { ToHome } from '@/Routes/';
 import UnderConstruct from '@/Components/UnderConstruct';
+import { isEmail } from 'validator';
+
+
 
 const Login = () => {
+    const [disabled, setDisabled] = React.useState(true);
+    const [data, setData] = React.useState({ email: "", password: "" });
+    const [error, setError] = React.useState({ email: "", password: "" });
+
+    const handleSubmit = async (e) => {
+        if (!disabled) {
+            e.preventDefault();
+            console.log("ok")
+        }
+    }
+
+    React.useEffect(() => {
+        if (isEmail(data.email) && data.password.length >= 6) {
+            // form is valid and can be submitted
+            setDisabled(false);
+            setError({ email: "", password: "" });
+        } else {
+            setDisabled(true);
+            setError({ email: isEmail(data.email) ? "" : "Email is not valid", password: data.password.length >= 6 ? "" : "Password must be at least 6 characters" });
+        }
+    }, [data])
     return (
         <NormalContainer>
-            <Form onSubmit={() => alert(0)}>
+            <Form onSubmit={(e) => handleSubmit(e)}>
                 <UnderConstruct />
                 <ToHome cusName="Go HOME 🏡" />
                 <div>
-                    {/* <label htmlFor="exampleInputEmail1">Email address : &nbsp;</label> */}
-                    <EmailInput type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                    {/* <small id="emailHelp">We'll never share your email with anyone else.</small> */}
+                    <Input onChange={(e) => setData({ ...data, email: e.target.value })} placeholder="Enter email" />
                 </div>
                 <div>
-                    {/* <label htmlFor="exampleInputPassword1">Password : &nbsp;</label> */}
-                    <PasswordInput type="password" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="Enter Password" />
+                    {/* <label htmlFor="pw">Password : &nbsp;</label> */}
+                    <Input type="password" onChange={(e) => setData({ ...data, password: e.target.value })} placeholder="Enter Password" />
                 </div>
                 <div>
-                    <LoginButton type="submit">Submit</LoginButton>
+                    <LoginButton type="submit" disabled={disabled}>Submit</LoginButton>
                 </div>
+                {
+                    error.email || error.password ||
+                        <p>
+                            {error.email || error.password}
+                        </p>
+                }
                 <ToSignup cusName="Don't have an account ?" />
             </Form>
         </NormalContainer>

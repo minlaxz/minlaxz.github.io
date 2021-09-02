@@ -34,7 +34,7 @@ const ServerlessApi = () => {
 
     React.useEffect(() => {
         console.log(query);
-        const offensive = ["fuck", "sex", "nude"]
+        const offensive = ["fuck", "sex", "nude", "porn", "simp"]
         offensive.includes(query) ? setDanger(true) : setDanger(false); /* 👻 */
     }, [query]);
 
