@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import points from './points';
 import user from './user';
+import authUser from './authUser';
 
-export default combineReducers({ points: points, user: user });
+export default combineReducers({ pointss: points, user: user, authUser: authUser });

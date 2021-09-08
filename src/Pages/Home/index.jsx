@@ -17,7 +17,7 @@ import { getUsers } from '@/actions/userActions';
 const Home = () => {
     const dispatch = useDispatch();
 
-    const points = useSelector(state => state.points);
+    const points = useSelector(state => state.pointss);
     const user = useSelector(state => state.user);
 
     React.useEffect(() => {
@@ -30,7 +30,7 @@ const Home = () => {
 
         // if it is redirected from markdown component, 
         // need to scroll top otherwise it will be empty view
-        // cuz I set total view height to 100vh + 100 vh to hide ContainerTwo
+        // cuz I set total view height to 100vh + 100vh to hide ContainerTwo
         window.scrollTo(0, 0)
 
         if (minlaxzData) { // visted user
@@ -106,7 +106,7 @@ const Home = () => {
                     <div>
                         <p>This is about <b>Redux</b> state management</p>
                         <button onClick={() => dispatch(increment())}>+</button>
-                        &nbsp; {points} &nbsp;
+                        &nbsp; {points.value} &nbsp;
                         <button onClick={() => dispatch(decrement())}>-</button>
                     </div>
                     <div>

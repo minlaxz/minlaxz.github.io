@@ -14,6 +14,7 @@ const ServerlessApi = React.lazy(() => import('@/Serverless'));
 const LinkShortener = React.lazy(() => import('@/Pages/ShortLink'));
 const Login = React.lazy(() => import('@/Pages/Login'));
 const SignUp = React.lazy(() => import('@/Pages/Signup'));
+const Dashboard = React.lazy(() => import('@/Pages/Dashboard'))
 
 const Pages = [
     { name: "home", r: <Home /> },
@@ -26,6 +27,8 @@ const Pages = [
     { name: "shortlink", r: <LinkShortener /> },
     { name: "login", r: <Login /> },
     { name: "signup", r: <SignUp /> },
+    { name: "dashboard", r: <Dashboard /> },
+
 ]
 
 const ActualPage = (props) => {
@@ -58,6 +61,7 @@ const SwitchedRoutes = () => {
             <Route exact path="/shortlink" render={props => <ActualPage type="shortlink" {...props} />} />
             <Route exact path="/login" render={props => <ActualPage type="login" {...props} />} />
             <Route exact path="/signup" render={props => <ActualPage type="signup" {...props} />} />
+            <Route exact path="/dashboard" render={props => <ActualPage type="dashboard" {...props} />} />
             <Route component={Oops} />
         </Switch>
     )
