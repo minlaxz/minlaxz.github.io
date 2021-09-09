@@ -9,29 +9,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '@/actions/userAuthActions';
 import { Redirect } from 'react-router-dom';
 
-/* Impure */
-const checkValidation = () => {
-    try {
-        const tokenObject = JSON.parse(localStorage.getItem("ggwp_user"));
-        if (tokenObject?.expireDate > Date.now()) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (error) {
-        /* ggwp broken */
-        return false;
-    }
-}
 
 const Login = () => {
-
     const dispatch = useDispatch();
-    const [disabled, setDisabled] = React.useState(true);
+    const [redirect, setRedirect] = React.useState(null);
+    const [disabled, setDisabled] = React.useState(false);
     const [data, setData] = React.useState({ email: "", password: "" });
-    const [error, setError] = React.useState({ email: "", password: "" });
 
-    const authUser = useSelector(state => state.authUser);
+    const checkValidation = () => {
+        try {
+            const tokenObject = JSON.parse(localStorage.getItem("ggwp_user"));
+            if (tokenObject?.expireDate > Date.now()) {
+                setRedirect("/dashboard")
+            } else {
+                setRedirect(null)
+            }
+        } catch (error) {
+            /* ggwp broken */
+            console.log(error)
+            setRedirect(null)
+        }
+    }
 
     const handleSubmit = async (e) => {
         if (!disabled) {
@@ -40,49 +38,43 @@ const Login = () => {
         }
     }
 
+    const authUser = useSelector(state => state.authUser);
     React.useEffect(() => {
-        if (isEmail(data.email) && data.password.length >= 6) {
-            // form is valid and can be submitted
-            setDisabled(false);
-            setError({ email: "", password: "" });
-        } else {
-            setDisabled(true);
-            setError({ email: isEmail(data.email) ? "" : "Email is not valid", password: data.password.length >= 6 ? "" : "Password must be at least 6 characters" });
-        }
-    }, [data])
+        checkValidation();
+        // if (isEmail(data.email) && data.password.length >= 6) {
+        /* form is valid and can be submitted */
+        //     setDisabled(false);
+        //     setError({ email: "", password: "" });
+        // } else {
+        //     setDisabled(true);
+        //     setError({ email: isEmail(data.email) ? "" : "Email is not valid", password: data.password.length >= 6 ? "" : "Password must be at least 6 characters" });
+        // }
+    }, [checkValidation])
 
-    if (checkValidation()) {
-        /* there is a token and it is not expired. */
-        return <Redirect to="/dashboard" />
-    }
+
     return (
-        <NormalContainer>
-            <Form onSubmit={(e) => handleSubmit(e)}>
-                {
-                    authUser.reqState.success
-                        ? <small>{authUser.userState.token.slice(10)}</small>
-                        : <small>{authUser.reqState.message}</small>
-                }
-                <ToHome cusName="Go HOME 🏡" />
-                <div>
-                    <Input onChange={(e) => setData({ ...data, email: e.target.value })} placeholder="Enter email" />
-                </div>
-                <div>
-                    {/* <label htmlFor="pw">Password : &nbsp;</label> */}
-                    <Input type="password" onChange={(e) => setData({ ...data, password: e.target.value })} placeholder="Enter Password" />
-                </div>
-                <div>
-                    <LoginButton type="submit" disabled={disabled}>Submit</LoginButton>
-                </div>
-                {
-                    error.email || error.password ||
-                    <p>
-                        {error.email || error.password}
-                    </p>
-                }
-                <ToSignup cusName="Don't have an account ?" />
-            </Form>
-        </NormalContainer>
+        redirect
+            ? <Redirect to={redirect} />
+            :
+            <NormalContainer>
+                <Form onSubmit={(e) => handleSubmit(e)}>
+                    {
+                        authUser.reqState.success || <small>{authUser.reqState.message}</small>
+                    }
+                    <ToHome cusName="Go HOME 🏡" />
+                    <div>
+                        <Input onChange={(e) => setData({ ...data, email: e.target.value })} placeholder="Enter email" />
+                    </div>
+                    <div>
+                        {/* <label htmlFor="pw">Password : &nbsp;</label> */}
+                        <Input type="password" onChange={(e) => setData({ ...data, password: e.target.value })} placeholder="Enter Password" />
+                    </div>
+                    <div>
+                        <LoginButton type="submit" disabled={disabled}>Submit</LoginButton>
+                    </div>
+                    <ToSignup cusName="Don't have an account ?" />
+                </Form>
+            </NormalContainer>
     )
 }
 

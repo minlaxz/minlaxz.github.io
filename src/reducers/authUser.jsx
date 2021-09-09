@@ -21,15 +21,15 @@ export default (state = initialState, action) => {
                 reqState: {
                     success: action.payload.data.success,
                     statusCode: action.payload.status, /* API return HTTP Code */
-                    message: action.payload.data.message,
-                    at: action.payload.data.loginTime
+                    at: action.payload.data.loginTime,
+                    message: action.payload.data.message /* Any extra message from Server ? */
                 },
                 userState: {
                     token: action.payload.data.token,
                     expiresIn: action.payload.data.expiresIn,
                     validated: action.payload.data.loginTime + action.payload.data.expiresIn > Date.now()
                 },
-            }
+            };
         case "LOGIN/fail":
             return {
                 ...state,
@@ -39,8 +39,12 @@ export default (state = initialState, action) => {
                     at: action.payload.data.loginTime,
                     message: action.payload.data.message /* Any extra message from Server ? */
                 }
-
-            }
+            };
+        case "LOGOUT/success":
+            return {
+                ...state,
+                ...initialState
+            };
         default: return state
     }
 

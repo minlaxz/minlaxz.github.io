@@ -19,6 +19,9 @@ const Home = () => {
 
     const points = useSelector(state => state.pointss);
     const user = useSelector(state => state.user);
+    const authUser = useSelector(state => state.authUser);
+
+    const [token, setToken] = React.useState(null);
 
     React.useEffect(() => {
         window.document.title = 'minlaxz | Home'
@@ -27,6 +30,8 @@ const Home = () => {
 
         const domain = window.location.hostname;
         const minlaxzData = localStorage.getItem(domain);
+        const data = JSON.parse(localStorage.getItem("ggwp_user"));
+
 
         // if it is redirected from markdown component, 
         // need to scroll top otherwise it will be empty view
@@ -44,6 +49,8 @@ const Home = () => {
             }
             localStorage.setItem('minlaxz.github.io', JSON.stringify(data));
         }
+
+        data && setToken(data.token)
 
     }, []);
 
@@ -114,6 +121,13 @@ const Home = () => {
                             user?.users[0]?.name ?? [].toString()
                         }
                     </div>
+                    <code style={{ fontSize: "11px" }}>
+                        {
+                            authUser.userState.token || token
+                                ? `Logged in`
+                                : `Logged out`
+                        }
+                    </code>
                 </ReduxContainer>
             </ContainerOne>
 
