@@ -8,6 +8,7 @@ import { isEmail } from 'validator';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '@/actions/userAuthActions';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -51,7 +52,6 @@ const Login = () => {
         // }
     }, [checkValidation])
 
-
     return (
         redirect
             ? <Redirect to={redirect} />
@@ -62,12 +62,20 @@ const Login = () => {
                         authUser.reqState.success || <small>{authUser.reqState.message}</small>
                     }
                     <ToHome cusName="Go HOME 🏡" />
+                    <input type="hidden" name="_csrf" value="" ></input>
                     <div>
                         <Input onChange={(e) => setData({ ...data, email: e.target.value })} placeholder="Enter email" />
                     </div>
                     <div>
                         {/* <label htmlFor="pw">Password : &nbsp;</label> */}
                         <Input type="password" onChange={(e) => setData({ ...data, password: e.target.value })} placeholder="Enter Password" />
+                    </div>
+                    <div>
+                        <button onClick={(e) => {
+                            e.preventDefault();
+                            axios.get("http://localhost:3001/", { withCredentials: true }).then(res => { console.log(res) }).catch(err => { console.log(err) })
+                        }}
+                        >Get CSRF</button>
                     </div>
                     <div>
                         <LoginButton type="submit" disabled={disabled}>Submit</LoginButton>
