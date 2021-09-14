@@ -17,6 +17,11 @@ jobs:
         run: |
           yarn install
           yarn build
+
+      - name: Copy vercel.sh
+        run: |
+          cp ./vercel.sh ./dist/vercel.sh
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
