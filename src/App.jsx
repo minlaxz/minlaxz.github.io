@@ -5,10 +5,13 @@ import SwitchedRoutes from '@/Routes/';
 // Needs hash router for frontend routing
 function App() {
   return (
-    <Router basename='/'>
-      <SwitchedRoutes />
-    </Router>
-
+    <div style={{
+      backgroundColor: '#f5f5f5',
+    }}>
+      <Router basename='/'>
+        <SwitchedRoutes />
+      </Router>
+    </div>
   )
 }
 

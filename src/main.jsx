@@ -6,10 +6,16 @@ import App from './App';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
+import { ThemeProvider } from '@/contexts/ThemeContext';
+import ThemeToggle from '@/Components/ThemeToggle';
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider>
+        <ThemeToggle />
+        <App />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
