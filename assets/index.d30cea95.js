@@ -1,4 +1,4 @@
-import{s as e}from"./vendor.4f34775f.js";e.div`
+import{s as e}from"./vendor.f7ee82cf.js";e.div`
     display: flex;
     flex-direction: column;
     align-items: center;

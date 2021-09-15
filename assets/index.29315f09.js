@@ -1,4 +1,4 @@
-import{N as e}from"./index.f1d4da9e.js";import{g as r,e as a}from"./index.f90b7844.js";import{s as t,R as p}from"./vendor.4f34775f.js";const d=t.form`
+import{N as e}from"./index.d30cea95.js";import{g as r,e as a}from"./index.815b0932.js";import{s as p,R as t}from"./vendor.f7ee82cf.js";import{U as d}from"./index.dd59dc64.js";const i=p.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@ import{N as e}from"./index.f1d4da9e.js";import{g as r,e as a}from"./index.f90b78
     background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,n=t.input`
+`,o=p.input`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -18,7 +18,7 @@ import{N as e}from"./index.f1d4da9e.js";import{g as r,e as a}from"./index.f90b78
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,i=t.input`
+`,x=p.input`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -26,7 +26,7 @@ import{N as e}from"./index.f1d4da9e.js";import{g as r,e as a}from"./index.f90b78
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,o=t.input`
+`,n=p.input`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -35,7 +35,7 @@ import{N as e}from"./index.f1d4da9e.js";import{g as r,e as a}from"./index.f90b78
     border-radius: 5px;
     color: darkred;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,l=t.button`
+`,l=p.button`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -48,4 +48,4 @@ import{N as e}from"./index.f1d4da9e.js";import{g as r,e as a}from"./index.f90b78
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-`,x=()=>p.createElement(p.Fragment,null,p.createElement("h4",null,"Under Construction")),c=()=>p.createElement(e,null,p.createElement(d,{onSubmit:()=>alert(0)},p.createElement(x,null),p.createElement(r,{cusName:"Go HOME 🏡"}),p.createElement("div",null,p.createElement(n,{type:"text",name:"username",id:"username",placeholder:"Your Name"})),p.createElement("div",null,p.createElement(i,{type:"email",id:"exampleInputEmail1","aria-describedby":"emailHelp",placeholder:"Enter email"})),p.createElement("div",null,p.createElement(o,{type:"password",id:"exampleInputPassword1","aria-describedby":"passwordHelp",placeholder:"Enter Password"})),p.createElement("div",null,p.createElement(l,{type:"submit"},"Submit")),p.createElement(a,{cusName:"Already have an account ?"})));export{c as default};
+`,c=()=>t.createElement(e,null,t.createElement(i,{onSubmit:()=>alert(0)},t.createElement(d,null),t.createElement(r,{cusName:"Go HOME 🏡"}),t.createElement("div",null,t.createElement(o,{type:"text",name:"username",id:"username",placeholder:"Your Name"})),t.createElement("div",null,t.createElement(x,{type:"email",id:"exampleInputEmail1","aria-describedby":"emailHelp",placeholder:"Enter email"})),t.createElement("div",null,t.createElement(n,{type:"password",id:"exampleInputPassword1","aria-describedby":"passwordHelp",placeholder:"Enter Password"})),t.createElement("div",null,t.createElement(l,{type:"submit"},"Submit")),t.createElement(a,{cusName:"Already have an account ?"})));export{c as default};

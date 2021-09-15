@@ -1,4 +1,4 @@
-import{s as e,R as t}from"./vendor.4f34775f.js";const n=e.div`
+import{s as e,R as t}from"./vendor.f7ee82cf.js";const n=e.div`
 margin: 0;
 padding: 0;
 height: 100vh;
