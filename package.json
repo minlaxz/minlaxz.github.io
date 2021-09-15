@@ -1,6 +1,9 @@
 {
   "name": "minlaxz.github.io",
   "version": "0.0.0",
+  "description": "My portfolio web site",
+  "author": "Min Min Latt <minminlaxz@gmail.com",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,6 +20,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.1",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.0",
     "validator": "^13.6.0",

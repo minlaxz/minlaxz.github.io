@@ -9,7 +9,7 @@ ReactGA.initialize('UA-167479267-1');
 
 // Redux
 import { Provider } from 'react-redux';
-import store from './store';
+import store from '@/Store';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import ThemeToggle from '@/Components/ThemeToggle';
 

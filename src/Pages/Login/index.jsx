@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '@/actions/userAuthActions';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import UnderConstruct from '@/Components/UnderConstruct';
 
 
 const Login = () => {
@@ -61,6 +62,7 @@ const Login = () => {
                     {
                         authUser.reqState.success || <small>{authUser.reqState.message}</small>
                     }
+                    <UnderConstruct />
                     <ToHome cusName="Go HOME 🏡" />
                     <input type="hidden" name="_csrf" value="" ></input>
                     <div>
