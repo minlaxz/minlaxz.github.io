@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import { endpoint } from '@/api';
+import endpoint from '@/api';
 
 const SourceVersion = () => {
     const [checksum, setChecksum] = React.useState("");
     const [timeout, setTimeout] = React.useState(false);
-    
+
     const repo = 'minlaxz.github.io';
     const user = 'minlaxz';
     const branch = 'main';
