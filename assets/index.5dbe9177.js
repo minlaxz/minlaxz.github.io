@@ -1,4 +1,4 @@
-import{s as e,R as t}from"./vendor.f7ee82cf.js";import{g as a}from"./index.815b0932.js";const n=e.div`
+import{s as e,R as t}from"./vendor.f7ee82cf.js";import{g as a}from"./index.59082b13.js";const n=e.div`
 margin:0;
 padding:0;
 display: flex;
