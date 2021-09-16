@@ -1,13 +1,12 @@
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import SwitchedRoutes from '@/Routes/';
+import './App.css';
 
 // Needs hash router for frontend routing
 function App() {
   return (
-    <div style={{
-      backgroundColor: '#f5f5f5',
-    }}>
+    <div className="App">
       <Router basename='/'>
         <SwitchedRoutes />
       </Router>

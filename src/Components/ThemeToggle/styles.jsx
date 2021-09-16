@@ -15,7 +15,9 @@ user-select: none;
 
 export const ToggleButton = styled.button`
 margin: 0.5rem;
-background-color: transparent;
+color: var(--color);
+/* background-color: transparent; */
+background-color: var(--background-color);
 border-radius: 10%;
 cursor: pointer;
 transition: all 0.8s ease-in-out;
@@ -26,4 +28,10 @@ box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
 &:active {
 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
+`;
+
+export const Nav = styled.div`
+transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s;
+background-color: var(--background-color);
+color: var(--color);
 `;

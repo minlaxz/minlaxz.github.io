@@ -1,0 +1,5 @@
+.App {
+  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s;
+  background-color: var(--background-color);
+  color: var(--color);
+}
