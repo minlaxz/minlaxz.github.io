@@ -2,17 +2,17 @@ import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from '@/contexts/ThemeContext';
 
-import { ToggleButton, ToggleContainer } from './styles';
+import { Nav, ToggleButton, ToggleContainer } from './styles';
 
 const ThemeToggle = () => {
     const { theme, setTheme } = useContext(ThemeContext);
 
     return (
-        <div style={{
-            backgroundColor: "#f5f5f5"
-        }}>
+        <Nav>
             <ToggleContainer>
-                Not yet:
+                <span style={{ fontSize: "0.7em" }}>
+                    Not Fully Implemented yet:
+                </span>
                 <ToggleButton
                     onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 >
@@ -27,7 +27,7 @@ const ThemeToggle = () => {
                     )}
                 </ToggleButton>
             </ToggleContainer>
-        </div>
+        </Nav>
     );
 };
 

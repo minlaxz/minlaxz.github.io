@@ -13,6 +13,10 @@ import store from '@/Store';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import ThemeToggle from '@/Components/ThemeToggle';
 
+import './dark-theme.css';
+import './light-theme.css';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

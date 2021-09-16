@@ -1,0 +1,4 @@
+html[class="dark"] {
+  --color: #e2e2e2;
+  --background-color: #292929;
+}

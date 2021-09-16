@@ -68,33 +68,37 @@ const Home = () => {
                     <UlView>
                         <LiView>View my =&gt;<ToRepos cusName="Repo List 🥶" /></LiView>
                         <LiView>Here is markdown =&gt; <ToHuman /></LiView>
-                        <LiView>Other sites =&gt; <ToOther /></LiView>
+                        <LiView>Currently I've some challenges =&gt; <ToOther cusName="Problems" /></LiView>
                         <LiView>Serverless Api Calls =&gt; <ToServerless /></LiView>
                         <LiView>Link shortener =&gt; <ToLinkShortener /></LiView>
-                        <LiView>Test Login System =&gt; <ToLogin /></LiView>
+                        <LiView>I challenge <b>U</b> to test my login system =&gt; <ToLogin /></LiView>
                         {/* this is extensible */}
                     </UlView>
                 </DivUl>
                 <DivUl className="animate__animated animate__flipInX animate__faster animate__delay-2s">
-                    Other sites and backends ...
+                    This on other domain and backends ...
                     <UlView>
                         <LiView>
-                            <Alink to="https://minlaxz.github.io" text="with Github Pages" />
+                            <Alink to="https://minlaxz.github.io" text="Deploy with Github Pages" />
                             {
                                 window.location.hostname === 'minlaxz.github.io' ? <span>
                                     &nbsp; you're currently viewing
-                                </span> : <span>...</span>
+                                </span> : <span> &nbsp; Viewing on {window.location.hostname}</span>
                             }
                         </LiView>
                         <LiView>
-                            <Alink to="https://gh-minlaxz.pages.dev" text="with Cloudflare Pages (not yet)" />
+                            <Alink to="https://gh-minlaxz.pages.dev" text="Deploy with Cloudflare Pages (not yet)" />
                         </LiView>
                         <LiView>
-                            <Alink to="https://api.octocat.tk" text="CF backend 👻 (using workers)" />
+                            <Alink to="https://api.octocat.tk" text="Serverless Backend" />
                         </LiView>
                         <LiView>
-                            <Alink to="https://microapi.octocat.tk" text="Deta backend 👻 (using express)" />
+                            <Alink to="https://microapi.octocat.tk" text="NodeJS Backend" />
                         </LiView>
+                        <LiView>
+                            <Alink to="https://github.com/minlaxz/easy-rest" text="Main Backend (Currently building)" />
+                        </LiView>
+
                         {/* this is extensiable */}
                     </UlView>
                 </DivUl>
