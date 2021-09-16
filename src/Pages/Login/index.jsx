@@ -4,7 +4,7 @@ import { Form, Input, LoginButton } from './styles';
 import { ToSignup } from '@/Routes/';
 import { ToHome } from '@/Routes/';
 // import UnderConstruct from '@/Components/UnderConstruct';
-import { isEmail } from 'validator';
+// import { isEmail } from 'validator';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '@/actions/userAuthActions';
 import { Redirect } from 'react-router-dom';

@@ -1,10 +1,11 @@
 import React from 'react';
+import axios from 'axios';
+import { isURL } from 'validator';
+
 import { NormalContainer } from '@/Components/Containers';
-import { ShortInput } from './styles';
 import { NavigationButtons } from '@/Components/Buttons';
 import { ToHome } from '@/Routes/';
-import { isURL } from 'validator';
-import axios from 'axios';
+import { ShortInput } from './styles';
 import styles from './Button.module.css';
 
 const LinkShortener = () => {

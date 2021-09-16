@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import React from 'react';
 
 export const ShortInput = styled.input`
     margin: 0.5em;

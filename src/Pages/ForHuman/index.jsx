@@ -1,10 +1,10 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
-import * as data from './data';
+
 import { ToHome, ToRepos } from '@/Routes';
-import { MainView, HeadView, IconsView, DivSpan, DamnImage } from './styles';
 import { NavigationButtons } from '@/Components/Buttons';
-// import axios from 'axios';
+import { MainView, HeadView, IconsView, DivSpan, DamnImage } from './styles';
+import * as data from './data';
 
 /**
  * Individual icon

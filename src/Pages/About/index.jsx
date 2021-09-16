@@ -1,6 +1,7 @@
 import React from 'react';
 import { ToHome } from '@/Routes';
-import { Container, Pre, Code, DivUl, UlView, LiView } from './styles';
+import { Pre, Code, DivUl, UlView, LiView } from './styles';
+import { NormalContainer } from '@/Components/Containers';
 
 const Li = ({ tech }) => <LiView>{tech}</LiView>;
 
@@ -12,17 +13,17 @@ const About = () => {
     }, []);
 
     return (
-        <Container>
+        <NormalContainer>
             <UlwithDiv head="I've used the following tools">
                 <Li tech="React for fontend" />
-                <Li tech="Redux for state management"/>
+                <Li tech="Redux for state management" />
                 <Li tech="styled componenet for CSS" />
                 <Li tech="Vite as build tool" />
                 <Li tech="React hash router for frontend routing" />
             </UlwithDiv>
             <UlwithDiv head="I've used these for hosting">
-                <Li tech="This is hosted on github pages" />
-                <Li tech="This is also hosted on cloudflare pages" />
+                <Li tech="Hosted on github pages" />
+                <Li tech="Also hosted on cloudflare pages" />
                 <Li tech="used CNAME for domain routing" />
             </UlwithDiv>
             <UlwithDiv head="What is cool ..?">
@@ -35,7 +36,7 @@ const About = () => {
                 <Code>This have two backends 🤪</Code>
             </Pre>
             <ToHome cusName="Back to Home" />
-        </Container>
+        </NormalContainer>
 
     );
 }

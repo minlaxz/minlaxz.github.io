@@ -1,9 +1,9 @@
-import { NormalContainer } from '@/Components/Containers';
-import { ToLogin } from '@/Routes/';
-import { Form, EmailInput, PasswordInput, SignUpButton, UserNameInput } from './styles';
 import React from 'react';
-import { ToHome } from '@/Routes/';
+
+import { NormalContainer } from '@/Components/Containers';
+import { ToHome, ToLogin } from '@/Routes/';
 import UnderConstruct from '@/Components/UnderConstruct';
+import { Form, EmailInput, PasswordInput, SignUpButton, UserNameInput } from './styles';
 
 const SignUp = () => {
     return (

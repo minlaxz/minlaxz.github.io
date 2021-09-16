@@ -1,18 +1,16 @@
 import React from 'react';
 import { useContext } from 'react';
-import { ThemeContext } from '@/contexts/ThemeContext';
+import { ThemeContext } from '@/Contexts/ThemeContext';
 
-import { Nav, ToggleButton, ToggleContainer } from './styles';
+import { MainContainer, ToggleButton, ToggleContainer, ToggleText } from './styles';
 
 const ThemeToggle = () => {
     const { theme, setTheme } = useContext(ThemeContext);
 
     return (
-        <Nav>
+        <MainContainer>
             <ToggleContainer>
-                <span style={{ fontSize: "0.7em" }}>
-                    Not Fully Implemented yet:
-                </span>
+                <ToggleText>Custom Dark Mode =&gt;</ToggleText>
                 <ToggleButton
                     onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 >
@@ -27,7 +25,7 @@ const ThemeToggle = () => {
                     )}
                 </ToggleButton>
             </ToggleContainer>
-        </Nav>
+        </MainContainer>
     );
 };
 

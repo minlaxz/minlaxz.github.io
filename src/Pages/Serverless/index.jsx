@@ -1,8 +1,9 @@
 import React from 'react';
-import { ToHome, ToRepos, ToHuman } from '@/Routes';
-import { Container, ImageContainer, SearchButton, StyledImage, TextInput, UserInput } from './styles';
 import axios from 'axios';
+
+import { ToHome, ToRepos, ToHuman } from '@/Routes';
 import { NavigationButtons } from '@/Components/Buttons';
+import { Container, ImageContainer, SearchButton, StyledImage, TextInput, UserInput } from './styles';
 
 const ServerlessApi = () => {
 
@@ -48,7 +49,7 @@ const ServerlessApi = () => {
                 <ToRepos cusName="To Repos 📑" />
             </NavigationButtons>
             <UserInput>
-                <TextInput type="text" placeholder="Search images" onChange={e => setQuery(e.target.value)} />
+                <TextInput type="text" placeholder="Search any images" onChange={e => setQuery(e.target.value)} />
                 <SearchButton danger={danger} onClick={search}>{`Search ${query} images`}</SearchButton>
             </UserInput>
             <ImageContainer>

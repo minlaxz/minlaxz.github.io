@@ -1,10 +1,11 @@
 import React from 'react';
-import { ToHome, ToHuman } from '@/Routes';
-import { Alink } from '@/Components/Units';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Container, UlView, LiView } from './styles';
+
+import { ToHome, ToHuman } from '@/Routes';
+import { Alink } from '@/Components/Units';
 import { NavigationButtons } from '@/Components/Buttons';
+import { Container, UlView, LiView } from './styles';
 // import produce from 'immer';
 
 // const isOutdated = (timestamp) => {

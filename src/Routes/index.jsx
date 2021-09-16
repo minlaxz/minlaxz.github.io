@@ -28,7 +28,7 @@ const SwitchedRoutes = () => {
         <Switch>
             <Route exact path="/" render={props => <ActualPage type="home" {...props} />} />
             <Route exact path="/about" render={props => <ActualPage type="about" {...props} />} />
-            <Route exact path="/othersites" render={props => <ActualPage type="othersites" {...props} />} />
+            <Route exact path="/other" render={props => <ActualPage type="other" {...props} />} />
             <Route exact path="/repos" render={props => <ActualPage type="repos" {...props} />} />
             <Route path="/repos/:name" render={props => <ActualPage type="repodetail" {...props} />} />
             <Route exact path="/forhuman" render={props => <ActualPage type="forhuman" {...props} />} />
@@ -62,7 +62,7 @@ export const ToRepos = ({ linkClass, cusName }) => {
 export const ToOther = ({ linkClass, cusName }) => {
     return (
         <span>
-            &nbsp; <Link to="/othersites" className={linkClass}>{cusName || `Other`}</Link>
+            &nbsp; <Link to="/other" className={linkClass}>{cusName || `Other`}</Link>
         </span>
 
     )
