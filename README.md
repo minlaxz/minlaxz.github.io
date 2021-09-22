@@ -39,7 +39,8 @@
 
 - [Vercel](https://vercel.com/)
 - [Github Actions](https://actions.github.com/)
+- [![Netlify Status](https://api.netlify.com/api/v1/badges/12102c4d-d8c7-4554-ad11-c94be963fac4/deploy-status)](https://app.netlify.com/sites/minlaxz/deploys)
 
-Custom Domain using CNAME: [minlaxz.octocat.tk](https://minlaxz.octocat.tk/) - Not yet.
+Custom Domain using CNAME: [api.octocat.tk](https://api.octocat.tk/) - Not yet.
 
 Backend API: [easy-rest](https://github.com/minlaxz/easy-rest)
