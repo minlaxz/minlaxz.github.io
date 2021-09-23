@@ -4,3 +4,4 @@ exports.handler = async function (event, context) {
         body: JSON.stringify({ message: "Hello World" })
     };
 }
+// https://octocat.tk/.netlify/functions/hello
