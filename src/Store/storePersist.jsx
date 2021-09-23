@@ -4,7 +4,8 @@ export const storePersist = {
     },
     get: (key) => {
         const result = window.localStorage.getItem(key);
-        return JSON.parse(result);
+        // return JSON.parse(result);
+        return result;
     },
     remove: (key) => {
         window.localStorage.removeItem(key);

@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
+import storePersist from './storePersist';
 
 import rootReducer from '@/Reducers';
 
@@ -16,7 +17,10 @@ if (process.env.NODE_ENV === 'development') {
     configStore = composeEnhancers(applyMiddleware(...middleware));
 }
 
-const initalState = {};
+const initalState = storePersist.get('minlaxz-theme')
+    ? { theme: storePersist.get('minlaxz-theme') }
+    : {};
+
 
 
 const store = createStore(rootReducer, initalState, configStore);
