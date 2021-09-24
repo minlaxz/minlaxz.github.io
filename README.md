@@ -1,39 +1,36 @@
 ## Building my portfolio site [minlaxz.github.io](https://minlaxz.github.io/)
 
-> > Used to showcase my projects and skills.
+```
+Used to showcase my projects and skills.
+```
 
 ### Fontend: [React SFC](https://reactjs.org/)
 
 - Styled Components [styled-components](https://www.styled-components.com/)
 - React Router [react-router](https://reacttraining.com/react-router/web/guides/quick-start)
 - React Lazy Load [react-loadable](https://github.com/jamiebuilds/react-loadable)
-- Effect Hooks [react-hooks](https://reactjs.org/docs/hooks-effect.html)
-- State Hooks [react-hooks](https://reactjs.org/docs/hooks-state.html)
-- Context API [react-context](https://reactjs.org/docs/context.html)
+- Custom Hooks [useFetch](https://github.com/minlaxz/minlaxz.github.io/blob/main/src/Hooks/useFetch.jsx)
 - Redux [redux](https://redux.js.org/)
+  - All states including dark mode, syncing with local storage
 - Redux Thunk [redux-thunk](https://github.com/reduxjs/redux-thunk)
-  - Middleware makes API calls
-- Redux Dev Tools [redux-devtools-extension]()
+  - Middleware should make API calls
+- Redux Dev Tools [redux-devtools-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+- Netlify Lambda [netlify-lambda](https://www.netlify.com/docs/functions/lambda/)
 
 #### Build tool
 
-- [Create-React-App](https://create-react-app.dev/)
-
-#### CSS framework
-
-- [TailwindCSS](https://tailwindcss.com/)
-
-  - Dark Mode
-  - Responsive
-  - Flexbox
-
-- [Sass](https://sass-lang.com/)
+- [Vite](http://vitejs.dev/)
 
 ### Deployments
 
 - [Vercel](https://vercel.com/)
+  - [Production Deployment](https://minlaxz.vercel.app/)
+  - [Development Deployment](https://devel.minlaxz.vercel.app/)
 - [Github Pages](https://pages.github.com/)
-- [Cloudflare Pages](https://www.cloudflare.com/)
+  - [minlaxz.github.io](https://minlaxz.github.io/)
+- [Cloudflare Pages](https://www.cloudflare.com/) - Not yet.
+- [Netlify](https://www.netlify.com/)
+  - [Octocat.tk](https://www.octocat.tk/)
 
 ### CI
 
@@ -41,6 +38,10 @@
 - [Github Actions](https://actions.github.com/)
 - [![Netlify Status](https://api.netlify.com/api/v1/badges/12102c4d-d8c7-4554-ad11-c94be963fac4/deploy-status)](https://app.netlify.com/sites/minlaxz/deploys)
 
-Custom Domain using CNAME: [api.octocat.tk](https://api.octocat.tk/) - Not yet.
+Backend #1 using NodeJS : [microapi](https://microapi.octocat.tk/)
+- [source - microapi](https://github.com/minlaxz/microapi)
 
-Backend API: [easy-rest](https://github.com/minlaxz/easy-rest)
+Backend #2 using Serverless : [lessapi](https://api.octocat.tk/)
+- [source - lessapi](https://github.com/minlaxz/lessapi)
+
+Main Backend: [easy-rest](https://github.com/minlaxz/easy-rest) - Not yet.

@@ -1,38 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+// Analytics
 import reportWebVitals from './reportWebVitals';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-167479267-1');
-
 // Redux
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
 import store from '@/Store';
-import { ThemeProvider } from '@/Contexts/ThemeContext';
-import ThemeToggle from '@/Components/ThemeToggle';
 
-import './dark-theme.css';
-import './light-theme.css';
+import './index.css';
+import App from './App';
+import DarkThemeProvider from "@/Providers/DarkThemeProvider";
+import DarkThemeToggle from "@/Components/DarkThemeToggle";
 
+ReactGA.initialize('UA-167479267-1');
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider>
-        <ThemeToggle />
+    <ReduxProvider store={store}>
+      <DarkThemeProvider>
+        <DarkThemeToggle />
         <App />
-      </ThemeProvider>
-    </Provider>
+      </DarkThemeProvider>
+    </ReduxProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
 
 function sendToAnalytics({ id, name, value }) {
   console.log(id, name, value);
-  // const body = JSON.stringify(metric);
-  // const url = 'https://example.com/analytics';
   ReactGA.ga('send', 'event', {
     eventCategory: 'Web Vitals',
     eventAction: name,
