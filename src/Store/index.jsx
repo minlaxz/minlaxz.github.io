@@ -21,7 +21,12 @@ const initalState = storePersist.get('minlaxz-theme')
     ? { theme: storePersist.get('minlaxz-theme') }
     : {};
 
-
-
 const store = createStore(rootReducer, initalState, configStore);
+
+store.subscribe(() => {
+    const theme = store.getState().theme;
+    if (!theme) return;
+    storePersist.set('minlaxz-theme', store.getState().theme);
+});
+
 export default store;

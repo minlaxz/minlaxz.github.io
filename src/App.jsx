@@ -1,16 +1,16 @@
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import SwitchedRoutes from '@/Routes/';
-import './App.css';
-
+import ToggleableContainer from '@/Components/ToggleableStuff';
 // Needs hash router for frontend routing
 function App() {
   return (
-    <div className="App">
+    /* Every page is in `Toggleable` container making sure dark mode is available globally. */
+    <ToggleableContainer>
       <Router basename='/'>
         <SwitchedRoutes />
       </Router>
-    </div>
+    </ToggleableContainer >
   )
 }
 
