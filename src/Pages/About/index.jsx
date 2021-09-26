@@ -14,20 +14,25 @@ const About = () => {
 
     return (
         <NormalContainer>
-            <UlwithDiv head="I've used the following tools">
+            <UlwithDiv head="Tools">
                 <Li tech="React for fontend" />
                 <Li tech="Redux for state management" />
                 <Li tech="styled componenet for CSS" />
                 <Li tech="Vite as build tool" />
                 <Li tech="React hash router for frontend routing" />
             </UlwithDiv>
-            <UlwithDiv head="I've used these for hosting">
-                <Li tech="Hosted on github pages" />
-                <Li tech="Also hosted on cloudflare pages" />
-                <Li tech="used CNAME for domain routing" />
+            <UlwithDiv head="Hosting">
+                <Li tech="Hosted on Github Pages" />
+                <Li tech="Hosted on Vercel" />
+                <Li tech="Hosted on Netlify" />
+                <Li tech="Also hosted on Cloudflare Pages" />
+                <Li tech="CNAME for domain routing" />
             </UlwithDiv>
-            <UlwithDiv head="What is cool ..?">
+            <UlwithDiv head="Cool stuffs ..?">
                 <Li tech="Clock is about Javascript Closures" />
+                <Li tech="Redux, Redux Thunk" />
+                <Li tech="React 'lazy load' - learning 'loadable'" />
+                <Li tech="Internal dispatch from 'thunk' to 'store'" />
                 <Li tech="Repo page is about axios with useEffect()" />
                 <Li tech="Markdown page is about map() and filter()" />
                 <Li tech="gh-pages package is cool but this used Github actions workflow" />

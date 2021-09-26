@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFetch } from '@/Hooks/useFetch';
+import { Alink } from '../Units';
 
 const SourceVersion = () => {
     const repo = 'minlaxz.github.io';
@@ -12,17 +13,20 @@ const SourceVersion = () => {
         <div style={{
             display: "flex",
             alignItems: "center",
-            flexDirection: "column",
+            flexDirection: "row",
         }}>
-            Last Commit : {
+            <small>
+                Last Commit Sha on "Main": &nbsp;
+            </small>
+            {
                 error
                     ? <span style={{ color: "red" }}>{error.message}</span>
                     : loading
                         ? <span style={{ color: "orange" }}>Fetching last commit SHA...</span>
                         :
-                        <a href={`https://github.com/minlaxz/${repo}/commit/${data.commit.sha}`} rel="noopener noreferrer" target="_blank">
-                            {`SHA: ${data.commit.sha}`}
-                        </a>
+                        <Alink
+                            to={`https://github.com/minlaxz/${repo}/commit/${data.commit.sha}`}
+                            text={`${data.commit.sha.slice(0, 7)}`} />
             }
         </div>
     )
