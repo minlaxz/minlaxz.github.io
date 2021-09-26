@@ -7,6 +7,8 @@ import rootReducer from '@/Reducers';
 
 const logger = createLogger();
 
+export const storageKey = 'theme.portfolio.minlaxz';
+
 let middleware = [thunk];
 let configStore = applyMiddleware(...middleware);
 
@@ -17,8 +19,11 @@ if (process.env.NODE_ENV === 'development') {
     configStore = composeEnhancers(applyMiddleware(...middleware));
 }
 
-const initalState = storePersist.get('minlaxz-theme')
-    ? { theme: storePersist.get('minlaxz-theme') }
+/* Clear old data from storage for visted user  */
+storePersist.isExist('minlaxz-theme') && storePersist.remove('minlaxz-theme');
+
+const initalState = storePersist.isExist(storageKey)
+    ? { theme: storePersist.get(storageKey) }
     : {};
 
 const store = createStore(rootReducer, initalState, configStore);
@@ -26,7 +31,7 @@ const store = createStore(rootReducer, initalState, configStore);
 store.subscribe(() => {
     const theme = store.getState().theme;
     if (!theme) return;
-    storePersist.set('minlaxz-theme', store.getState().theme);
+    storePersist.set(storageKey, store.getState().theme);
 });
 
 export default store;
