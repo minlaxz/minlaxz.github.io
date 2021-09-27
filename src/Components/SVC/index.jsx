@@ -1,13 +1,11 @@
 import React from 'react';
-import { useFetch } from '@/Hooks/useFetch';
-import { Alink } from '../Units';
+import { Alink } from '@/Components/Units';
+import { repo } from '@/Constants/repo';
+import { useSelector } from 'react-redux';
 
 const SourceVersion = () => {
-    const repo = 'minlaxz.github.io';
-    const user = 'minlaxz';
-    const branch = 'main';
 
-    const { data, error, loading } = useFetch(`https://api.github.com/repos/${user}/${repo}/branches/${branch}`);
+    const lastCommitData = useSelector(state => state.lastCommit)
 
     return (
         <div style={{
@@ -19,14 +17,14 @@ const SourceVersion = () => {
                 Last Commit Sha on "Main": &nbsp;
             </small>
             {
-                error
-                    ? <span style={{ color: "red" }}>{error.message}</span>
-                    : loading
+                lastCommitData.error
+                    ? <span style={{ color: "red" }}>{lastCommitData.error}</span>
+                    : lastCommitData.loading
                         ? <span style={{ color: "orange" }}>Fetching last commit SHA...</span>
                         :
                         <Alink
-                            to={`https://github.com/minlaxz/${repo}/commit/${data.commit.sha}`}
-                            text={`${data.commit.sha.slice(0, 7)}`} />
+                            to={`https://github.com/minlaxz/${repo}/commit/${lastCommitData.sha}`}
+                            text={`${lastCommitData.sha.slice(0, 7)}`} />
             }
         </div>
     )
