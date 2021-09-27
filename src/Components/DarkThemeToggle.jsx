@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleDarkTheme } from "@/actions/themeActions";
 import { backgroundColor, textColor } from "./ToggleableStuff";
 
+import { toast } from "react-toastify";
+
 const MainContainer = styled.div`
     transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s;
     background-color: ${backgroundColor};
@@ -60,7 +62,15 @@ const DarkThemeToggle = () => {
                 <ToggleContainer>
                     <ToggleText>not context but redux =&gt;</ToggleText>
                     <ToggleButton
-                        onClick={() => dispatch(toggleDarkTheme())}
+                        onClick={
+                            () => {
+                                dispatch(toggleDarkTheme())
+                                toast(darkThemeEnabled ? `Switched to light mode 🤖.` : `Switched to dark mode 👻.`, {
+                                    icon: "🔄",
+                                    theme: darkThemeEnabled ? "dark" : "light"
+                                })
+                            }
+                        }
                     >
                         {darkThemeEnabled ? (
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" style={{ height: "2em", width: "2em" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,14 +1,21 @@
 import axios from 'axios';
 import { mainBranchEndpoint } from '@/api';
+import { toast } from 'react-toastify';
 
 export const getLastCommitOnMain = () => async (dispatch) => {
     try {
         const res = await axios.get(mainBranchEndpoint);
+        toast.success("Auto fetched and dispatched", {
+            icon: "🚀",
+            autoClose: 3000,
+            theme: "colored"
+        })
         dispatch({
             type: 'GET_LAST_COMMIT_SUCCESS',
             payload: { sha: res.data.commit.sha }
         });
     } catch (error) {
+        toast.error(error.message)
         dispatch({
             type: 'GET_LAST_COMMIT_FAILURE',
             payload: { error: error.message }
