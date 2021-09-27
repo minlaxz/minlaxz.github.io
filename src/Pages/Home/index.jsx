@@ -42,6 +42,7 @@ const Home = () => {
     return (
         <>
             <ContainerOne />
+            {/* <button onClick={() => toast("Notification .... ", { theme: "dark", type: "success" })}>Notify !</button> */}
             <ContainerTwo />
         </>
     );

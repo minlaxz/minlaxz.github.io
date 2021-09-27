@@ -9,10 +9,13 @@ import ReactGA from 'react-ga';
 import { Provider as ReduxProvider } from 'react-redux';
 import store from '@/Store';
 
+import 'react-toastify/dist/ReactToastify.min.css';
+
 import './index.css';
 import App from './App';
 import DarkThemeProvider from "@/Providers/DarkThemeProvider";
 import DarkThemeToggle from "@/Components/DarkThemeToggle";
+import { ToastContainer, Flip } from 'react-toastify';
 
 ReactGA.initialize('UA-167479267-1');
 
@@ -21,6 +24,14 @@ ReactDOM.render(
     <ReduxProvider store={store}>
       <DarkThemeProvider>
         <DarkThemeToggle />
+        <ToastContainer
+          position={"bottom-center"}
+          limit={3}
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          transition={Flip}
+        />
         <App />
       </DarkThemeProvider>
     </ReduxProvider>

@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const increment = (number) => {
     return {
         type: "INCREMENT",
@@ -10,3 +12,5 @@ export const decrement = (number) => {
         payload: number || 1
     }
 }
+
+
