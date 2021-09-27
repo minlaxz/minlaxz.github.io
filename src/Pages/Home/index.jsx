@@ -9,6 +9,9 @@ import { useDispatch } from 'react-redux';
 import { getUsers } from '@/actions/userActions';
 import { getLastCommitOnMain } from '@/actions/generalActions';
 
+import store from '@/Store';
+import { toast } from 'react-toastify';
+
 // A simple home component
 const Home = () => {
     const dispatch = useDispatch();
@@ -16,12 +19,16 @@ const Home = () => {
     React.useEffect(() => {
         window.document.title = 'minlaxz | Home'
         // if it is redirected from markdown component, 
-        // need to scroll top otherwise it will be empty view
-        // cuz I set total view height to 100vh + 100vh to hide ContainerTwo
+        // need to scroll top otherwise it would be empty view
         window.scrollTo(0, 0)
 
-        dispatch(getUsers());
-        dispatch(getLastCommitOnMain());
+        // dispatch(getUsers());
+
+        const state = store.getState().lastCommit.sha !== '';
+        !state && dispatch(getLastCommitOnMain());
+        state && toast.success(`phew... won't dispatch again, already have a state.`, {
+            icon: '😌'
+        });
 
         const domain = window.location.hostname;
         const minlaxzData = localStorage.getItem(domain);
@@ -39,16 +46,14 @@ const Home = () => {
         }
     }, []);
 
+
     return (
         <>
             <ContainerOne />
-            {/* <button onClick={() => toast("Notification .... ", { theme: "dark", type: "success" })}>Notify !</button> */}
             <ContainerTwo />
         </>
     );
+
 }
-
-// let's add clock to the home page
-
 
 export default Home;
