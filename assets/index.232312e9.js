@@ -1,0 +1,1 @@
+import{N as e}from"./index.6f5045ff.js";import{a as t}from"./index.14431077.js";import{R as o}from"./vendor.7f3b8c1d.js";const a=()=>o.createElement(e,null,o.createElement("h3",null,"No Content Yet"),o.createElement(t,{cusName:"Go Back To Home"}));export{a as default};

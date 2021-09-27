@@ -1,4 +1,4 @@
-import{h as e,g as t,R as n,s as a}from"./vendor.e9f8f170.js";const r=a.div`
+import{h as e,g as t,R as n,s as a}from"./vendor.7f3b8c1d.js";const r=a.div`
 text-align:center;
 border:1px dotted gold;
 border-radius:10px;
