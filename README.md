@@ -8,7 +8,7 @@ Used to showcase my projects and skills.
 
 - Styled Components [styled-components](https://www.styled-components.com/)
 - React Router [react-router](https://reacttraining.com/react-router/web/guides/quick-start)
-- React Lazy Load [react-loadable](https://github.com/jamiebuilds/react-loadable)
+- Lazy Load (Dynamic import) [loadable-components](https://loadable-components.com/)
 - Custom Hooks [useFetch](https://github.com/minlaxz/minlaxz.github.io/blob/main/src/Hooks/useFetch.jsx)
 - Redux [redux](https://redux.js.org/)
   - All states including dark mode, syncing with local storage
