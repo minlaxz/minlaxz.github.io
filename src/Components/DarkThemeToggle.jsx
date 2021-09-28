@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
-import { toggleDarkTheme } from "@/actions/themeActions";
+import { toggleTheme } from "@/Reducers/themeSlice";
 import { backgroundColor, textColor } from "./ToggleableStuff";
 
 import { toast } from "react-toastify";
@@ -53,7 +53,7 @@ const ToggleButton = styled.button`
 `;
 
 const DarkThemeToggle = () => {
-    const darkThemeEnabled = useSelector((state) => state.theme.darkThemeEnabled);
+    const darkThemeEnabled = useSelector((state) => state.darkTheme.darkThemeEnabled);
     const dispatch = useDispatch();
 
     return (
@@ -64,7 +64,7 @@ const DarkThemeToggle = () => {
                     <ToggleButton
                         onClick={
                             () => {
-                                dispatch(toggleDarkTheme())
+                                dispatch(toggleTheme())
                                 toast(darkThemeEnabled ? `Switched to light mode 🤖.` : `Switched to dark mode 👻.`, {
                                     icon: "🔄",
                                     theme: darkThemeEnabled ? "dark" : "light"
