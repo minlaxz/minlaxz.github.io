@@ -26,17 +26,17 @@ const ActualPage = (props) => {
 const SwitchedRoutes = () => {
     return (
         <Switch>
-            <Route exact path="/" render={props => <ActualPage type="home" {...props} />} />
-            <Route exact path="/about" render={props => <ActualPage type="about" {...props} />} />
-            <Route exact path="/other" render={props => <ActualPage type="other" {...props} />} />
-            <Route exact path="/repos" render={props => <ActualPage type="repos" {...props} />} />
-            <Route path="/repos/:name" render={props => <ActualPage type="repodetail" {...props} />} />
-            <Route exact path="/forhuman" render={props => <ActualPage type="forhuman" {...props} />} />
-            <Route exact path="/serverless" render={props => <ActualPage type="serverless" {...props} />} />
-            <Route exact path="/shortlink" render={props => <ActualPage type="shortlink" {...props} />} />
-            <Route exact path="/login" render={props => <ActualPage type="login" {...props} />} />
-            <Route exact path="/signup" render={props => <ActualPage type="signup" {...props} />} />
-            <Route exact path="/dashboard" render={props => <ActualPage type="dashboard" {...props} />} />
+            <Route exact path="/" render={() => <ActualPage type="home" />} />
+            <Route exact path="/about" render={() => <ActualPage type="about" />} />
+            <Route exact path="/other" render={() => <ActualPage type="other" />} />
+            <Route exact path="/repos" render={() => <ActualPage type="repos" />} />
+            <Route path="/repos/:name" render={() => <ActualPage type="repodetail" />} />
+            <Route exact path="/forhuman" render={() => <ActualPage type="forhuman" />} />
+            <Route exact path="/serverless" render={() => <ActualPage type="serverless" />} />
+            <Route exact path="/shortlink" render={() => <ActualPage type="shortlink" />} />
+            <Route exact path="/login" render={() => <ActualPage type="login" />} />
+            <Route exact path="/signup" render={() => <ActualPage type="signup" />} />
+            <Route exact path="/dashboard" render={() => <ActualPage type="dashboard" />} />
             <Route component={Oops} />
         </Switch>
     )
