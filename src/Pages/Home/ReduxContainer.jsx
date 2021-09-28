@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { increment, decrement } from '@/actions/pointActions';
 
+import { decrease, increase } from '@/Reducers/counterSlice';
+
 export const ReduxContainer = styled.div`
 text-align:center;
 border:1px dotted gold;
@@ -19,6 +21,8 @@ export default () => {
     const user = useSelector(state => state.user);
     const authUser = useSelector(state => state.authUser);
 
+    const count = useSelector(state => state.counter.value);
+
     return (
         <ReduxContainer>
             <div>
@@ -27,6 +31,13 @@ export default () => {
                 &nbsp; {points.value} &nbsp;
                 <button onClick={() => dispatch(decrement())}>-</button>
             </div>
+            <div>
+                <p>About <b>Redux Toolkit</b></p>
+                <button onClick={() => dispatch(increase())}>+</button>
+                &nbsp; {count} &nbsp;
+                <button onClick={() => dispatch(decrease())}>-</button>
+            </div>
+            <p>Total {points.value + count}</p>
             <div>
                 {
                     user?.users[0]?.name ?? [].toString()
