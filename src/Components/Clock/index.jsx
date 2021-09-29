@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 
 const TikTik = () => {
@@ -8,13 +9,13 @@ const TikTik = () => {
         setCurrentTime(new Date());
     })
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         // on component mount
         let timerId = setInterval(() => aSingleTick(), 1000);
         // component unmount
         return () => clearInterval(timerId);
-            
-    },[aSingleTick]);
+
+    }, [aSingleTick]);
 
     return (
         <span>
