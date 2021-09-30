@@ -1,4 +1,4 @@
-import{s as o}from"./vendor.44efb526.js";o.div`
+import{s as o}from"./vendor.bfaeb708.js";o.div`
     display: flex;
     flex-direction: column;
     align-items: center;
