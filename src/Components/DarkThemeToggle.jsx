@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { toggleTheme } from "@/Reducers/themeSlice";
 import { backgroundColor, textColor } from "./ToggleableStuff";
+import { bgNav, textNav } from "./ToggleableStuff";
 
 import { toast } from "react-toastify";
 
 const MainContainer = styled.div`
     transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s;
-    background-color: ${backgroundColor};
-    color: ${textColor};
+    background-color: ${bgNav};
 `;
 
 const ToggleContainer = styled.div`
@@ -30,7 +30,9 @@ const ToggleContainer = styled.div`
 const ToggleText = styled.span`
     font-size: 0.8em;
     font-weight: bold;
-    color: ${textColor};
+    color: ${textNav};
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s;
+
     @media only screen and (max-width: 768px) {
         font-size: 0.6em;
     }

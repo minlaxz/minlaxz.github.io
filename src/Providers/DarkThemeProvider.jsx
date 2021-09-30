@@ -7,7 +7,7 @@ const DarkThemeProvider = ({ children }) => {
     return (
         <ThemeProvider theme={{ theme: darkThemeEnabled ? "dark" : "light" }}>
             {children}
-        </ThemeProvider>
+        </ThemeProvider >
     );
 };
 
