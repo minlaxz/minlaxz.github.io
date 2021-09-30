@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrease, increase } from '@/Reducers/counterSlice';
+import { toast } from 'react-toastify';
 
 export const ReduxContainer = styled.div`
 text-align:center;
@@ -14,14 +15,25 @@ padding:10px;
 export default () => {
     const dispatch = useDispatch();
     const count = useSelector(state => state.counter.value);
+    const toastEnabled = useSelector(state => state.toast.toastEnabled);
 
     return (
         <ReduxContainer>
             <div>
                 <p>State : <b>Redux Toolkit</b></p>
-                <button onClick={() => dispatch(increase())}>+</button>
+                <button
+                    onClick={() => {
+                        dispatch(increase())
+                        toastEnabled && toast.success('dipatched increase')
+                    }}
+                >+</button>
                 &nbsp; {count} &nbsp;
-                <button onClick={() => dispatch(decrease())}>-</button>
+                <button
+                    onClick={() => {
+                        dispatch(decrease())
+                        toastEnabled && toast.warn('dipatched decrease')
+                    }}
+                >-</button>
             </div>
         </ReduxContainer>
     )

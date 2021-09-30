@@ -3,12 +3,22 @@ import styled from "styled-components";
 
 export const backgroundColor = theme("theme", {
     light: "#efefef",
-    dark: "#292929",
+    dark: "#363738",
 });
 
 export const textColor = theme("theme", {
     light: "#050505",
     dark: "#e2e2e2",
+});
+
+export const bgNav = theme("theme", {
+    light: "#f5f5f5",
+    dark: "#626466",
+});
+
+export const textNav = theme("theme", {
+    light: "#1d3c47",
+    dark: "#d4ccac",
 });
 
 export default styled.div`
