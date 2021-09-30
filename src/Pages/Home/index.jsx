@@ -6,7 +6,6 @@ import ContainerTwo from './ContainerTwo';
 
 // Redux
 import { useDispatch } from 'react-redux';
-import { getUsers } from '@/actions/userActions';
 import { getLastCommitOnMain } from '@/actions/generalActions';
 
 import store from '@/Store';

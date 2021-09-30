@@ -1,16 +1,17 @@
 import React from 'react';
+import { lazy } from '@loadable/component';
 
-const Home = React.lazy(() => import('@/Pages/Home'));
-const About = React.lazy(() => import('@/Pages/About'));
-const Other = React.lazy(() => import('@/Pages/Other'));
-const Repos = React.lazy(() => import('@/Pages/Repos'));
-const ForHuman = React.lazy(() => import('@/Pages/ForHuman'));
-const RepoDetail = React.lazy(() => import('@/Pages/Detail'));
-const ServerlessApi = React.lazy(() => import('@/Pages/Serverless'));
-const LinkShortener = React.lazy(() => import('@/Pages/ShortLink'));
-const Login = React.lazy(() => import('@/Pages/Login'));
-const SignUp = React.lazy(() => import('@/Pages/Signup'));
-const Dashboard = React.lazy(() => import('@/Pages/Dashboard'))
+const Home = lazy(() => import('@/Pages/Home'));
+const About = lazy(() => import('@/Pages/About'));
+const Other = lazy(() => import('@/Pages/Other'));
+const Repos = lazy(() => import('@/Pages/Repos'));
+const ForHuman = lazy(() => import('@/Pages/ForHuman'));
+const RepoDetail = lazy(() => import('@/Pages/Detail'));
+const ServerlessApi = lazy(() => import('@/Pages/Serverless'));
+const LinkShortener = lazy(() => import('@/Pages/ShortLink'));
+const Login = lazy(() => import('@/Pages/Login'));
+const SignUp = lazy(() => import('@/Pages/Signup'));
+const Dashboard = lazy(() => import('@/Pages/Dashboard'))
 
 const Pages = [
     { name: "home", r: <Home /> },

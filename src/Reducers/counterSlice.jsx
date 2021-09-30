@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { toast } from 'react-toastify'
 
 const initialState = {
     value: 0,
@@ -9,9 +10,11 @@ export const counterSlice = createSlice({
     initialState,
     reducers: {
         increase: (state) => {
+            toast.success('dipatched increase')
             state.value += 1
         },
         decrease: (state) => {
+            toast.warn('dipatched decrease')
             state.value -= 1
         },
         increaseByAmount: (state, action) => {
