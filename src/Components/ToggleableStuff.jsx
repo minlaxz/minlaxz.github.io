@@ -3,17 +3,17 @@ import styled from "styled-components";
 
 export const backgroundColor = theme("theme", {
     light: "#efefef",
-    dark: "#363738",
+    dark: "#1e1e1e",
 });
 
 export const textColor = theme("theme", {
-    light: "#050505",
-    dark: "#e2e2e2",
+    light: "#1d3c47",
+    dark: "#CEA981",
 });
 
 export const bgNav = theme("theme", {
     light: "#f5f5f5",
-    dark: "#626466",
+    dark: "#272727",
 });
 
 export const textNav = theme("theme", {
