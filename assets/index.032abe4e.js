@@ -15,7 +15,7 @@ import{s as o}from"./vendor.bfaeb708.js";o.div`
     &:hover {
         box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
     }
-`;const e=o.div`
+`;const r=o.div`
     margin: 0;
     padding: 0;
     height: 95vh;
@@ -27,4 +27,4 @@ import{s as o}from"./vendor.bfaeb708.js";o.div`
     background-color: var(--background-color);
     color: var(--color);
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.6s;
-`;export{e as N};
+`;export{r as N};

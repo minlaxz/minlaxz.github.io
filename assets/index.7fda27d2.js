@@ -1,4 +1,4 @@
-import{s as e,R as r}from"./vendor.bfaeb708.js";import{N as a}from"./index.032abe4e.js";import{b as p,f as t}from"./index.8b032ab5.js";import{U as d}from"./index.42ca9e36.js";const i=e.form`
+import{s as r,R as e}from"./vendor.bfaeb708.js";import{N as t}from"./index.032abe4e.js";import{b as a,f as p}from"./index.5ce306e5.js";import{U as o}from"./index.42ca9e36.js";const n=r.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@ import{s as e,R as r}from"./vendor.bfaeb708.js";import{N as a}from"./index.032ab
     background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,o=e.input`
+`,d=r.input`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -18,7 +18,7 @@ import{s as e,R as r}from"./vendor.bfaeb708.js";import{N as a}from"./index.032ab
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,x=e.input`
+`,i=r.input`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -26,7 +26,7 @@ import{s as e,R as r}from"./vendor.bfaeb708.js";import{N as a}from"./index.032ab
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,n=e.input`
+`,x=r.input`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -35,7 +35,7 @@ import{s as e,R as r}from"./vendor.bfaeb708.js";import{N as a}from"./index.032ab
     border-radius: 5px;
     color: darkred;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,l=e.button`
+`,l=r.button`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -48,4 +48,4 @@ import{s as e,R as r}from"./vendor.bfaeb708.js";import{N as a}from"./index.032ab
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-`,c=()=>r.createElement(a,null,r.createElement(i,{onSubmit:()=>alert(0)},r.createElement(d,null),r.createElement(p,{cusName:"Go HOME 🏡"}),r.createElement("div",null,r.createElement(o,{type:"text",name:"username",id:"username",placeholder:"Your Name"})),r.createElement("div",null,r.createElement(x,{type:"email",id:"exampleInputEmail1","aria-describedby":"emailHelp",placeholder:"Enter email"})),r.createElement("div",null,r.createElement(n,{type:"password",id:"exampleInputPassword1","aria-describedby":"passwordHelp",placeholder:"Enter Password"})),r.createElement("div",null,r.createElement(l,{type:"submit"},"Submit")),r.createElement(t,{cusName:"Already have an account ?"})));export{c as default};
+`,b=()=>e.createElement(t,null,e.createElement(n,{onSubmit:()=>alert(0)},e.createElement(o,null),e.createElement(a,{cusName:"Go HOME \u{1F3E1}"}),e.createElement("div",null,e.createElement(d,{type:"text",name:"username",id:"username",placeholder:"Your Name"})),e.createElement("div",null,e.createElement(i,{type:"email",id:"exampleInputEmail1","aria-describedby":"emailHelp",placeholder:"Enter email"})),e.createElement("div",null,e.createElement(x,{type:"password",id:"exampleInputPassword1","aria-describedby":"passwordHelp",placeholder:"Enter Password"})),e.createElement("div",null,e.createElement(l,{type:"submit"},"Submit")),e.createElement(p,{cusName:"Already have an account ?"})));export{b as default};
