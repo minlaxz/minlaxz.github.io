@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "yarn"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Asia/Yangon"
+    target-branch: "devel"
+    labels:
+      - "dependencies"
+    pull-request-branch-name:
+      separator: "-"
