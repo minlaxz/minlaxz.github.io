@@ -17,8 +17,8 @@ export const bgNav = theme("theme", {
 });
 
 export const textNav = theme("theme", {
-    light: "#050505",
-    dark: "purple",
+    light: "#1d3c47",
+    dark: "#d4ccac",
 });
 
 export default styled.div`

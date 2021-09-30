@@ -8,7 +8,8 @@ import rootReducer from '@/Reducers';
 
 const logger = createLogger();
 
-export const storageKey = 'theme.portfolio.minlaxz';
+export const themeKey = 'theme.portfolio.minlaxz';
+export const toastKey = 'toast.portfolio.minlaxz';
 
 // let middleware = [thunk];
 // let configStore = applyMiddleware(...middleware);
@@ -23,11 +24,13 @@ export const storageKey = 'theme.portfolio.minlaxz';
 /* Clear old data from storage for visted user  */
 storePersist.isExist('minlaxz-theme') && storePersist.remove('minlaxz-theme');
 
+if (storePersist.isExist(themeKey) && !storePersist.isExist(toastKey)) storePersist.clear();
+
 const customMiddlewares = [thunk];
 process.env.NODE_ENV === 'development' && customMiddlewares.push(logger);
 
-const initalState = storePersist.isExist(storageKey)
-    ? { darkTheme: storePersist.get(storageKey) }
+const initalState = storePersist.isExist(themeKey) && storePersist.isExist(toastKey)
+    ? { darkTheme: storePersist.get(themeKey), toast: storePersist.get(toastKey) }
     : {};
 
 const store = configureStore({
@@ -40,9 +43,10 @@ const store = configureStore({
 // (rootReducer, initalState, configStore);
 
 store.subscribe(() => {
-    const theme = store.getState().darkTheme;
-    if (!theme) return;
-    storePersist.set(storageKey, store.getState().darkTheme);
+    const shouldSet = store.getState().darkTheme && store.getState().toast;
+    if (!shouldSet) return;
+    storePersist.set(themeKey, store.getState().darkTheme);
+    storePersist.set(toastKey, store.getState().toast);
 });
 
 export default store;

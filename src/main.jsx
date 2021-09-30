@@ -15,7 +15,6 @@ import App from './App';
 
 import DarkThemeProvider from "@/Providers/DarkThemeProvider";
 import DarkThemeToggle from "@/Components/DarkThemeToggle";
-import ModToastContainer from "@/Components/ModToastContainer";
 
 ReactGA.initialize('UA-167479267-1');
 
@@ -24,7 +23,6 @@ ReactDOM.render(
         <ReduxProvider store={store}>
             <DarkThemeProvider>
                 <DarkThemeToggle />
-                <ModToastContainer />
                 <App />
             </DarkThemeProvider>
         </ReduxProvider>
