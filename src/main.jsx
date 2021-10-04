@@ -14,7 +14,7 @@ import './index.css';
 import App from './App';
 
 import DarkThemeProvider from "@/Providers/DarkThemeProvider";
-import DarkThemeToggle from "@/Components/DarkThemeToggle";
+
 
 ReactGA.initialize('UA-167479267-1');
 
@@ -22,7 +22,6 @@ ReactDOM.render(
     <React.StrictMode>
         <ReduxProvider store={store}>
             <DarkThemeProvider>
-                <DarkThemeToggle />
                 <App />
             </DarkThemeProvider>
         </ReduxProvider>
@@ -31,7 +30,7 @@ ReactDOM.render(
 )
 
 function sendToAnalytics({ id, name, value }) {
-    console.log(id, name, value);
+    // console.log(id, name, value);
     ReactGA.ga('send', 'event', {
         eventCategory: 'Web Vitals',
         eventAction: name,

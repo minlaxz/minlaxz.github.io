@@ -7,7 +7,7 @@ export default () => (
         <UlView>
             <LiView>View my =&gt;<ToRepos cusName="Repo List 🥶" /></LiView>
             <LiView>Here is markdown =&gt; <ToHuman /></LiView>
-            <LiView>Currently I've some challenges =&gt; <ToOther cusName="Problems" /></LiView>
+            <LiView>Check <b style={{ fontFamily: "cursive" }}>React</b> Life Cycles =&gt; <ToOther cusName="Hmmm" /></LiView>
             <LiView>Serverless Api Calls =&gt; <ToServerless /></LiView>
             <LiView>Link shortener =&gt; <ToLinkShortener /></LiView>
             <LiView>I challenge <b>U</b> to test my login system =&gt; <ToLogin /></LiView>

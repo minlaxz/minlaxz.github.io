@@ -24,7 +24,7 @@ const ToggleContainer = styled.div`
     max-width: 80%;
     padding: 0 10px;
     user-select: none;
-    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s;
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s;
 
     @media only screen and (max-width: 768px) {
         max-width: 90%;
@@ -61,7 +61,7 @@ const ToggleButton = styled.button`
 `;
 
 
-const DarkThemeToggle = () => {
+const Togglers = () => {
     const darkThemeEnabled = useSelector((state) => state.darkTheme.darkThemeEnabled);
     const toastEnabled = useSelector((state) => state.toast.toastEnabled);
     const dispatch = useDispatch();
@@ -133,4 +133,4 @@ const DarkThemeToggle = () => {
     );
 };
 
-export default DarkThemeToggle;
+export default Togglers;
