@@ -1,4 +1,4 @@
-import{s as o}from"./vendor.bfaeb708.js";o.div`
+import{s as o}from"./vendor.dd7afec9.js";o.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +23,7 @@ import{s as o}from"./vendor.bfaeb708.js";o.div`
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: ${e=>e.justifyContent||"center"};
     background-color: var(--background-color);
     color: var(--color);
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.6s;
