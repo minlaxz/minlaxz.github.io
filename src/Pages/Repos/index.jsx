@@ -16,7 +16,6 @@ const Repos = () => {
 
     return (
         <Container>
-            Recently updated repositories ...
             <NavigationButtons>
                 <ToHome cusName="Back to Home 🏡" />
                 <ToHuman cusName="Go to markdown 🥶" />
@@ -27,24 +26,29 @@ const Repos = () => {
                         If this too long to response please <b>refresh</b> ...
                     </p>
                     :
-                    <UlView>
-                        {
-                            data.map((repo) => {
-                                return (
-                                    <React.Fragment key={repo.id}>
-                                        <LiView >{repo.name} <Alink to={repo.html_url} text="View on github" />
-                                            <p>{`${repo.description}`.slice(0, 250)}...</p>
-                                            <small>Size : {repo.size}Kb, Language: {repo.language}</small>
-                                            &nbsp;
-                                            <Link to={`/repos/${repo.name}`}>Detail </Link> =&gt;
-                                        </LiView>
-                                        <hr />
-                                    </React.Fragment>
+                    <>
+                        <p>
+                            <b style={{ fontFamily: "cursive" }}>Recently updated repositories ...</b>
+                        </p>
+                        <UlView>
+                            {
+                                data.map((repo) => {
+                                    return (
+                                        <React.Fragment key={repo.id}>
+                                            <LiView >{repo.name} <Alink to={repo.html_url} text="View on github" />
+                                                <p>{`${repo.description}`.slice(0, 250)}...</p>
+                                                <small>Size : {repo.size}Kb, Language: {repo.language}</small>
+                                                &nbsp;
+                                                <Link to={`/repos/${repo.name}`}>Detail </Link> =&gt;
+                                            </LiView>
+                                            <hr />
+                                        </React.Fragment>
 
-                                )
-                            })
-                        }
-                    </UlView>
+                                    )
+                                })
+                            }
+                        </UlView>
+                    </>
             }
         </Container>
     );

@@ -27,7 +27,7 @@ export const NormalContainer = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: ${props => props.justifyContent || 'center'};
     background-color: var(--background-color);
     color: var(--color);
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.6s;
