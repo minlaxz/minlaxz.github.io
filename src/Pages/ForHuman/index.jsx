@@ -5,6 +5,7 @@ import { ToHome, ToRepos } from '@/Routes';
 import { NavigationButtons } from '@/Components/Buttons';
 import { MainView, HeadView, IconsView, DivSpan, DamnImage } from './styles';
 import * as data from './data';
+import { useSelector } from 'react-redux';
 
 /**
  * Individual icon
@@ -42,6 +43,9 @@ const HeadIcon = ({ name }) => (
 )
 
 const ForHuman = () => {
+    const darkThemeEnabled = useSelector((state) => state.darkTheme.darkThemeEnabled);
+    // const toastEnabled = useSelector((state) => state.toast.toastEnabled);
+
     React.useEffect(() => {
         window.document.title = "minlaxz | markdown"
     }, []);
@@ -66,17 +70,15 @@ const ForHuman = () => {
             <HeadIcon name="osiot" />
 
             <DamnImage
-                src="https://metrics.lecoq.io/minlaxz"
-                alt="Github Metrics"
-            />
-
-            <DamnImage
-                src="https://github-readme-streak-stats.herokuapp.com/?user=minlaxz"
+                // src="https://github-readme-streak-stats.herokuapp.com/?user=minlaxz"
+                src={`https://github-readme-streak-stats.herokuapp.com?user=minlaxz&theme=github-${darkThemeEnabled?`dark`:`light`}&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&fire=DD2727&ring=B400DD&sideNums=4F78DD&dates=2ADD68&sideLabels=21C8DD&currStreakLabel=DD2727`}
                 alt="Github Streak Stats"
             />
-
-
-
+            <DamnImage
+                src="https://raw.githubusercontent.com/minlaxz/minlaxz/github-metrics/github-metrics.svg"
+                alt="Github Metrics"
+            />
+            
         </MainView>
     );
 }

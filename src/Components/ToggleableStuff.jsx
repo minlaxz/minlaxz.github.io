@@ -8,7 +8,8 @@ export const backgroundColor = theme("theme", {
 
 export const textColor = theme("theme", {
     light: "#1d3c47",
-    dark: "#CEA981",
+    // dark: "#CEA981",
+    dark: "#b00b69" /* 👻 */
 });
 
 export const bgNav = theme("theme", {
