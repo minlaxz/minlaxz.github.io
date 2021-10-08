@@ -1,4 +1,4 @@
-import{g as c,f as s,R as e,h as r,s as d}from"./vendor.dd7afec9.js";import{k as l,l as i}from"./index.02aaf4fe.js";const u=d.div`
+import{g as c,f as s,R as e,h as r,s as d}from"./vendor.dd7afec9.js";import{k as l,l as i}from"./index.cb41b2af.js";const u=d.div`
 text-align:center;
 border:1px dotted gold;
 border-radius:10px;
