@@ -6,7 +6,7 @@ export default () => (
     <DivUl className="animate__animated animate__flipInX animate__faster animate__delay-1s">Available routes:
         <UlView>
             <LiView>View my =&gt;<ToRepos cusName="Repo List 🥶" /></LiView>
-            <LiView>Here is markdown =&gt; <ToHuman /></LiView>
+            <LiView>How I renderd =&gt; <ToHuman /></LiView>
             <LiView>Check <b style={{ fontFamily: "cursive" }}>React</b> Life Cycles =&gt; <ToOther cusName="Hmmm" /></LiView>
             <LiView>Serverless Api Calls =&gt; <ToServerless /></LiView>
             <LiView>Link shortener =&gt; <ToLinkShortener /></LiView>
