@@ -1,4 +1,4 @@
-import{s as r,R as e}from"./vendor.dd7afec9.js";import{N as t}from"./index.53c41f35.js";import{b as a,f as p}from"./index.cb41b2af.js";import{U as o}from"./index.b96b2237.js";const n=r.form`
+import{s as r,R as e}from"./vendor.085cecd7.js";import{N as t}from"./index.db0c6cc4.js";import{b as a,f as p}from"./index.dfe33cfc.js";import{U as o}from"./index.17f122cf.js";const n=r.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,7 @@ import{s as r,R as e}from"./vendor.dd7afec9.js";import{N as t}from"./index.53c41
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,x=r.input`
+`,c=r.input`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -35,7 +35,7 @@ import{s as r,R as e}from"./vendor.dd7afec9.js";import{N as t}from"./index.53c41
     border-radius: 5px;
     color: darkred;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-`,l=r.button`
+`,x=r.button`
     width: 100%;
     height: 40px;
     padding: 0px 10px;
@@ -48,4 +48,4 @@ import{s as r,R as e}from"./vendor.dd7afec9.js";import{N as t}from"./index.53c41
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-`,b=()=>e.createElement(t,null,e.createElement(n,{onSubmit:()=>alert(0)},e.createElement(o,null),e.createElement(a,{cusName:"Go HOME \u{1F3E1}"}),e.createElement("div",null,e.createElement(d,{type:"text",name:"username",id:"username",placeholder:"Your Name"})),e.createElement("div",null,e.createElement(i,{type:"email",id:"exampleInputEmail1","aria-describedby":"emailHelp",placeholder:"Enter email"})),e.createElement("div",null,e.createElement(x,{type:"password",id:"exampleInputPassword1","aria-describedby":"passwordHelp",placeholder:"Enter Password"})),e.createElement("div",null,e.createElement(l,{type:"submit"},"Submit")),e.createElement(p,{cusName:"Already have an account ?"})));export{b as default};
+`,b=()=>e.createElement(t,null,e.createElement(n,{onSubmit:()=>alert(0)},e.createElement(o,null),e.createElement(a,{cusName:"Go HOME \u{1F3E1}"}),e.createElement("div",null,e.createElement(d,{type:"text",name:"username",id:"username",placeholder:"Your Name"})),e.createElement("div",null,e.createElement(i,{type:"email",id:"exampleInputEmail1","aria-describedby":"emailHelp",placeholder:"Enter email"})),e.createElement("div",null,e.createElement(c,{type:"password",id:"exampleInputPassword1","aria-describedby":"passwordHelp",placeholder:"Enter Password"})),e.createElement("div",null,e.createElement(x,{type:"submit"},"Submit")),e.createElement(p,{cusName:"Already have an account ?"})));export{b as default};
