@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alink } from '@/Components/Units';
-import { DivUl, UlView, LiView } from './styles';
+import { DivUl, UlView, LiView } from '@/Components/Views';
 
 
 export default () => (

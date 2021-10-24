@@ -22,11 +22,11 @@ export const ShadowContainer = styled.div`
 export const NormalContainer = styled.div`
     margin: 0;
     padding: 0;
-    height: 95vh;
+    height: ${props => props.height || '95vh'};
     width: 100vw;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: ${props => props.alignItems || 'center'};
     justify-content: ${props => props.justifyContent || 'center'};
     background-color: var(--background-color);
     color: var(--color);

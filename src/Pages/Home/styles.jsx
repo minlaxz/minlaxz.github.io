@@ -1,20 +1,5 @@
 import styled from "styled-components";
 
-export const UlView = styled.ul`
-list-style-type: lower-greek;
-`;
-
-export const LiView = styled.li`
-font-size: 15px;
-margin: 0.2em;
-padding: 0.2em;
-`;
-
-export const DivUl = styled.div`
-margin: 0.5em;
-padding: 0.5em;
-`;
-
 export const Border = styled.div`
 border: 1px dotted crimson;
 border-radius: 5px;
