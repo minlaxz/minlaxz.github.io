@@ -1,4 +1,4 @@
-import{s as o}from"./vendor.085cecd7.js";o.div`
+import{s as e}from"./vendor.085cecd7.js";e.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,15 +15,15 @@ import{s as o}from"./vendor.085cecd7.js";o.div`
     &:hover {
         box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
     }
-`;const r=o.div`
+`;const r=e.div`
     margin: 0;
     padding: 0;
-    height: 95vh;
+    height: ${o=>o.height||"95vh"};
     width: 100vw;
     display: flex;
     flex-flow: column;
-    align-items: center;
-    justify-content: ${e=>e.justifyContent||"center"};
+    align-items: ${o=>o.alignItems||"center"};
+    justify-content: ${o=>o.justifyContent||"center"};
     background-color: var(--background-color);
     color: var(--color);
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.6s;
