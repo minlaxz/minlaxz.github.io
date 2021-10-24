@@ -7,6 +7,7 @@ export const ButtonContainer = styled.div`
     width: 100vw;
     justify-content: space-evenly;
     margin-top: 1em;
+    margin-bottom: 1em;
 `;
 
 export const NavigationButtons = (props) => {

@@ -11,7 +11,9 @@ const ServerlessApi = lazy(() => import('@/Pages/Serverless'));
 const LinkShortener = lazy(() => import('@/Pages/ShortLink'));
 const Login = lazy(() => import('@/Pages/Login'));
 const SignUp = lazy(() => import('@/Pages/Signup'));
-const Dashboard = lazy(() => import('@/Pages/Dashboard'))
+const Dashboard = lazy(() => import('@/Pages/Dashboard'));
+const CheatSheets = lazy(() => import('@/Pages/CheatSheets'));
+const GitCS = lazy(() => import('@/Pages/CheatSheets/GitCS'));
 
 const Pages = [
     { name: "home", r: <Home /> },
@@ -25,6 +27,8 @@ const Pages = [
     { name: "login", r: <Login /> },
     { name: "signup", r: <SignUp /> },
     { name: "dashboard", r: <Dashboard /> },
+    { name: "cheatsheets", r: <CheatSheets /> },
+    { name: "gitcs", r: <GitCS /> },
 ]
 
 export default Pages;

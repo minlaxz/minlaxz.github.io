@@ -26,14 +26,14 @@ export default () => {
                         dispatch(increase())
                         toastEnabled && toast.success('dipatched increase')
                     }}
-                >+</button>
+                > + </button>
                 &nbsp; {count} &nbsp;
                 <button
                     onClick={() => {
                         dispatch(decrease())
                         toastEnabled && toast.warn('dipatched decrease')
                     }}
-                >-</button>
+                > - </button>
             </div>
         </ReduxContainer>
     )

@@ -8,6 +8,7 @@ import SourceVersion from '@/Components/SVC';
 import Loading from '@/Components/Loading';
 
 import { Pre, Border } from './styles';
+import { SourceProP } from '@/Components/Views';
 
 const AvailableRoutes = lazy(() => import('./AvailableRoutes'))
 const Backends = lazy(() => import('./Backends'));
@@ -30,8 +31,8 @@ justify-content: center;
 export default () => {
     return (
         <ContainerOne>
-            <h4 style={{ fontFamily: "cursive" }} className="animate__animated animate__flipInX animate__slower">( minlaxz = (&nbsp;) =&gt; async dispatch =&gt; 👻 ) </h4>
-            <div style={{marginBottom:"1em", fontFamily:"fantasy"}}>
+            <SourceProP className="animate__animated animate__flipInX animate__slower" fontSize="14px"> ( minlaxz = (&nbsp;) =&gt; async dispatch =&gt; 👻 ) </SourceProP>
+            <div style={{ marginBottom: "1em", fontFamily: "fantasy" }}>
                 <small>Here is <Alink to={`https://github.com/minlaxz`} text={`My Github`} /></small>
             </div>
             <code style={{ fontSize: "13px" }} className="animate__animated animate__flipInX">Welcome to my universe. <TikTik /></code>
