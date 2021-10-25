@@ -1,4 +1,0 @@
-import{R as e}from"./vendor.085cecd7.js";import{N as l}from"./index.d1d54eb1.js";import{N as a}from"./index.b94c23d2.js";import{b as c}from"./index.c8db17b0.js";const i=()=>{const[t,o]=e.useState(0);return e.useEffect(()=>{console.log(`=> Initial Effect Hook - Count: ${t}
-`);const n=setTimeout(()=>{console.log(`--> Before Hook Makes State Update - Count: ${t}`),o(t+1),console.log(`--> After Hook Makes State Update - Count: ${t}`)},1e4);return()=>{console.log(`xxx Cleanup Hook - Count: ${t}
-`),clearTimeout(n)}},[t]),console.log(`=> Rendering DOM - Count: ${t}
-`),e.createElement(l,{justifyContent:"flex-start"},e.createElement("h4",{style:{fontFamily:"cursive"}},"Here I test React Life Cycles"),e.createElement("small",null,e.createElement("code",null,"~View Inspect~")),e.createElement("p",null,"Count: ",t),e.createElement("button",{onClick:()=>o(t+1)},"Add"),e.createElement(a,null,e.createElement(c,{cusName:"Go Back To Home"})))};export{i as default};
