@@ -60,7 +60,7 @@ const Login = () => {
             <NormalContainer>
                 <Form onSubmit={(e) => handleSubmit(e)}>
                     {
-                        authUser.reqState.success || <small>{authUser.reqState.message}</small>
+                        // authUser.reqState.success || <small>{authUser.reqState.message}</small>
                     }
                     <UnderConstruct />
                     <ToHome cusName="Go HOME 🏡" />
