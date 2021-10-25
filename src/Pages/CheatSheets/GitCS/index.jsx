@@ -1,40 +1,21 @@
 import React from 'react';
 import { NormalContainer } from '@/Components/Containers';
-import { ToHome, ToCheatsheets } from '@/Routes/';
-import { NavigationButtons } from '@/Components/Buttons';
-import { Cards, Card, CardBody, CardHead, Pre, UlView, LiView, SourceProP } from '@/Components/Views';
-
-const CardContent = (props) => {
-    return (
-        <span>
-            <UlView>
-                {
-                    props.content.map((item, index) => {
-                        return (
-                            <LiView key={index}>
-                                {item.head}
-                                <Pre>{item.command}</Pre>
-                            </LiView>
-                        )
-                    })
-                }
-            </UlView>
-        </span>
-    )
-}
+import { Cards, Card, CardBody, CardHead, CardContent } from '@/Components/Views';
+import { CShead } from '@/Pages/CheatSheets';
+import { BranchIcon, CreateIcon, EditIcon, GitIcon, MergeIcon, UndoIcon, UpdateIcon } from '../icons';
 
 export default () => (
     <NormalContainer justifyContent="flex-start" height="100%">
-        <SourceProP fontSize="16px" fontWeight="bold">
-            Git Cheat Sheet
-        </SourceProP>
-        <NavigationButtons>
-            <ToHome cusName="Back to Home 🏡" />
-            <ToCheatsheets cusName="Back to List 📔" />
-        </NavigationButtons>
+        <CShead text="Git Cheat Sheet">
+            <GitIcon />
+        </CShead>
         <Cards>
             <Card>
-                <CardHead> Create </CardHead>
+                <CardHead>
+                    <CreateIcon />
+                    &nbsp;
+                    Create
+                </CardHead>
                 <CardBody>
                     <CardContent content={[
                         { head: "Clone and Existing Repository", command: '$ git clone ssh://user@domain.com/repo.git' },
@@ -43,7 +24,11 @@ export default () => (
                 </CardBody>
             </Card>
             <Card>
-                <CardHead> Local Changes </CardHead>
+                <CardHead>
+                    <EditIcon />
+                    &nbsp;
+                    Local Changes
+                </CardHead>
                 <CardBody>
                     <CardContent content={[
                         { head: "Changed files in your working directory", command: '$ git status' },
@@ -58,7 +43,11 @@ export default () => (
                 </CardBody>
             </Card>
             <Card>
-                <CardHead> Branching & Tags </CardHead>
+                <CardHead>
+                    <BranchIcon />
+                    &nbsp;
+                    Branching & Tags
+                </CardHead>
                 <CardBody>
                     <CardContent content={[
                         { head: "List all existing branches", command: '$ git branch' },
@@ -71,7 +60,11 @@ export default () => (
                 </CardBody>
             </Card>
             <Card>
-                <CardHead> Update & Publish </CardHead>
+                <CardHead>
+                    <UpdateIcon />
+                    &nbsp;
+                    Update & Publish
+                </CardHead>
                 <CardBody>
                     <CardContent content={[
                         { head: "List all currently configured remotes", command: '$ git remote -v' },
@@ -86,7 +79,11 @@ export default () => (
                 </CardBody>
             </Card>
             <Card>
-                <CardHead> Merge & Rebase </CardHead>
+                <CardHead>
+                    <MergeIcon />
+                    &nbsp;
+                    Merge & Rebase
+                </CardHead>
                 <CardBody>
                     <CardContent content={[
                         { head: "Merge <branch> into your current HEAD", command: '$ git merge <branch>' },
@@ -100,7 +97,11 @@ export default () => (
                 </CardBody>
             </Card>
             <Card>
-                <CardHead> Undo </CardHead>
+                <CardHead>
+                    <UndoIcon />
+                    &nbsp;
+                    Undo
+                </CardHead>
                 <CardBody>
                     <CardContent content={[
                         { head: "Discard all local changes in your working directory", command: '$ git reset --hard HEAD' },
@@ -113,6 +114,5 @@ export default () => (
                 </CardBody>
             </Card>
         </Cards>
-
     </NormalContainer>
 )

@@ -36,6 +36,8 @@ const SwitchedRoutes = () => {
             <Route exact path="/dashboard" render={() => <ActualPage type="dashboard" />} />
             <Route exact path="/cheatsheets" render={() => <ActualPage type="cheatsheets" />} />
             <Route exact path="/cheatsheets/gitcs" render={() => <ActualPage type="gitcs" />} />
+            <Route exact path="/cheatsheets/reactcs" render={() => <ActualPage type="reactcs" />} />
+
             <Route component={Oops} />
         </Switch>
     );
@@ -115,5 +117,10 @@ export const ToGitCS = ({ linkClass, cusName }) => (
     </span>
 );
 
+export const ToReactCS = ({ linkClass, cusName }) => (
+    <span>
+        &nbsp; <Link to="/cheatsheets/reactcs" className={linkClass}>{cusName || `React Cheat Sheet`}</Link>
+    </span>
+);
 
 export default SwitchedRoutes;

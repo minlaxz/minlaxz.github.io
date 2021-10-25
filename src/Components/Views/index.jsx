@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import React from 'react';
 import { textNav } from "@/Components/ToggleableStuff";
+
 
 export const UlView = styled.ul`
 list-style-type: lower-greek;
@@ -29,10 +31,14 @@ export const Cards = styled.section`
     `;
 
 export const Card = styled.article`
-	/* flex: 0 1 100%; */
+	flex: 0 1 20%;
+    @media only screen and (max-width: 1024px) {
+        flex: 0 1 100%;
+    }
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	margin: 2em;
     padding: 1.5em;
+    border: 1px solid #e6e6e6;
     `;
 
 export const CardHead = styled.h4`
@@ -42,7 +48,7 @@ export const CardHead = styled.h4`
     color: ${textNav};
 `;
 
-export const CardBody = styled.p`
+export const CardBody = styled.div`
     font-size: 80%;
 `;
 
@@ -51,3 +57,22 @@ white-space: pre-wrap;
 font-size: 0.8rem;
 min-width: 0;
 `;
+
+export const CardContent = (props) => {
+    return (
+        <span>
+            <UlView>
+                {
+                    props.content.map((item, index) => {
+                        return (
+                            <LiView key={index}>
+                                {item.head}
+                                <Pre>{item.command}</Pre>
+                            </LiView>
+                        )
+                    })
+                }
+            </UlView>
+        </span>
+    )
+}

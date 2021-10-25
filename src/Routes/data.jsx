@@ -14,6 +14,7 @@ const SignUp = lazy(() => import('@/Pages/Signup'));
 const Dashboard = lazy(() => import('@/Pages/Dashboard'));
 const CheatSheets = lazy(() => import('@/Pages/CheatSheets'));
 const GitCS = lazy(() => import('@/Pages/CheatSheets/GitCS'));
+const ReactCS = lazy(() => import('@/Pages/CheatSheets/ReactCS'));
 
 const Pages = [
     { name: "home", r: <Home /> },
@@ -29,6 +30,7 @@ const Pages = [
     { name: "dashboard", r: <Dashboard /> },
     { name: "cheatsheets", r: <CheatSheets /> },
     { name: "gitcs", r: <GitCS /> },
+    { name: "reactcs", r: <ReactCS /> }
 ]
 
 export default Pages;
