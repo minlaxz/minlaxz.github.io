@@ -1,8 +1,7 @@
 import React from 'react';
 import { NormalContainer } from "@/Components/Containers"
 import { SourceProP, DivUl, UlView, LiView } from '@/Components/Views';
-import { ToGitCS } from '@/Routes/';
-import { ToHome } from '@/Routes/';
+import { ToHome, ToGitCS, ToReactCS, ToCheatsheets } from '@/Routes/';
 import { NavigationButtons } from '@/Components/Buttons';
 
 export default () => {
@@ -15,6 +14,7 @@ export default () => {
             <DivUl>
                 <UlView>
                     <LiView> <ToGitCS /> </LiView>
+                    <LiView> <ToReactCS /> </LiView>
                     {/* extensiable */}
                 </UlView>
             </DivUl>
@@ -24,3 +24,17 @@ export default () => {
         </NormalContainer>
     );
 };
+
+export const CShead = (props) => (
+    <>
+        <SourceProP fontSize="16px" fontWeight="bold">
+            {props.text}
+            &nbsp;
+            {props.children}
+        </SourceProP>
+        <NavigationButtons>
+            <ToHome cusName="Back to Home 🏡" />
+            <ToCheatsheets cusName="Back to List 📔" />
+        </NavigationButtons>
+    </>
+)
