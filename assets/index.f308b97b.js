@@ -1,4 +1,4 @@
-import{s as e,R as n}from"./vendor.09fd204b.js";const o=e.div`
+import{s as e,R as n}from"./vendor.fe7edddc.js";const o=e.div`
     display: flex;
     flex-direction: row;
     width: 100vw;
