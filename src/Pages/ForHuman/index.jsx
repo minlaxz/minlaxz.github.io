@@ -78,7 +78,10 @@ const ForHuman = () => {
                 src="https://raw.githubusercontent.com/minlaxz/minlaxz/github-metrics/github-metrics.svg"
                 alt="Github Metrics"
             />
-            
+            <DamnImage
+                src="https://raw.githubusercontent.com/minlaxz/minlaxz/devcard/devcard.svg"
+                alt="Github Metrics"
+            />
         </MainView>
     );
 }

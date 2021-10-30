@@ -76,3 +76,9 @@ export const CardContent = (props) => {
         </span>
     )
 }
+
+export const Loading = () => (
+    <div>
+        Loading Components...
+    </div>
+)

@@ -1,7 +1,7 @@
 import React from 'react';
 import { lazy } from '@loadable/component';
 
-const Home = lazy(() => import('@/Pages/Home'));
+// const Home = lazy(() => import('@/Pages/Home'));
 const About = lazy(() => import('@/Pages/About'));
 const Other = lazy(() => import('@/Pages/Other'));
 const Repos = lazy(() => import('@/Pages/Repos'));
@@ -15,9 +15,10 @@ const Dashboard = lazy(() => import('@/Pages/Dashboard'));
 const CheatSheets = lazy(() => import('@/Pages/CheatSheets'));
 const GitCS = lazy(() => import('@/Pages/CheatSheets/GitCS'));
 const ReactCS = lazy(() => import('@/Pages/CheatSheets/ReactCS'));
+const Main = lazy(() => import('@/Pages/Main'));
 
 const Pages = [
-    { name: "home", r: <Home /> },
+    { name: "home", r: <Main /> },
     { name: "about", r: <About /> },
     { name: "other", r: <Other /> },
     { name: "repos", r: <Repos /> },

@@ -11,9 +11,9 @@ import { Pre, Border } from './styles';
 import { SourceProP } from '@/Components/Views';
 
 const AvailableRoutes = lazy(() => import('./AvailableRoutes'))
-const Backends = lazy(() => import('./Backends'));
+const Backends = lazy(() => import('../Main/Backends'));
 const BuildWith = lazy(() => import('./BuildWith'));
-const ReduxContainer = lazy(() => import('./ReduxContainer'));
+const ReduxContainer = lazy(() => import('../Main/ReduxContainer'));
 
 const ContainerOne = styled.div`
 margin: 0;
@@ -31,7 +31,7 @@ justify-content: center;
 export default () => {
     return (
         <ContainerOne>
-            <SourceProP className="animate__animated animate__flipInX animate__slower" fontSize="14px"> ( minlaxz = (&nbsp;) =&gt; async dispatch =&gt; 👻 ) </SourceProP>
+            <SourceProP fontSize="14px"> ( minlaxz = (&nbsp;) =&gt; async dispatch =&gt; 👻 ) </SourceProP>
             <div style={{ marginBottom: "1em", fontFamily: "fantasy" }}>
                 <small>Here is <Alink to={`https://github.com/minlaxz`} text={`My Github`} /></small>
             </div>
