@@ -2,7 +2,7 @@ import React from 'react';
 import produce from 'immer';
 
 import ContainerOne from './ContainerOne';
-import ContainerTwo from './ContainerTwo';
+import ContainerTwo from '../Main/ContainerTwo';
 
 // Redux
 import { useDispatch } from 'react-redux';

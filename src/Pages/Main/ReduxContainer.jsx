@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { decrease, increase } from '@/Reducers/counterSlice';
 import { toast } from 'react-toastify';
 
-export const ReduxContainer = styled.div`
+const ReduxContainer = styled.div`
 text-align:center;
 border:1px dotted gold;
 border-radius:10px;
@@ -20,7 +20,7 @@ export default () => {
     return (
         <ReduxContainer>
             <div>
-                <p>State : <b>Redux Toolkit</b></p>
+                <p>State Management: <b>Redux Toolkit</b></p>
                 <button
                     onClick={() => {
                         dispatch(increase())

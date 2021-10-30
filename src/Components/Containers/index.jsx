@@ -25,7 +25,7 @@ export const NormalContainer = styled.div`
     height: ${props => props.height || '95vh'};
     width: 100vw;
     display: flex;
-    flex-flow: column;
+    flex-flow: ${props => props.flow || 'column' };
     align-items: ${props => props.alignItems || 'center'};
     justify-content: ${props => props.justifyContent || 'center'};
     background-color: var(--background-color);
