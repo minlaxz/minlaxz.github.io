@@ -1,1 +1,0 @@
-import{d as t}from"./vendor.085cecd7.js";import{a as u}from"./index.9ff040e8.js";const l=s=>{const[a,o]=t.exports.useState(null),[r,c]=t.exports.useState(null),[n,f]=t.exports.useState(!0);return t.exports.useEffect(()=>{(async()=>{try{const e=await u(s,{timeout:1e3*5});o(e.data)}catch(e){c(e)}finally{f(!1)}})()},[s]),{data:a,error:r,loading:n}};export{l as u};

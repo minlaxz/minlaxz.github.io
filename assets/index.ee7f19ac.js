@@ -1,4 +1,4 @@
-import{s as e}from"./vendor.085cecd7.js";e.div`
+import{s as e}from"./vendor.09fd204b.js";e.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@ import{s as e}from"./vendor.085cecd7.js";e.div`
     height: ${o=>o.height||"95vh"};
     width: 100vw;
     display: flex;
-    flex-flow: column;
+    flex-flow: ${o=>o.flow||"column"};
     align-items: ${o=>o.alignItems||"center"};
     justify-content: ${o=>o.justifyContent||"center"};
     background-color: var(--background-color);

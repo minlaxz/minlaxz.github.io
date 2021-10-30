@@ -1,4 +1,4 @@
-import{R as e,s as r}from"./vendor.085cecd7.js";import{N as o}from"./index.d1d54eb1.js";import{CShead as c}from"./index.dd15f11d.js";import{R as l}from"./icons.63114d1a.js";import"./index.538cacbe.js";import"./index.7b67436b.js";import"./index.b94c23d2.js";const d=r.div`
+import{R as e,s as r}from"./vendor.09fd204b.js";import{N as o}from"./index.ee7f19ac.js";import{CShead as l}from"./index.3f5a6bd3.js";import{R as c}from"./icons.9d9447d1.js";import"./index.33ffd995.js";import"./index.59615b05.js";import"./index.537fed23.js";const d=r.div`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,7 +17,7 @@ import{R as e,s as r}from"./vendor.085cecd7.js";import{N as o}from"./index.d1d54
     align-items: flex-start;
     justify-content: center;
     margin: 10px;
-`,n=a=>e.createElement("pre",null,e.createElement("code",null,a.code));var E=()=>e.createElement(o,{justifyContent:"flex-start",height:"100%"},e.createElement(c,{text:"React Cheat Sheet"},e.createElement(l,null)),e.createElement(d,null,e.createElement(t,null,e.createElement("h3",null,"Create React App"),e.createElement(n,{code:"npx create-react-app APP_NAME"})),e.createElement(t,null,e.createElement("h3",null,"Stateless component"),e.createElement(n,{code:`
+`,n=a=>e.createElement("pre",null,e.createElement("code",null,a.code));var E=()=>e.createElement(o,{justifyContent:"flex-start",height:"100%"},e.createElement(l,{text:"React Cheat Sheet"},e.createElement(c,null)),e.createElement(d,null,e.createElement(t,null,e.createElement("h3",null,"Create React App"),e.createElement(n,{code:"npx create-react-app APP_NAME"})),e.createElement(t,null,e.createElement("h3",null,"Stateless component"),e.createElement(n,{code:`
 import React from 'react';
 
 const YourComponent = () => <div> aaa </div> ;
