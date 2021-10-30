@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { lazy } from '@loadable/component'
-import styled from 'styled-components';
 
 // Redux
 import { useDispatch } from 'react-redux';
@@ -13,9 +12,12 @@ import { NormalContainer } from '@/Components/Containers';
 import { SourceProP, Pre, Loading } from '@/Components/Views';
 import { Alink } from '@/Components/Units';
 
-import { DamnImage, DamnImage2, Border } from './styles';
+import { Border } from './styles';
 import { toast } from 'react-toastify';
 import { ToAbout } from '@/Routes/';
+
+import { ReactSVG } from 'react-svg';
+import * as styles from './index.module.css';
 
 const BuildWith = lazy(() => import('./BuildWith'));
 const SourceVersion = lazy(() => import('@/Components/SVC'));
@@ -23,14 +25,27 @@ const AvailableRoutes = lazy(() => import('./AvailableRoutes'));
 const ReduxContainer = lazy(() => import('./ReduxContainer'));
 const Backends = lazy(() => import('../Main/Backends'));
 
-const GeneralContainer = styled.div`
-width: ${props => props.width};
-`;
-
+const RenderSVG = ({ src, className }) => {
+    return (
+        <ReactSVG
+            beforeInjection={(svg) => {
+                svg.classList.add(className)
+            }}
+            style={{ margin: 0 }}
+            evalScripts="always"
+            fallback={() => <span>Error!</span>}
+            loading={() => <span>Loading Daily Developer Card Svg Data... </span>}
+            renumerateIRIElements={false}
+            src={src}
+            useRequestCache={false}
+        />
+    )
+}
 
 const Main = () => {
     let isScreenWide = useMediaQuery('(min-width: 768px)');
     const dispatch = useDispatch();
+
     React.useEffect(() => {
         const state = store.getState().lastCommit.sha !== '';
         !state && dispatch(getLastCommitOnMain());
@@ -62,20 +77,15 @@ const Main = () => {
                     <p style={{ margin: '10px', padding: '10px', fontFamily: 'serif' }}>
                         My name is <b>Min Min Latt</b>, &nbsp;
                         <span>
-                            a self-taught software developer.
+                            a self-taught software developer.Use to create stuffs 🚀
+                            by reading documentations 🗒️
+                            and fixed bugs 🐛 by following discussions and thoughts 💭.
                         </span>
-                    </p>
-                    <p style={{ margin: '10px', padding: '10px', fontFamily: 'monospace' }}>
-                        Use to create stuffs 🚀
-                        by reading documentations 🗒️
-                        and fixed bugs 🐛 by following discussions and thoughts 💭.
                     </p>
                 </div>
 
-                <DamnImage
-                    src="https://raw.githubusercontent.com/minlaxz/minlaxz/devcard/devcard.svg"
-                    alt="Dev Card"
-                />
+                <RenderSVG src="https://raw.githubusercontent.com/minlaxz/minlaxz/devcard/devcard.svg" className={styles.svg_class} />
+
                 <Border>
                     <Pre>You would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{ color: "hotpink" }}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
                 </Border>
@@ -93,10 +103,8 @@ const Main = () => {
                 </div>
             </div>
 
-            <DamnImage2
-                src="https://raw.githubusercontent.com/minlaxz/minlaxz/github-metrics/github-metrics.svg"
-                alt="Github Metrics"
-            />
+            <RenderSVG src="https://raw.githubusercontent.com/minlaxz/minlaxz/github-metrics/github-metrics.svg" className={styles.svg_class_2} />
+
         </NormalContainer>
     )
 }

@@ -1,0 +1,26 @@
+.svg_class {
+  height: auto;
+  width: 15vw;
+  margin: 1em;
+}
+.svg_class_2 {
+  height: auto;
+  width: 30vw;
+  margin: 1em;
+}
+@media only screen and (max-width: 1024px) {
+  .svg_class {
+    width: 30vw;
+  }
+  .svg_class_2 {
+    width: 50vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .svg_class {
+    width: 60vw;
+  }
+  .svg_class_2 {
+    width: 90vw;
+  }
+}
