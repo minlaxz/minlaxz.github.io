@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { lazy } from '@loadable/component'
 
 // Redux
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getLastCommitOnMain } from '@/actions/generalActions';
 import store from '@/Store';
 
@@ -18,6 +18,7 @@ import { ToAbout } from '@/Routes/';
 
 import { ReactSVG } from 'react-svg';
 import * as styles from './index.module.css';
+import { useScreenSize } from '@/Hooks/useScreenSize';
 
 const BuildWith = lazy(() => import('./BuildWith'));
 const SourceVersion = lazy(() => import('@/Components/SVC'));
@@ -45,11 +46,13 @@ const RenderSVG = ({ src, className }) => {
 const Main = () => {
     let isScreenWide = useMediaQuery('(min-width: 768px)');
     const dispatch = useDispatch();
+    const screenSize = useScreenSize();
+    // const darkThemeEnabled = useSelector((state) => state.darkTheme.darkThemeEnabled);
 
     React.useEffect(() => {
-        const state = store.getState().lastCommit.sha !== '';
-        !state && dispatch(getLastCommitOnMain());
-        state && toast.success(`phew... won't dispatch again, already have a state.`, {
+        const shaState = store.getState().lastCommit.sha !== '';
+        !shaState && dispatch(getLastCommitOnMain());
+        shaState && toast.success(`phew... won't dispatch again, already have a state.`, {
             icon: '😌'
         });
     }, []);
@@ -67,11 +70,16 @@ const Main = () => {
                     alignItems: 'center',
                 }}>
                 <SourceProP fontSize="15px" fontWeight="bolder"> minlaxz = (&nbsp;) =&gt; async dispatch =&gt; 🚀 </SourceProP>
+
                 <div>
                     <p>Here is <Alink to={`https://github.com/minlaxz`} text={`My Github`} /></p>
                     <code style={{ fontSize: "13px" }} className="animate__animated animate__flipInX">Welcome to my universe. <TikTik /></code>
                     <SourceProP fontSize="14px">This is an automated profile.</SourceProP>
+                    <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 </div>
+
+                <span style={{ fontSize: "12px" }}>This device's dynamic width:{screenSize.dynamicWidth}&nbsp;&&nbsp; height:{screenSize.dynamicHeight}</span>
+                
                 <div style={{ maxWidth: "100%" }}>
                     {/* bug fix: shorten the text to work space-evenly */}
                     <p style={{ margin: '10px', padding: '10px', fontFamily: 'serif' }}>
@@ -83,13 +91,19 @@ const Main = () => {
                         </span>
                     </p>
                 </div>
+                {/* <a href='https://app.daily.dev/minlaxz'>
+                    <img
+                        width="300" alt="Min Min Latt's Dev Card"
+                        src={`https://api.daily.dev/devcards/a63b95418a644749aaaee500f68cd745.png?r=${darkThemeEnabled?`sxb`:`63d`}`}
+                    />
+                </a> */}
 
                 <RenderSVG src="https://raw.githubusercontent.com/minlaxz/minlaxz/devcard/devcard.svg" className={styles.svg_class} />
+
 
                 <Border>
                     <Pre>You would visit to me with <Alink to="https://git.io/minlaxz" text="git.io/minlaxz"></Alink> if this url <u style={{ color: "hotpink" }}>{window.location.hostname}</u> is <b>long</b> to remember for you 🥴</Pre>
                 </Border>
-                <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 <Suspense fallback={<Loading />}>
                     <SourceVersion />
                     <ReduxContainer />
@@ -97,14 +111,13 @@ const Main = () => {
                     <AvailableRoutes />
                     <Backends />
                 </Suspense>
-                <div style={{ border: '2px dotted khaki' }}>
+                <div style={{ border: '2px dotted khaki', margin: "1em" }}>
                     <small>Well, actually I am the last one 🤓 not to distrurb you.</small>
                     <ToAbout />
                 </div>
             </div>
 
             <RenderSVG src="https://raw.githubusercontent.com/minlaxz/minlaxz/github-metrics/github-metrics.svg" className={styles.svg_class_2} />
-
         </NormalContainer>
     )
 }
