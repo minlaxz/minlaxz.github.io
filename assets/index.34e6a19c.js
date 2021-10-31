@@ -1,4 +1,4 @@
-import{s as n,R as e,L as s}from"./vendor.fe7edddc.js";import{T as m,a as i}from"./index.3a8cb21f.js";import{A as o}from"./index.c1a83402.js";import{N as c}from"./index.f308b97b.js";import{u}from"./useFetch.3a14bda6.js";import"./index.9ff040e8.js";const d=n.div`
+import{s as n,R as e,L as s}from"./vendor.fe7edddc.js";import{T as m,a as i}from"./index.95e92e4e.js";import{A as o}from"./index.c1a83402.js";import{N as c}from"./index.f308b97b.js";import{u}from"./useFetch.3a14bda6.js";import"./index.9ff040e8.js";const d=n.div`
 margin: 0;
 padding: 0;
 display: flex;
