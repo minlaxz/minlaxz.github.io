@@ -1,4 +1,4 @@
-import{s as c,m as i,R as e}from"./vendor.fe7edddc.js";import"./index.9ff040e8.js";import{b as r,T as a}from"./index.95e92e4e.js";import{N as n}from"./index.fd650fc1.js";import{u}from"./useFetch.3a14bda6.js";const m=c.pre`
+import{s as c,m as i,R as e}from"./vendor.fe7edddc.js";import"./index.9ff040e8.js";import{b as r,T as a}from"./index.034ee227.js";import{N as n}from"./index.fd650fc1.js";import{u}from"./useFetch.3a14bda6.js";const m=c.pre`
 white-space: pre-wrap;
 /* word-break: break-all; */
 text-align: center;
