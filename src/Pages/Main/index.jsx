@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { lazy } from '@loadable/component'
 
 // Redux
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getLastCommitOnMain } from '@/actions/generalActions';
 import store from '@/Store';
 
@@ -18,7 +18,7 @@ import { ToAbout } from '@/Routes/';
 
 import { ReactSVG } from 'react-svg';
 import * as styles from './index.module.css';
-import { useScreenSize } from '@/Hooks/useScreenSize';
+// import { useScreenSize } from '@/Hooks/useScreenSize';
 
 const BuildWith = lazy(() => import('./BuildWith'));
 const SourceVersion = lazy(() => import('@/Components/SVC'));
@@ -26,7 +26,7 @@ const AvailableRoutes = lazy(() => import('./AvailableRoutes'));
 const ReduxContainer = lazy(() => import('./ReduxContainer'));
 const Backends = lazy(() => import('../Main/Backends'));
 
-const RenderSVG = ({ src, className }) => {
+const RenderSVG = ({ src, className, loadingText }) => {
     return (
         <ReactSVG
             beforeInjection={(svg) => {
@@ -35,7 +35,7 @@ const RenderSVG = ({ src, className }) => {
             style={{ margin: 0 }}
             evalScripts="always"
             fallback={() => <span>Error!</span>}
-            loading={() => <span>Loading Daily Developer Card Svg Data... </span>}
+            loading={() => <span> {loadingText} </span>}
             renumerateIRIElements={false}
             src={src}
             useRequestCache={false}
@@ -46,8 +46,7 @@ const RenderSVG = ({ src, className }) => {
 const Main = () => {
     let isScreenWide = useMediaQuery('(min-width: 768px)');
     const dispatch = useDispatch();
-    const screenSize = useScreenSize();
-    // const darkThemeEnabled = useSelector((state) => state.darkTheme.darkThemeEnabled);
+    // const screenSize = useScreenSize();
 
     React.useEffect(() => {
         const shaState = store.getState().lastCommit.sha !== '';
@@ -78,7 +77,7 @@ const Main = () => {
                     <p>Source Code is hosted <Alink to="https://github.com/minlaxz/minlaxz.github.io" text="here" /></p>
                 </div>
 
-                <span style={{ fontSize: "12px" }}>This device's dynamic width:{screenSize.dynamicWidth}&nbsp;&&nbsp; height:{screenSize.dynamicHeight}</span>
+                {/* <span style={{ fontSize: "12px" }}>This device's dynamic width:{screenSize.dynamicWidth}&nbsp;&&nbsp; height:{screenSize.dynamicHeight}</span> */}
                 
                 <div style={{ maxWidth: "100%" }}>
                     {/* bug fix: shorten the text to work space-evenly */}
@@ -91,14 +90,13 @@ const Main = () => {
                         </span>
                     </p>
                 </div>
-                {/* <a href='https://app.daily.dev/minlaxz'>
-                    <img
-                        width="300" alt="Min Min Latt's Dev Card"
-                        src={`https://api.daily.dev/devcards/a63b95418a644749aaaee500f68cd745.png?r=${darkThemeEnabled?`sxb`:`63d`}`}
-                    />
-                </a> */}
 
-                <RenderSVG src="https://raw.githubusercontent.com/minlaxz/minlaxz/devcard/devcard.svg" className={styles.svg_class} />
+
+                <RenderSVG 
+                src="https://raw.githubusercontent.com/minlaxz/minlaxz/devcard/devcard.svg" 
+                className={styles.svg_class} 
+                loadingText="Loading Daily Developer Card Svg Data..." />
+
 
 
                 <Border>
@@ -117,7 +115,11 @@ const Main = () => {
                 </div>
             </div>
 
-            <RenderSVG src="https://raw.githubusercontent.com/minlaxz/minlaxz/github-metrics/github-metrics.svg" className={styles.svg_class_2} />
+            <RenderSVG 
+            src="https://raw.githubusercontent.com/minlaxz/minlaxz/github-metrics/github-metrics.svg" 
+            className={styles.svg_class_2} 
+            loadingText="Loading Github Metrics Svg Data..." />
+
         </NormalContainer>
     )
 }
