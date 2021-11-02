@@ -1,4 +1,16 @@
-## Building my portfolio site [minlaxz.github.io](https://minlaxz.github.io/)
+### `This is Deprecated Branch`
+
+I don't want to delete this branch, cuz there is a lot of work, commits.
+
+- actions stopped
+- vercel build stopped
+- netlify build stopped
+- made orphan branch
+- changing default branch
+- vercel build running
+- for-pages branch should be running as it
+
+#### Building my portfolio site [minlaxz.github.io](https://minlaxz.github.io/)
 
 ```
 Used to showcase my projects and skills.
@@ -36,12 +48,13 @@ Used to showcase my projects and skills.
 
 - [Vercel](https://vercel.com/)
 - [Github Actions](https://actions.github.com/)
-- [![Netlify Status](https://api.netlify.com/api/v1/badges/12102c4d-d8c7-4554-ad11-c94be963fac4/deploy-status)](https://app.netlify.com/sites/minlaxz/deploys)
 
 Backend #1 using NodeJS : [microapi](https://microapi.octocat.tk/)
+
 - [source - microapi](https://github.com/minlaxz/microapi)
 
 Backend #2 using Serverless : [lessapi](https://api.octocat.tk/)
+
 - [source - lessapi](https://github.com/minlaxz/lessapi)
 
 Main Backend: [easy-rest](https://github.com/minlaxz/easy-rest) - Not yet.
