@@ -121,3 +121,7 @@
     flex-direction: column;
   }
 }
+
+.counter {
+  color: hotpink;
+}

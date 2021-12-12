@@ -1,11 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useDispatch, useSelector } from 'react-redux'
 // import Link from 'next/link'
-import Layout, { siteTitle } from '../components/layout'
-import styles from '../styles/Home.module.css'
-import utilStyles from '../styles/utils.module.css'
+import Layout, { siteTitle } from '@/components/layout'
+import styles from '@/styles/Home.module.css'
+import utilStyles from '@/styles/utils.module.css'
+import { countMinus, countPlus } from '@/app/features/counter'
 
 export default function Home() {
+  const dispatch = useDispatch()
+  const value = useSelector(state => state.counter.value)
   return (
     <Layout home>
       <Head>
@@ -27,19 +31,35 @@ export default function Home() {
         </p>
       </section>
 
+      <div>
+      <button
+          onClick={() => {
+            dispatch(countMinus())
+          }}
+        > - </button>
+        {' '}
+        simp counter : <span className={styles.counter}>{value}</span> (in-sync with storage)
+        {' '}
+        <button
+          onClick={() => {
+            dispatch(countPlus())
+          }}
+        > + </button>
+      </div>
+
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://vercel.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <span className={styles.logo}>
-            <Image src="/images/vercel-triangle-black.svg" alt="Vercel Logo" width={28} height={28} />
+            <Image src="/images/vercel-triangle-black.svg" alt="Vercel Logo" width={25} height={25} />
           </span>
         </a>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -48,12 +68,12 @@ export default function Home() {
           </span>
         </a>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://nextjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           <span className={styles.logo}>
-            <Image src="/images/nextjs-black-logo.svg" alt="NextJS Logo" width={48} height={30} />
+            <Image src="/images/nextjs-black-logo.svg" alt="NextJS Logo" width={48} height={40} />
           </span>
         </a>
       </footer>
