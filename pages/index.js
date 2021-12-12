@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Layout, { siteTitle } from '../components/layout'
 import styles from '../styles/Home.module.css'
 import utilStyles from '../styles/utils.module.css'
@@ -16,12 +16,12 @@ export default function Home() {
         <code style={{ fontSize: "14px" }}> Use to create stuffs 🚀  by reading documentations 🗒️ and fixed bugs 🐛 by following discussions and thoughts 💭 </code>
         <br />
         <p>
-          <small>Here is my OpenPGP ID:
+          <small>OpenPGP ID:
             <a
               href='https://keys.openpgp.org/search?q=minminlaxz%40gmail.com'
               target={`_blank`}
               rel="noopener noreferrer">
-              {' '}D047EEF6CCB71C5D&#8599;
+              {' '}EA179537523B034D&#8599;
             </a>
           </small>
         </p>

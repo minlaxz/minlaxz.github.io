@@ -1,6 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler(req, res) {
-  // console.log(req);
-  res.status(200).json({ name: 'Min Latt' })
+  if (!req.query.name) {
+    return res.status(400).end();
+  }
+  res.writeHead(307, { Location: `/` })
+  res.end(`Hello ${req.query.name}`);
+  // res.end()
 }
+
+
