@@ -25,7 +25,6 @@
   border-top: 1px solid #eaeaea;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .footer a {
@@ -124,4 +123,70 @@
 
 .counter {
   color: hotpink;
+}
+
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-grow: 1;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.nameField {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.nameField:focus {
+  border: 0.25rem dotted burlywood;
+}
+
+.messageField {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  resize: vertical;
+  max-height: 35vh;
+  min-height: 20vh;
+  outline: none;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.messageField:focus{
+  border: 0.25rem dotted lightblue;
+
+}
+
+.submitButton {
+  width: 20%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  background: rgb(54, 170, 216);
+  color: #fff;
+  cursor: pointer;
 }
