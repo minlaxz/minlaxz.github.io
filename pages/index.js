@@ -90,6 +90,9 @@ export default function Home() {
           showMessage && <small>{appMessage}</small>
         }
       </div>
+      {
+        console.log('WEBHOOK: ' + process.env.SLACK_WEBHOOK)
+      }
 
       <footer className={styles.footer}>
         <a

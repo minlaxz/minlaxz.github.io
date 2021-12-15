@@ -28,5 +28,3 @@ Used to showcase my projects and skills.
 ### CI
 
 - [Github Actions](https://actions.github.com/)
-
-Testing GPG signing.
