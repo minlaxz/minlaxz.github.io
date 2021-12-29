@@ -49,7 +49,10 @@ export default function Home() {
       </Head>
       <section className={utilStyles.headingMd}>
         <h4>I am a Software Developer ...</h4>
-        <code style={{ fontSize: "14px" }}> Use to create stuffs 🚀  by reading documentations 🗒️ and fixed bugs 🐛 by following discussions and thoughts 💭 </code>
+        <code
+        style={{ 
+          fontSize: "14px",
+        }}> Use to create stuffs 🚀  by reading documentations 🗒️ and fixed bugs 🐛 by following discussions and thoughts 💭 </code>
         <br />
         <p>
           <small>OpenPGP ID:
