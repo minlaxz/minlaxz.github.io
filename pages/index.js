@@ -1,15 +1,11 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-
 import Layout, { siteTitle } from '@/components/layout'
 import utilStyles from '@/styles/utils.module.css'
-import styles from '@/styles/Home.module.css'
-import FeedbackForm from 'components/feedback'
+import { FeedbackForm, Footer, Quote } from 'components'
 
 export default function Home() {
-
-
   // const [preState, setPreState] = React.useState({
   //   name: '',
   //   message: ''
@@ -17,9 +13,6 @@ export default function Home() {
   // const handleChange = (prop) => (event) => {
   //   setPreState({ ...preState, [prop]: event?.target?.value });
   // };
-
-
-
   return (
     <Layout home>
       <Head>
@@ -27,9 +20,15 @@ export default function Home() {
       </Head>
       <section className={utilStyles.headingMd}>
         <h4
-          style={{ fontSize: "18px" }}>Hello, I am a backend web developer</h4>
+          style={{
+            fontSize: "18px"
+          }}>
+          Hello, I am a backend web developer
+        </h4>
         <p
-          style={{ fontSize: "14px" }}>
+          style={{
+            fontSize: "14px"
+          }}>
           @
           <a
             target={`_blank`}
@@ -40,90 +39,61 @@ export default function Home() {
           </a>
         </p>
       </section>
-      <code
-        style={{
-          fontSize: "14px",
-        }}> Use to create stuffs 🚀  by reading documentations 🗒️ and fixed bugs 🐛 by following discussions and thoughts 💭 </code>
+
+      <Quote />
+
       <br />
-      <p
-        style={{ fontSize: "16px" }}>
-        Source code for {' '}
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          margin: "1em",
+        }}
+      >
         <a
-          target={`_blank`}
-          rel='noopener noreferrer'
-          href='https://github.com/minlaxz/minlaxz.github.io'>
-          this&#8599;
+          href="https://keys.openpgp.org/search?q=minminlaxz%40gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div style={{
+            display: 'inline-block',
+            verticalAlign: 'middle'
+          }}>
+            <Image
+              src="/images/lock-and-key.svg"
+              alt="OpenPGP ID"
+              width={30}
+              height={30} />
+          </div>
+          <span>
+            {' '}PGP: EA179537&#8599;
+          </span>
         </a>
-      </p>
-
-      <p>OpenPGP ID:
         <a
-          href='https://keys.openpgp.org/search?q=minminlaxz%40gmail.com'
-          target={`_blank`}
-          rel="noopener noreferrer">
-          {' '}EA179537523B034D&#8599;
+          href="https://githb.com/minlaxz/minlaxz.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div style={{
+            display: 'inline-block',
+            verticalAlign: 'middle'
+          }}>
+            <Image
+              src="/images/source-code.svg"
+              alt="Source Code"
+              width={35}
+              height={35} />
+          </div>
+          <span>
+            {' '}Source code&#8599;
+          </span>
         </a>
-      </p>
-
-
+      </div>
       <hr />
-
       <FeedbackForm />
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={styles.logo}>
-            <Image
-              src="/images/vercel-triangle-black.svg"
-              alt="Vercel Logo"
-              width={25}
-              height={25} />
-          </span>
-        </a>
-        <a
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={styles.logo}>
-            <Image
-              src="/images/react-logo.svg"
-              alt="ReactJS Logo"
-              width={30}
-              height={30} />
-          </span>
-        </a>
-        <a
-          href="https://redux-toolkit.js.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={styles.logo}>
-            <Image
-              src="/images/redux.svg"
-              alt="Redux Logo"
-              width={30}
-              height={30} />
-          </span>
-        </a>
-        <a
-          href="https://nextjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={styles.logo}>
-            <Image
-              src="/images/nextjs-black-logo.svg"
-              alt="NextJS Logo"
-              width={48}
-              height={40} />
-          </span>
-        </a>
-      </footer>
+      <Footer />
     </Layout>
   )
 }
