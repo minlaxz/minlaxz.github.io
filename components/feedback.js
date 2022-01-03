@@ -30,7 +30,7 @@ const FeedbackForm = () => {
     }
     return (
         <div className={styles.mainForm}>
-            <h4>Message 💬 me <span style={{ color: 'dodgerblue' }}>privately</span> about <span style={{ color: 'darkorange' }}> thoughts 💭</span>.</h4>
+            <h4>Message me <span style={{ color: 'dodgerblue' }}>privately</span> your <span style={{ color: 'darkorange' }}> thoughts 💭</span>.</h4>
             <input
                 className={styles.nameField}
                 type="text"

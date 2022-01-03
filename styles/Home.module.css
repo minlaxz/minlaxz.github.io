@@ -138,6 +138,7 @@
 
 .nameField {
   width: 100%;
+  background-color: #fafafa;  
   padding: 0.5rem;
   margin: 0.5rem 0;
   border: 1px solid #eaeaea;
@@ -152,6 +153,8 @@
 }
 .nameField:focus {
   border: 0.25rem dotted burlywood;
+  background-color: aliceblue;
+
 }
 
 .messageField {
@@ -159,6 +162,7 @@
   padding: 0.5rem;
   margin: 0.5rem 0;
   border: 1px solid #eaeaea;
+  background-color: #fafafa;
   border-radius: 5px;
   font-size: 1rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -176,7 +180,7 @@
 
 .messageField:focus{
   border: 0.25rem dotted lightblue;
-
+  background-color: aliceblue;
 }
 
 .submitButton {

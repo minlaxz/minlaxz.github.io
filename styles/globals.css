@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: Sora, sans-serif;
   /* Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue */
+  background-color: var(--body-bg);
+  color: var(--body-color);
 }
 
 a {
@@ -13,4 +15,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* Light mode */
+:root {
+  --body-bg: #eeeeee;
+  --body-color: #000000;
+  --text-color: #4bb6e7fd;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+      --body-bg: #000000;
+      --body-color: #eeeeee;
+      --text-color: #c72deefd;
+  }
 }

@@ -35,7 +35,7 @@ export default function Home() {
             rel='noopener noreferrer'
             href='https://engineerforce.io'
           >
-            engineerforce.io&#8599;
+            engineerforce.io &#8599;
           </a>
         </p>
       </section>
@@ -67,12 +67,12 @@ export default function Home() {
               width={30}
               height={30} />
           </div>
-          <span>
-            {' '}PGP: EA179537&#8599;
+          <span style={{ fontSize: "12px" }}>
+            {' '}PGP: EA179537 &#8599;
           </span>
         </a>
         <a
-          href="https://githb.com/minlaxz/minlaxz.github.io"
+          href="https://github.com/minlaxz/minlaxz.github.io"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -86,11 +86,18 @@ export default function Home() {
               width={35}
               height={35} />
           </div>
-          <span>
-            {' '}Source code&#8599;
+          <span style={{ fontSize: "12px" }}>
+            {' '}Source code &#8599;
           </span>
         </a>
       </div>
+      <a
+        href='https://minlaxz.github.io'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Another website &#8599;
+      </a>
       <hr />
       <FeedbackForm />
       <Footer />
