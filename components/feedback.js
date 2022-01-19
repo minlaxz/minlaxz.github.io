@@ -12,6 +12,13 @@ const FeedbackForm = () => {
 
     const handlePostMessage = async () => {
         setShowMessage(true)
+        if (name.length === 0 || message.length === 0) {
+            setAppMessage('I know you are a little shy, but please fill out the form!')
+            setTimeout(() => {
+                setShowMessage(false)
+            }, 3e3)
+            return
+        }
         setAppMessage('Sending...')
 
         let res = await fetch('/api/feedback', {
@@ -19,13 +26,19 @@ const FeedbackForm = () => {
             body: JSON.stringify({ name, message })
         })
         if (res.ok) {
-            setAppMessage('Message sent!')
+            setAppMessage('Message sent, thank you!')
             /* auto set false after 3 seconds */
             setTimeout(() => {
                 setShowMessage(false)
             }, 3e3)
             dispatch(changeName(''))
             dispatch(changeMessage(''))
+        }
+        else {
+            setTimeout(() => {
+                setShowMessage(false)
+            }, 3e3)
+            setAppMessage('Error!')
         }
     }
     return (

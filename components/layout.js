@@ -2,14 +2,23 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from '@/styles/utils.module.css'
+import themeStyles from '@/styles/theme.module.css'
+
+import { useSelector } from 'react-redux'
 
 const name = 'Min Min Latt'
 export const siteTitle = 'Min Min Latt Portfolio'
 
 const Layout = ({ children, home }) => {
+    const { isDarkModeEnabled } = useSelector(state => state.darkmode)
+
     return (
-        <div className={styles.container}>
+        <div className={
+            isDarkModeEnabled ?
+                `${styles.container} ${themeStyles.dark}` :
+                `${styles.container} ${themeStyles.light}`
+        }>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta

@@ -9,7 +9,7 @@ import rootReducer from '@/app/features'
 
 const minlaxzKey = 'minlaxz.vercel.app'
 const customMiddlewares = [thunk]
-const logger = createLogger()
+const logger = createLogger({ collapsed: true })
 process.env.NODE_ENV === 'development' && customMiddlewares.push(logger);
 
 const initialState = storePersist.isExist(minlaxzKey)

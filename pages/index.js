@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout, { siteTitle } from '@/components/layout'
 import utilStyles from '@/styles/utils.module.css'
-import { FeedbackForm, Footer, Quote } from 'components'
+import { FeedbackForm, Footer, Quote, Toggler } from 'components'
 
 export default function Home() {
   // const [preState, setPreState] = React.useState({
@@ -19,9 +19,10 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
+        <Toggler />
         <h4
           style={{
-            fontSize: "18px"
+            fontSize: '1.5rem',
           }}>
           Hello, I am a backend web developer
         </h4>

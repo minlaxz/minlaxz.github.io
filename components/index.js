@@ -1,4 +1,5 @@
 import Footer from "./footer";
 import FeedbackForm from "./feedback";
 import Quote from "./quote";
-export { Footer, FeedbackForm, Quote };
+import Toggler from "./toggler";
+export { Footer, FeedbackForm, Quote, Toggler };
