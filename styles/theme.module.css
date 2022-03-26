@@ -1,19 +1,19 @@
 .headText {
-    color: rgb(40, 39, 41);
+    color: var(--white);
     font-size: "18px";
 }
 
 .headTextDark {
-    color: #dcd9ddfd;
+    color: var(--white-soft);
     font-size: "18px";
 }
 
 .dark {
-    background-color: #3e3c3ffd;
-    color: #dcd9ddfd;
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .light {
-    background-color: #fff;
-    color: #3e3c3ffd;
+    background-color: var(--black-soft);
+    color: var(--white-soft);
 }
