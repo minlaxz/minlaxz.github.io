@@ -5,6 +5,8 @@ import Layout, { siteTitle } from '@/components/layout'
 import utilStyles from '@/styles/utils.module.css'
 import { FeedbackForm, Footer, Quote, Toggler } from 'components'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
+import useMediaQuery from '@/hooks/useMediaQuery'
 
 export default function Home() {
   // const [preState, setPreState] = React.useState({
@@ -14,6 +16,8 @@ export default function Home() {
   // const handleChange = (prop) => (event) => {
   //   setPreState({ ...preState, [prop]: event?.target?.value });
   // };
+  const isDesktop = useMediaQuery('(min-width: 960px)');
+  const { isDarkModeEnabled } = useSelector(state => state.darkmode)
   return (
     <div
       style={{
@@ -22,7 +26,8 @@ export default function Home() {
         minHeight: '100vh',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'var(--muted-soft-color)'
+        // backgroundColor: isDarkModeEnabled ? 'darkgray' : '#fafafa',
+        overflow: 'hidden',
       }}
     >
 

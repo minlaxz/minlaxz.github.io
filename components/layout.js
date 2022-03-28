@@ -14,11 +14,19 @@ const Layout = ({ children, home }) => {
     const { isDarkModeEnabled } = useSelector(state => state.darkmode)
 
     return (
-        <div className={
-            isDarkModeEnabled ?
-                `${styles.container} ${themeStyles.dark}` :
-                `${styles.container} ${themeStyles.light}`
-        }>
+        <div
+            className={
+                isDarkModeEnabled ?
+                    `${styles.container} ${themeStyles.dark}` :
+                    `${styles.container} ${themeStyles.light}`
+            }
+            style={{
+                backgroundColor: isDarkModeEnabled ? 'var(--black)' : 'var(--gray-soft)',
+                borderRadius: '0.5rem',
+                width:'100%'
+            }}
+
+        >
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
