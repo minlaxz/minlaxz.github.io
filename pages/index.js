@@ -129,9 +129,10 @@ export default function Home() {
               style={{
                 textDecoration: 'underline',
                 color: 'hotpink',
+                ffontSize: '1.2em',
               }}
             >
-              about ...
+              about →
             </a>
           </Link>
         </div>
