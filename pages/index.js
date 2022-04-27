@@ -9,13 +9,6 @@ import { useSelector } from 'react-redux'
 import useMediaQuery from '@/hooks/useMediaQuery'
 
 export default function Home() {
-  // const [preState, setPreState] = React.useState({
-  //   name: '',
-  //   message: ''
-  // })
-  // const handleChange = (prop) => (event) => {
-  //   setPreState({ ...preState, [prop]: event?.target?.value });
-  // };
   const isDesktop = useMediaQuery('(min-width: 960px)');
   const { isDarkModeEnabled } = useSelector(state => state.darkmode)
   return (
