@@ -8,7 +8,10 @@ export default function About() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
+                scrollbarColor: '#6969dd #e0e0e0',
+                scrollbarWidth: 'thin'
             }}
+            className="section"
         >
             <Layout
                 style={{
