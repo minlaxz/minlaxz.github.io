@@ -51,7 +51,7 @@ const Layout = ({ children, home }) => {
                             width={144}
                             alt={`${name} Profile Image`}
                         />
-                        <h1 className={utilStyles.headingXl}>{name}</h1>
+                        <h1 className="text-3xl font-bold mt-3">{name}</h1>
                     </>
                 ) : (
                     <>
