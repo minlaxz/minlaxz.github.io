@@ -5,9 +5,10 @@
 </head>
 
 <body>
-    If you haven't redirected for a long time, please click: <a href="" id="redirect">Continue</a>
+    If you haven't redirected for a long time, please click: <a href="" id="direct">Continue</a>
     <script>
-        document.getElementById('redirect').href = decodeURIComponent('https://minlaxz.vercel.app') // + "?code=" + code;
+        const url = 'https://minlaxz.vercel.app/';
+        document.getElementById('direct').href = decodeURIComponent(url) // + "?code=" + code;
         window.open(decodeURIComponent(url), '_blank')
     </script>
 </body>
