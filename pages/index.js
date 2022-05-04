@@ -7,6 +7,7 @@ import { FeedbackForm, Footer, Quote, Toggler } from 'components'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import useMediaQuery from '@/hooks/useMediaQuery'
+import Linkbutton from 'components/linkbutton'
 
 export default function Home() {
   const isDesktop = useMediaQuery('(min-width: 960px)');
@@ -19,7 +20,7 @@ export default function Home() {
         minHeight: '100vh',
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: isDarkModeEnabled ? 'darkgray' : '#fafafa',
+        backgroundColor: '#121212',
         overflow: 'hidden',
       }}
     >
@@ -110,24 +111,31 @@ export default function Home() {
             margin: "1em",
           }}
         >
-          <a
-            href='https://minlaxz.github.io'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Another website &#8599;
-          </a>
-          <Link href='/about'>
-            <a
-              style={{
-                textDecoration: 'underline',
-                color: 'hotpink',
-                ffontSize: '1.2em',
-              }}
-            >
-              about →
-            </a>
-          </Link>
+          <Linkbutton
+            href='https://github.com/minlaxz'
+            text='Github &#8599;'
+            firstSpanSx={{
+              borderRadius: '0.5rem',
+            }}
+            secondSpanSx={{
+              padding: '0.5rem 3rem',
+              borderRadius: '0.5rem',
+            }}
+            firstSpanBg={`bg-slate-600`}
+          />
+          <Linkbutton
+            isExternal={false}
+            href='/about'
+            text='about →'
+            firstSpanSx={{
+              borderRadius: '0.5rem',
+            }}
+            secondSpanSx={{
+              padding: '0.5rem 3rem',
+              borderRadius: '0.5rem',
+            }}
+            firstSpanBg={`bg-cyan-700`}
+          />
         </div>
         <hr />
         <FeedbackForm />

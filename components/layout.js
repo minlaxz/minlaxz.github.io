@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from './layout.module.css'
 import utilStyles from '@/styles/utils.module.css'
 import themeStyles from '@/styles/theme.module.css'
+import LinkButton from '@/components/linkbutton'
 
 import { useSelector } from 'react-redux'
 
@@ -22,8 +23,11 @@ const Layout = ({ children, home }) => {
             }
             style={{
                 backgroundColor: isDarkModeEnabled ? 'var(--black)' : 'var(--gray-soft)',
-                borderRadius: '0.5rem',
-                width:'100%'
+                // borderRadius: '0.5rem',
+                // width:'100%',
+                // position: 'absolute',
+                // zIndex: 1,
+                // opacity: 0.75,
             }}
 
         >
@@ -77,11 +81,7 @@ const Layout = ({ children, home }) => {
             </header>
             <main>{children}</main>
             {!home && (
-                <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
-                </div>
+                <LinkButton href='/' text='← Back to home'/>
             )}
         </div>
     )
