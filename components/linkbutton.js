@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 
-export default ({
+const LinkButton = ({
     children,
     href = '/',
     text = null,
@@ -60,3 +60,5 @@ export default ({
         </Link>
     )
 }
+
+export default LinkButton;
