@@ -1,4 +1,4 @@
-### Building my portfolio site [minlaxz.github.io](https://minlaxz.github.io/) using NextJS
+### Building my portfolio site [minlaxz.me](https://minlaxz.me/) using NextJS and stuff.
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 </div>
 
 ```
-Used to showcase my projects and skills.
+Used to showcase my projects and skills. 👻
 ```
 
 ### Framework: [NextJS](https://nextjs.org/)
@@ -16,14 +16,10 @@ Used to showcase my projects and skills.
 
 ### Others:
 
-- Styled Components [styled-components](https://www.styled-components.com/)
-- React Router [react-router](https://reacttraining.com/react-router/web/guides/quick-start)
+- State Management Library [redux-toolkit](https://redux.js.org/)
+  + Also thinking about [recoil](https://recoiljs.org/)
 - Custom Hooks [useFetch](https://github.com/minlaxz/minlaxz.github.io/blob/main/src/Hooks/useFetch.jsx)
-- State Management [redux-toolkit](https://redux.js.org/)
-  - All states including dark mode, syncing with local storage
 - Redux Thunk [redux-thunk](https://github.com/reduxjs/redux-thunk)
-  - Middleware to make API calls
-- Redux Dev Tools [redux-devtools-extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
 ### CI
 
