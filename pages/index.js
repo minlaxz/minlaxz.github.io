@@ -4,14 +4,21 @@ import Image from 'next/image'
 import Layout, { siteTitle } from '@/components/layout'
 import utilStyles from '@/styles/utils.module.css'
 import { FeedbackForm, Footer, Quote, Toggler } from 'components'
-import Link from 'next/link'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Linkbutton from 'components/linkbutton'
+import { testCall } from '@/api/testCall'
 
 export default function Home() {
   const isDesktop = useMediaQuery('(min-width: 960px)');
-  const { isDarkModeEnabled } = useSelector(state => state.darkmode)
+  const { isDarkModeEnabled } = useSelector(state => state.darkmode);
+  const { response, error, loading } = useSelector(state => state.testCall);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(testCall());
+  }, [dispatch]);
+
   return (
     <div
       style={{
@@ -103,6 +110,17 @@ export default function Home() {
             </span>
           </a>
         </div>
+        <small
+          style={{ color: 'hotpink' }}>
+          DRF:
+          {
+            loading
+              ? <span> Loading ... </span>
+              : response
+                ? `${response.message}`
+                : <span>Backend Not Ready Yet!</span>
+          }
+        </small>
         <div
           style={{
             display: "flex",
