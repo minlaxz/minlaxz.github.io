@@ -1,10 +1,19 @@
-### Building my portfolio site [minlaxz.me](https://minlaxz.me/) using NextJS and stuff.
+### Building my portfolio site [minlaxz.me](https://minlaxz.me/) using NextJS and some stuff.
 
 <div align="center">
 
 ![](docs/next.svg)
 
 </div>
+
+### Note to myself
+
+- will be pointing to custom subdomain `about.minlaxz.me`.
+- will be hosting on `vercel`.
+- will have an API backend that is hosted on a _Own Server_.
+- will not be using Docker for this but API.
+
+
 
 ```
 Used to showcase my projects and skills. 👻
