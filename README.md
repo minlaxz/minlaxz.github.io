@@ -1,5 +1,8 @@
-### Building my portfolio site [minlaxz.me](https://minlaxz.me/) using NextJS and some stuff.
-
+<div align="center">
+  <h4>
+    Building my portfolio site using some awesome stuffs.
+  </h4>
+</div>
 <div align="center">
 
 ![](docs/next.svg)
@@ -14,9 +17,8 @@
 - will not be using Docker for this but API.
 
 
-
 ```
-Used to showcase my projects and skills. 👻
+Used to test for my messing things and skills >.<
 ```
 
 ### Framework: [NextJS](https://nextjs.org/)
