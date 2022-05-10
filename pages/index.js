@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout, { siteTitle } from '@/components/layout'
 import utilStyles from '@/styles/utils.module.css'
-import { FeedbackForm, Footer, Quote, Toggler } from 'components'
+import { FeedbackForm, Footer, Quote } from 'components'
 import { useSelector, useDispatch } from 'react-redux'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Linkbutton from 'components/linkbutton'
@@ -37,7 +37,6 @@ export default function Home() {
           <title>{siteTitle}</title>
         </Head>
         <section className={utilStyles.headingMd}>
-          <Toggler />
           <h4
             style={{
               fontSize: '1.5rem',
@@ -112,7 +111,7 @@ export default function Home() {
         </div>
         <small
           style={{ color: 'hotpink' }}>
-          DRF:
+          Docker responsed:
           {
             loading
               ? <span> Loading ... </span>

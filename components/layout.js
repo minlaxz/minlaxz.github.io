@@ -5,6 +5,7 @@ import styles from './layout.module.css'
 import utilStyles from '@/styles/utils.module.css'
 import themeStyles from '@/styles/theme.module.css'
 import LinkButton from '@/components/linkbutton'
+import { Toggler } from '@/components'
 
 import { useSelector } from 'react-redux'
 
@@ -56,7 +57,9 @@ const Layout = ({ children, home }) => {
                             alt={`${name} Profile Image`}
                         />
                         <h1 className="text-3xl font-bold mt-3">{name}</h1>
+                        <Toggler />
                     </>
+
                 ) : (
                     <>
                         <Link href="/">
@@ -71,6 +74,7 @@ const Layout = ({ children, home }) => {
                                 />
                             </a>
                         </Link>
+                        <Toggler />
                         <h2 className={utilStyles.headingLg}>
                             <Link href="/">
                                 <a className={utilStyles.colorInherit}>{name}</a>
@@ -81,7 +85,7 @@ const Layout = ({ children, home }) => {
             </header>
             <main>{children}</main>
             {!home && (
-                <LinkButton href='/' text='← Back to home'/>
+                <LinkButton href='/' text='← Back to home' />
             )}
         </div>
     )
