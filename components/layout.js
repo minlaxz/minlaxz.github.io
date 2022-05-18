@@ -56,7 +56,7 @@ const Layout = ({ children, home }) => {
                             width={144}
                             alt={`${name} Profile Image`}
                         />
-                        <h1 className="text-3xl font-bold mt-3">{name}</h1>
+                        <h1 className="text-3xl font-bold mt-3" style={{fontFamily:'Sora'}}>{name}</h1>
                         <Toggler />
                     </>
 

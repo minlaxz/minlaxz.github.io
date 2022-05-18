@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { isDarkModeEnabled: false };
+const initialState = { isDarkModeEnabled: true };
 
 export const toggleDarkModeSlice = createSlice({
     name: "darkModeToggler",

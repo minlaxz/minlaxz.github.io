@@ -1,4 +1,5 @@
 import Layout from '@/components/layout'
+import Image from 'next/image'
 
 export default function About() {
     return (
@@ -6,10 +7,10 @@ export default function About() {
             style={{
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
+                alignContent: 'flex-start',
                 scrollbarColor: '#6969dd #e0e0e0',
-                scrollbarWidth: 'thin'
+                scrollbarWidth: 'thin',
+                width: '100vw',
             }}
             className="section"
         >
@@ -20,6 +21,7 @@ export default function About() {
                     alignItems: 'flex-start',
                     backgroundColor: 'var(--muted-soft-color)',
                     padding: '1em',
+                    width: '100vw',
                 }}
             >
                 <ul>
@@ -55,6 +57,17 @@ export default function About() {
                         if i got more time, i would like to revise this.
                     </pre>
                 </p>
+                <Image
+                    src="https://github.com/minlaxz/minlaxz/raw/github-metrics/github-metrics.svg"
+                    alt="Github Matrics"
+                    width={400}
+                    height={2000}
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                        // objectFit: 'contain',
+                    }}
+                />
             </Layout>
         </div>
     )

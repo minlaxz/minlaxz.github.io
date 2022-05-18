@@ -37,24 +37,26 @@ export default function Home() {
           <title>{siteTitle}</title>
         </Head>
         <section className={utilStyles.headingMd}>
-          <h4
-            style={{
-              fontSize: '1.5rem',
-            }}>
-            Hi, I am a dev
-          </h4>
           <p
             style={{
-              fontSize: "14px"
+              fontFamily: 'Sora',
+              fontSize: '1rem',
             }}>
-            @
-            <a
-              target={`_blank`}
-              rel='noopener noreferrer'
-              href='https://engineerforce.io'
-            >
-              engineerforce.io &#8599;
-            </a>
+            Hi, I am a developer {' '}
+            <span
+              style={{
+                fontSize: "14px",
+                color: '#1E75BC'
+              }}>
+              @
+              <a
+                target={`_blank`}
+                rel='noopener noreferrer'
+                href='https://engineerforce.io'
+              >
+                engineerforce.io &#8599;
+              </a>
+            </span>
           </p>
         </section>
 
@@ -86,7 +88,7 @@ export default function Home() {
                 height={30} />
             </div>
             <span style={{ fontSize: "12px" }}>
-              {' '}PGP: EA179537 &#8599;
+              {' '}Digital Sign: EA179537 &#8599;
             </span>
           </a>
           <a
@@ -135,7 +137,7 @@ export default function Home() {
               borderRadius: '0.5rem',
             }}
             secondSpanSx={{
-              padding: '0.5rem 3rem',
+              padding: '0.5rem 1rem',
               borderRadius: '0.5rem',
             }}
             firstSpanBg={`bg-slate-600`}
@@ -148,7 +150,7 @@ export default function Home() {
               borderRadius: '0.5rem',
             }}
             secondSpanSx={{
-              padding: '0.5rem 3rem',
+              padding: '0.5rem 1rem',
               borderRadius: '0.5rem',
             }}
             firstSpanBg={`bg-cyan-700`}
