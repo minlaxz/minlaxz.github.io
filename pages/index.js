@@ -113,7 +113,7 @@ export default function Home() {
         </div>
         <small
           style={{ color: 'hotpink' }}>
-          Docker responsed:
+          Backend responsed:
           {
             loading
               ? <span> Loading ... </span>
@@ -145,7 +145,7 @@ export default function Home() {
           <Linkbutton
             isExternal={false}
             href='/about'
-            text='about →'
+            text='about me →'
             firstSpanSx={{
               borderRadius: '0.5rem',
             }}
