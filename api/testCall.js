@@ -4,7 +4,7 @@ import { testCallRequest, testCallSuccess, testCallFailure } from '@/app/feature
 export const testCall = () => async dispatch => {
     dispatch(testCallRequest());
     try {
-        const response = await axios.get('https://api.scalebore.ml/test/', {
+        const response = await axios.get('https://superduperdrf.herokuapp.com/api/test/', {
             timeout: 5000,
         });
         dispatch(testCallSuccess(response.data));
