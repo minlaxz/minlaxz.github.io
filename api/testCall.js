@@ -4,7 +4,7 @@ import { testCallRequest, testCallSuccess, testCallFailure } from '@/app/feature
 export const testCall = () => async dispatch => {
     dispatch(testCallRequest());
     try {
-        const response = await axios.get('https://superduperdrf.herokuapp.com/api/test/', {
+        const response = await axios.get('https://super-duper-laxz-69.fly.dev/api/test/', {
             timeout: 5000,
         });
         dispatch(testCallSuccess(response.data));

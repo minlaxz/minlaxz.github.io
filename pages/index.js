@@ -112,15 +112,24 @@ export default function Home() {
           </a>
         </div>
         <small
-          style={{ color: 'hotpink' }}>
-          Backend responsed:
-          {
-            loading
-              ? <span> Loading ... </span>
-              : response
-                ? `${response.message}`
-                : <span>Backend Not Ready Yet!</span>
-          }
+          style={{ color: 'white', textAlign: 'center' }}>
+          Django backend is containerized using <span style={{ color: '#38B7ED' }}>Docker</span> and hosted on <a href="https://fly.io" style={{ color: 'hotpink' }} target={`_blank`}
+            rel='noopener noreferrer'>fly.io a (PAAS)</a> which give me an ID of =&gt; &nbsp;
+          <b style={{color:'red'}}>
+            {
+              loading
+                ? <span> Loading ... </span>
+                : response
+                  ? `${response.message}`
+                  : <span>Backend Not Ready Yet!</span>
+            }
+          </b>
+        </small>
+        <br />
+        <small style={{ marginTop: '10px' }}>
+          Yo may know that, this is not about design, but this is likely <br />
+          <b>to be about Design Context which can't be seen.</b>
+          &nbsp; FYI: this is totally detaching from Heroku.
         </small>
         <div
           style={{
