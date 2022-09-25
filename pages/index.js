@@ -27,7 +27,7 @@ export default function Home() {
         minHeight: '100vh',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#121212',
+        backgroundColor: '#FAFAFA',
         overflow: 'hidden',
       }}
     >
@@ -112,8 +112,8 @@ export default function Home() {
           </a>
         </div>
         <small
-          style={{ color: 'white', textAlign: 'center' }}>
-          Django backend is containerized using <span style={{ color: '#38B7ED' }}>Docker</span> and hosted on <a href="https://fly.io" style={{ color: 'hotpink' }} target={`_blank`}
+          style={{ color: "white", textAlign: "center" }}>
+          Django backend is containerized using <span style={{ color: "#38B7ED" }}>Docker</span> and hosted on <a href="https://fly.io" style={{ color: "hotpink" }} target="_blank"
             rel='noopener noreferrer'>fly.io a (PAAS)</a> which give me an ID of =&gt; &nbsp;
           <b style={{color:'red'}}>
             {
@@ -126,9 +126,9 @@ export default function Home() {
           </b>
         </small>
         <br />
-        <small style={{ marginTop: '10px' }}>
-          Yo may know that, this is not about design, but this is likely <br />
-          <b>to be about Design Context which can't be seen.</b>
+        <small style={{ marginTop: "10px" }}>
+          I know the design is terrible, but this actually<br />
+          <b>included some design which can&apos;t be seen.</b>
           &nbsp; FYI: this is totally detaching from Heroku.
         </small>
         <div
