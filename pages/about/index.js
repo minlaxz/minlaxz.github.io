@@ -12,20 +12,21 @@ export default function About() {
             }}
         >
             <Layout
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                    backgroundColor: 'var(--muted-soft-color)',
-                    padding: '1em',
-                }}
+                // style={{
+                //     display: 'flex',
+                //     flexDirection: 'column',
+                //     alignItems: 'flex-start',
+                //     backgroundColor: 'var(--muted-soft-color)',
+                //     padding: '1em',
+                // }}
             >
-                <p style={{
-                    whiteSpace: 'pre-wrap',
+                <pre style={{
+                    whiteSpace: 'break-spaces',
+                    fontSize: '14.5px',
                 }}>
                 Hello I am Min Min Latt (ミンミンラッ).
 I used to create tech stuff and fix bug 🪲 by reading documentation 📑 and following fair discussions 🗣️. 
-My background is Electronic and Communication Engineering. 
+My background is <b>Electronic and Communication Engineering</b>. 
 That`s why sometime I can`t caught what is Agile project management. 
 But don`t worry I will caught it up as long as I have the Internet. 
 I do not hesitate to ask or search for what I don`t know yet.
@@ -80,7 +81,7 @@ Sometime, I do not speak very much but I respect what the others said.
 Not to mention that I am from Myanmar who cares more about errors and validations than features.
 
 Nice to meet you all, thank you for reading to the end.
-                </p>
+                </pre>
                 <Link href={`/tech`}>
                     <a
                         style={{

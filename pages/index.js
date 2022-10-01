@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Linkbutton from 'components/linkbutton'
 import { testCall } from '@/api/testCall'
+import HomeQuote from 'components/homeQuote'
 
 export default function Home() {
   const isDesktop = useMediaQuery('(min-width: 960px)');
@@ -25,32 +26,7 @@ export default function Home() {
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <section className={utilStyles.headingMd}>
-          <p
-            style={{
-              fontFamily: 'Sora',
-              fontSize: '1rem',
-            }}>
-            Hi, I am a developer {' '}
-            <span
-              style={{
-                fontSize: "14px",
-                color: '#1E75BC'
-              }}>
-              @
-              <a
-                target={`_blank`}
-                rel='noopener noreferrer'
-                href='https://engineerforce.io'
-              >
-                engineerforce.io &#8599;
-              </a>
-            </span>
-          </p>
-        </section>
-
-        <Quote />
-
+        <HomeQuote styles={{ headingMd: utilStyles.headingMd }} />
         <br />
 
         <div
@@ -104,7 +80,7 @@ export default function Home() {
           style={{ color: "white", textAlign: "center" }}>
           Django backend is containerized using <span style={{ color: "#38B7ED" }}>Docker</span> and hosted on <a href="https://fly.io" style={{ color: "hotpink" }} target="_blank"
             rel='noopener noreferrer'>fly.io a (PAAS)</a> which give me an ID of =&gt; &nbsp;
-          <b style={{color:'red'}}>
+          <b style={{ color: 'red' }}>
             {
               loading
                 ? <span> Loading ... </span>
@@ -123,40 +99,87 @@ export default function Home() {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            margin: "1em",
+            flexDirection: 'column',
+            justifyContent: "space-evenly",
+            alignItems: "flex-end",
+            alignContent: "flex-start",
+            margin: "0.2em",
+            height: "15vh"
           }}
         >
           <Linkbutton
             href='https://github.com/minlaxz'
             text='Github &#8599;'
             firstSpanSx={{
-              borderRadius: '0.5rem',
+              borderRadius: '0.2rem',
             }}
             secondSpanSx={{
-              padding: '0.5rem 1rem',
-              borderRadius: '0.5rem',
+              padding: '0.2rem 0.4rem',
+              borderRadius: '0.2rem',
             }}
-            firstSpanBg={`bg-slate-600`}
+            firstSpanBg={`bg-slate-500`}
           />
           <Linkbutton
             isExternal={false}
-            href='/about'
-            text='about me →'
+            href='/sendmessage'
+            text='Message &#8594;'
             firstSpanSx={{
-              borderRadius: '0.5rem',
+              borderRadius: '0.2rem',
             }}
             secondSpanSx={{
-              padding: '0.5rem 1rem',
-              borderRadius: '0.5rem',
+              padding: '0.2rem 0.4rem',
+              borderRadius: '0.2rem',
             }}
-            firstSpanBg={`bg-cyan-700`}
+            firstSpanBg={`bg-purple-600`}
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: 'column',
+            justifyContent: "space-evenly",
+            alignItems: "flex-start",
+            alignContent: "flex-start",
+            margin: "0.5em",
+            marginBottom: "3ch",
+            height: "15vh"
+          }}
+        >
+          <Linkbutton
+            isExternal={false}
+            href='/about'
+            text='about &#8594;'
+            firstSpanSx={{
+              borderRadius: '0.2rem',
+            }}
+            secondSpanSx={{
+              padding: '0.2rem 0.4rem',
+              borderRadius: '0.2rem',
+            }}
+            firstSpanBg={`bg-cyan-600`}
+          />
+          <Linkbutton
+            isExternal={false}
+            href='/blog'
+            text='blog &#8594;'
+            firstSpanSx={{
+              borderRadius: '0.2rem',
+            }}
+            secondSpanSx={{
+              padding: '0.2rem 0.4rem',
+              borderRadius: '0.2rem',
+            }}
+            firstSpanBg={`bg-yellow-600`}
           />
         </div>
         <hr />
-        <FeedbackForm />
+        {/* <FeedbackForm /> */}
         <Footer />
+        <div style={{ width: "100%", textAlign: 'center', marginTop: '100vh', marginBottom: '40vh' }}>
+          <small>
+            👻
+          </small>
+        </div>
       </Layout>
     </div>
   )

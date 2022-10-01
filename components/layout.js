@@ -10,7 +10,7 @@ import ProfilePhoto from '@/components/profilePhoto'
 
 import { useSelector } from 'react-redux'
 
-const name = 'Min Min Latt'
+const name = 'Min Latt'
 export const siteTitle = 'Min Min Latt Portfolio'
 
 const Layout = ({ children, home }) => {
@@ -59,8 +59,9 @@ const Layout = ({ children, home }) => {
                             style={{ fontFamily: 'Sora' }}
                         >
                             {name}
+                            {' '}
+                            <Toggler />
                         </h1>
-                        <Toggler />
                     </>
 
                 ) : (
@@ -75,6 +76,7 @@ const Layout = ({ children, home }) => {
                                 />
                             </a>
                         </Link>
+                        {' '}
                         <Toggler />
                         <h2
                             className={utilStyles.headingLg}
