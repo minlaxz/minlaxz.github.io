@@ -3,7 +3,7 @@ import { toggleDarkMode } from "app/features/toggleDark";
 
 const Toggler = () => {
     const dispatch = useDispatch()
-    const { isDarkModeEnabled } = useSelector(state => state.darkmode)
+    const { isDarkModeEnabled } = useSelector(state => state.darkmodeReducer)
 
     return (
         <div>

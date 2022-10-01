@@ -11,7 +11,7 @@ import { testCall } from '@/api/testCall'
 
 export default function Home() {
   const isDesktop = useMediaQuery('(min-width: 960px)');
-  const { isDarkModeEnabled } = useSelector(state => state.darkmode);
+  const { isDarkModeEnabled } = useSelector(state => state.darkmodeReducer);
   const { response, error, loading } = useSelector(state => state.testCall);
   const dispatch = useDispatch();
 
@@ -20,18 +20,7 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#FAFAFA',
-        overflow: 'hidden',
-      }}
-    >
-
+    <div>
       <Layout home>
         <Head>
           <title>{siteTitle}</title>

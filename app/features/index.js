@@ -6,7 +6,7 @@ import testCallReducer from "./testcall";
 const Reducers = ({
     counter: counterReducer,
     feedback: feedbackReducer,
-    darkmode: darkmodeReducer,
+    darkmodeReducer,
     testCall: testCallReducer,
 });
 

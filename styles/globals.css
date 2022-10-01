@@ -5,7 +5,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   --black: #444343;
   --white: #edecee;
   --gray: #2c2c2c;
@@ -15,7 +15,7 @@ body {
   --orange: #ffca85;
   --pink: #f694ff;
   --blue: #82e2ff;
-  --red: 	#ff6767;
+  --red: #ff6767;
 
   --background-color: var(--black);
   --foreground-color: var(--white);
@@ -30,8 +30,8 @@ body {
 
   --warning-color: var(--orange);
   --success-color: var(--green);
-  --error-color: var(--red);  
-  
+  --error-color: var(--red);
+
   --black-soft: #15141b;
   --white-soft: #bdbdbd;
   --gray-soft: #6d6d6d;
@@ -43,7 +43,7 @@ body {
   --blue-soft: #6cb2c7;
   --red-soft: #c55858;
 
-  --background-soft-color: var(--black-soft);  
+  /* --background-soft-color: var(--black-soft);
   --foreground-soft-color: var(--white-soft);
   --muted-soft-color: var(--gray-soft);
   --selection-soft-color: var(--purple-fading-soft);
@@ -56,19 +56,47 @@ body {
 
   --warning-soft-color: var(--orange-soft);
   --success-soft-color: var(--green-soft);
-  --error-soft-color: var(--red-soft);  
+  --error-soft-color: var(--red-soft); */
 }
 
-a {
+/* a {
   color: inherit;
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
-}
+} */
 
-.section {
+/* .section {
   scrollbar-color: #6969dd #e0e0e0;
   scrollbar-width: thin;
+} */
+
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
+  background-color: #2d333c;
+  color: #b6cde4a1;
+  /* color: #2D333C;
+    background-color:#b6cde4a1; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 3em 0 1em;
+}
+
+p,
+ul,
+ol {
+  margin-bottom: 2em;
+  font-family: sans-serif;
 }

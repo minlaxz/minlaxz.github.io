@@ -1,9 +1,19 @@
+import Link from "next/link"
+
 function Error({ statusCode }) {
     return (
         <p>
-            {statusCode
-                ? `An error ${statusCode} occurred on server`
-                : 'An error occurred on client'}
+            {
+                statusCode
+                    ?
+                    statusCode >= 500
+                        ?
+                        `This is my fault, ${statusCode} occurred on server 👻`
+                        :
+                        `🍑 Okay, this is your fault, keep calm and return to / , bro!`
+                    :
+                    'An error occurred on client'
+            }
         </p>
     )
 }
