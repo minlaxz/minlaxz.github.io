@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout, { siteTitle } from '@/components/layout'
 import utilStyles from '@/styles/utils.module.css'
-import { FeedbackForm, Footer, Quote } from 'components'
+import { Footer } from 'components'
 import { useSelector, useDispatch } from 'react-redux'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Linkbutton from 'components/linkbutton'
@@ -27,6 +27,9 @@ export default function Home() {
           <title>{siteTitle}</title>
         </Head>
         <HomeQuote styles={{ headingMd: utilStyles.headingMd }} />
+        <small>
+        { isDarkModeEnabled ? ` Dark ` : ` Light ` } Mode on.
+        </small>
         <br />
 
         <div

@@ -2,18 +2,26 @@ import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeMessage, changeName } from 'app/features/feedback'
 import styles from '@/styles/Home.module.css'
+import autoAnimate from '@formkit/auto-animate'
 
 const FeedbackForm = () => {
+    const parentRef = React.useRef(null)
     const dispatch = useDispatch()
     const { name, message } = useSelector(state => state.feedback)
 
     const [showMessage, setShowMessage] = React.useState(false)
     const [appMessage, setAppMessage] = React.useState('')
 
+    React.useEffect(() => {
+        if (parentRef.current) {
+            autoAnimate(parentRef.current);
+        }
+    }, [parentRef])
+
     const handlePostMessage = async () => {
         setShowMessage(true)
         if (name.length === 0 || message.length === 0) {
-            setAppMessage('I know you are a little shy, but please fill out the form!')
+            setAppMessage('I know you\'re a little shy, but please fill out the forms!')
             setTimeout(() => {
                 setShowMessage(false)
             }, 3e3)
@@ -43,7 +51,7 @@ const FeedbackForm = () => {
     }
     return (
         <div className={styles.mainForm}>
-            <h4>Message me <span style={{ color: 'dodgerblue' }}>privately</span> your <span style={{ color: 'darkorange' }}> thoughts 💭</span>.</h4>
+            <p style={{padding:'1em'}}>Message me <span style={{ color: 'dodgerblue' }}>privately</span> your <span style={{ color: 'darkorange' }}> thoughts 💭</span>.</p>
             <input
                 className={styles.nameField}
                 type="text"
@@ -72,9 +80,12 @@ const FeedbackForm = () => {
                 onClick={() => handlePostMessage()}
             > Send
             </button>
+            <div ref={parentRef}>
             {
-                showMessage && <small>{appMessage}</small>
+                showMessage && <small style={{color:'hotpink'}}>{appMessage}</small>
             }
+            </div>
+            <div className={styles.animatted}></div>
         </div>
     )
 }
