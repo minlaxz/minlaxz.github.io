@@ -54,14 +54,14 @@ const Layout = ({ children, home }) => {
                             className={{ profileImage: utilStyles.borderCircle }}
                             path="/images/profile.jpg"
                         />
-                        <h1
+                        <h3
                             className="text-3xl font-bold mt-3"
-                            style={{ fontFamily: 'Sora' }}
+                            style={{ fontFamily: 'Sora', color: isDarkModeEnabled ? 'var(--gray-soft)' : 'var(--black-soft)' }}
                         >
                             {name}
                             {' '}
+                        </h3>
                             <Toggler />
-                        </h1>
                     </>
 
                 ) : (

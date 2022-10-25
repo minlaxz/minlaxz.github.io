@@ -85,7 +85,7 @@ const FeedbackForm = () => {
                 showMessage && <small style={{color:'hotpink'}}>{appMessage}</small>
             }
             </div>
-            <div className={styles.animatted}></div>
+            {/* <div className={styles.animatted}></div> */}
         </div>
     )
 }
