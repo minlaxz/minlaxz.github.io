@@ -1,7 +1,12 @@
 import Layout from '@/components/layout'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
+import homeStyles from "@/styles/Home.module.css";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export default function About() {
+    const { isDarkModeEnabled } = useSelector(state => state.darkmodeReducer)
+    const isDesktop = useMediaQuery("(min-width: 960px)");
     return (
         <div
             style={{
@@ -9,17 +14,11 @@ export default function About() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
+                padding: isDesktop ? "3em 2em 1em 2em" : "1.5em 1em 1.5em 1em"
             }}
+            className={isDarkModeEnabled ? homeStyles.claymophismdark: homeStyles.claymophism}
         >
-            <Layout
-                // style={{
-                //     display: 'flex',
-                //     flexDirection: 'column',
-                //     alignItems: 'flex-start',
-                //     backgroundColor: 'var(--muted-soft-color)',
-                //     padding: '1em',
-                // }}
-            >
+            <Layout>
                 <pre style={{
                     whiteSpace: 'break-spaces',
                     fontSize: '14.5px',

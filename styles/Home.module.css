@@ -252,19 +252,19 @@
 }
 
 .claymophism {
- backdrop-filter: blur(3px);
- background-color: rgba(255, 255, 255, 0.164);
+ backdrop-filter: blur(2px);
+ background-color: rgba(120, 146, 177, 0.226);
  border-radius: 26px;
- box-shadow: 35px 35px 68px 0px rgba(135, 115, 158, 0.5),
-  inset -0px -0px 16px 0px rgba(135, 115, 158, 0.6),
-  inset 0px 11px 28px 0px rgb(255, 255, 255);
+ box-shadow: 35px 35px 68px 0px rgba(111, 145, 191, 0.5),
+  inset -3px -3px 16px 0px rgba(111, 145, 191, 0.6),
+  inset 0px 11px 28px 0px rgba(192, 192, 192, 0.507);
 }
 
 .claymophismdark {
- backdrop-filter: blur(3px);
- background-color: rgba(255, 255, 255, 0.1);
- border-radius: 39px;
- box-shadow: 0px 0px 68px 35px rgba(29, 20, 39, 0.795),
-  inset -0px -0px 16px 0px rgba(29, 20, 39, 0.6),
-  inset 0px 11px 28px 0px rgba(255, 255, 255, 0.342);
+ backdrop-filter: blur(2px);
+ background-color: rgba(45, 86, 114, 0.1);
+ border-radius: 26px;
+ box-shadow: 35px 35px 68px 0px rgba(36, 52, 76, 0.5),
+  inset -3px -3px 16px 0px rgba(36, 52, 76, 0.6),
+  inset 0px 11px 28px 0px rgb(0, 0, 0);
 }

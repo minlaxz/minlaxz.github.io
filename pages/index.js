@@ -20,7 +20,7 @@ export default function Home() {
  }, [dispatch]);
 
  return (
-  <div className={isDarkModeEnabled ? homeStyles.claymophism: homeStyles.claymophismdark} style={{padding: isDesktop ? "3em 2em 1em 2em" : "1.5em 1em 1.5em 1em"}}>
+  <div className={isDarkModeEnabled ? homeStyles.claymophismdark: homeStyles.claymophism} style={{padding: isDesktop ? "3em 2em 1em 2em" : "3em 1em 1.5em 1em"}}>
    <Layout home>
     <Head>
      <title>{siteTitle}</title>
