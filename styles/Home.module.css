@@ -1,232 +1,270 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 2rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ padding: 0 2rem;
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+ min-height: 100vh;
+ padding: 4rem 0;
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 }
 
 .footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  width: 100%;
-  border-top: 1px solid #eaeaea;
-  justify-content: space-between;
-  align-items: center;
-  /* margin-bottom: 50vh; */
+ display: flex;
+ flex: 1;
+ padding: 2rem 0;
+ width: 100%;
+ border-top: 1px solid #eaeaea;
+ justify-content: space-between;
+ align-items: center;
+ /* margin-bottom: 50vh; */
 }
 
 .footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-grow: 1;
 }
 
 .title a {
-  color: #0070f3;
-  text-decoration: none;
+ color: #0070f3;
+ text-decoration: none;
 }
 
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
+ text-decoration: underline;
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+ margin: 0;
+ line-height: 1.15;
+ font-size: 4rem;
 }
 
 .title,
 .description {
-  text-align: center;
+ text-align: center;
 }
 
 .description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+ margin: 4rem 0;
+ line-height: 1.5;
+ font-size: 1.5rem;
 }
 
 .code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+ background: #fafafa;
+ border-radius: 5px;
+ padding: 0.75rem;
+ font-size: 1.1rem;
+ font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+  Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-wrap: wrap;
+ max-width: 800px;
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+ margin: 1rem;
+ padding: 1.5rem;
+ text-align: left;
+ color: inherit;
+ text-decoration: none;
+ border: 1px solid #eaeaea;
+ border-radius: 10px;
+ transition: color 0.15s ease, border-color 0.15s ease;
+ max-width: 300px;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+ color: #0070f3;
+ border-color: #0070f3;
 }
 
 .card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+ margin: 0 0 1rem 0;
+ font-size: 1.5rem;
 }
 
 .card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+ margin: 0;
+ font-size: 1.25rem;
+ line-height: 1.5;
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+ height: 1em;
+ margin-left: 0.5rem;
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+ .grid {
+  width: 100%;
+  flex-direction: column;
+ }
 }
 
 .counter {
-  color: hotpink;
+ color: hotpink;
 }
 
 .mainForm {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  flex-grow: 1;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-  padding: 0.5rem;
-  border-radius: 5px;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: center;
+ flex-grow: 1;
+ box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+ padding: 0.5rem;
+ border-radius: 5px;
 }
 
 .nameField {
-  width: 80%;
-  /* background-color: #b8b3b3;   */
-  padding: 0.2rem;
-  margin: 0.2rem 0;
-  border: 3px solid #eaeaea;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  outline: none;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+ width: 80%;
+ /* background-color: #b8b3b3;   */
+ padding: 0.2rem;
+ margin: 0.2rem 0;
+ border: 3px solid #eaeaea;
+ border-radius: 5px;
+ font-size: 0.8rem;
+ outline: none;
+ -webkit-transition: all 0.2s ease-out;
+ -moz-transition: all 0.2s ease-out;
+ -ms-transition: all 0.2s ease-out;
+ -o-transition: all 0.2s ease-out;
+ transition: all 0.2s ease-out;
 }
 .nameField:focus {
-  border: 0.1rem dotted burlywood;
-  background-color: aliceblue;
-  width: 100%;
+ border: 0.1rem dotted burlywood;
+ background-color: aliceblue;
+ width: 100%;
 }
 
 .messageField {
-  width: 80%;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-  border: 1px solid #eaeaea;
-  background-color: #fafafa;
-  border-radius: 5px;
-  font-size: 0.7rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  resize: vertical;
-  max-height: 25vh;
-  min-height: 10vh;
-  outline: none;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+ width: 80%;
+ padding: 0.5rem;
+ margin: 0.5rem 0;
+ border: 1px solid #eaeaea;
+ background-color: #fafafa;
+ border-radius: 5px;
+ font-size: 0.7rem;
+ font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+ resize: vertical;
+ max-height: 25vh;
+ min-height: 10vh;
+ outline: none;
+ -webkit-transition: all 0.2s ease-out;
+ -moz-transition: all 0.2s ease-out;
+ -ms-transition: all 0.2s ease-out;
+ -o-transition: all 0.2s ease-out;
+ transition: all 0.2s ease-out;
 }
 
 @media (prefers-color-scheme: dark) {
-  .messageField {
-    background-color: #333333;
-    color: #fafafa;
-  }
-  .nameField {
-    background-color: #333333;
-    color: #fafafa;
-  }
+ .messageField {
+  background-color: #333333;
+  color: #fafafa;
+ }
+ .nameField {
+  background-color: #333333;
+  color: #fafafa;
+ }
 }
 
-.messageField:focus{
-  border: 0.1rem dotted lightblue;
-  background-color: aliceblue;
-  width: 100%;
-  max-height: 35vh;
-  min-height: 20vh;
+.messageField:focus {
+ border: 0.1rem dotted lightblue;
+ background-color: aliceblue;
+ width: 100%;
+ max-height: 35vh;
+ min-height: 20vh;
 }
 
 .submitButton {
-  width: 30%;
-  padding: 0.2rem;
-  margin: 0.2rem;
-  border: 1px solid #eaeaea;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  background: rgb(22, 77, 99);
-  color: rgba(240, 236, 236, 0.877);
-  cursor: pointer;
+ width: 30%;
+ padding: 0.2rem;
+ margin: 0.2rem;
+ border: 1px solid #eaeaea;
+ border-radius: 5px;
+ font-size: 0.8rem;
+ background: rgb(22, 77, 99);
+ color: rgba(240, 236, 236, 0.877);
+ cursor: pointer;
 }
 
 .animatted {
-  width: 3px;
-  height: 3px;
-  background-color: red;
-  position: relative;
-  animation-name: anni;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-delay: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+ width: 3px;
+ height: 3px;
+ background-color: red;
+ position: relative;
+ animation-name: anni;
+ animation-duration: 10s;
+ animation-timing-function: linear;
+ animation-delay: 1s;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
 }
 
 @keyframes anni {
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:690px; top:0px;}
-  50%  {background-color:blue; left:690px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
+ 0% {
+  background-color: red;
+  left: 0px;
+  top: 0px;
+ }
+ 25% {
+  background-color: yellow;
+  left: 690px;
+  top: 0px;
+ }
+ 50% {
+  background-color: blue;
+  left: 690px;
+  top: 200px;
+ }
+ 75% {
+  background-color: green;
+  left: 0px;
+  top: 200px;
+ }
+ 100% {
+  background-color: red;
+  left: 0px;
+  top: 0px;
+ }
+}
+
+.claymophism {
+ backdrop-filter: blur(3px);
+ background-color: rgba(255, 255, 255, 0.164);
+ border-radius: 26px;
+ box-shadow: 35px 35px 68px 0px rgba(135, 115, 158, 0.5),
+  inset -0px -0px 16px 0px rgba(135, 115, 158, 0.6),
+  inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.claymophismdark {
+ backdrop-filter: blur(3px);
+ background-color: rgba(255, 255, 255, 0.1);
+ border-radius: 39px;
+ box-shadow: 0px 0px 68px 35px rgba(29, 20, 39, 0.795),
+  inset -0px -0px 16px 0px rgba(29, 20, 39, 0.6),
+  inset 0px 11px 28px 0px rgba(255, 255, 255, 0.342);
 }

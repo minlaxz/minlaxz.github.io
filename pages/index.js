@@ -2,15 +2,17 @@ import * as React from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "@/components/layout";
 import utilStyles from "@/styles/utils.module.css";
+import homeStyles from "@/styles/Home.module.css";
 import { Footer, GPG_SourceCode, ServerQuote, HomeQuote } from "@/components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Linkbutton from "@/components/linkbutton";
 import { testCall } from "@/api/testCall";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
-// import useMediaQuery from "@/hooks/useMediaQuery";
 export default function Home() {
-//  const isDesktop = useMediaQuery("(min-width: 960px)");
- 
+  const { isDarkModeEnabled } = useSelector(state => state.darkmodeReducer)
+  const isDesktop = useMediaQuery("(min-width: 960px)");
+
  const dispatch = useDispatch();
 
  React.useEffect(() => {
@@ -18,15 +20,17 @@ export default function Home() {
  }, [dispatch]);
 
  return (
-  <div>
+  <div className={isDarkModeEnabled ? homeStyles.claymophism: homeStyles.claymophismdark} style={{padding: isDesktop ? "3em 2em 1em 2em" : "1.5em 1em 1.5em 1em"}}>
    <Layout home>
     <Head>
      <title>{siteTitle}</title>
     </Head>
     <HomeQuote styles={{ headingMd: utilStyles.headingMd }} />
     <br />
-    <GPG_SourceCode/>
-    <ServerQuote/>
+    <div>
+     <GPG_SourceCode />
+    </div>
+    <ServerQuote />
     <br />
     <small style={{ marginTop: "10px" }}>
      I know the design is terrible, but this actually
