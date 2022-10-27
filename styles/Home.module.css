@@ -252,18 +252,23 @@
 }
 
 .claymophism {
+ transition: background 1s;
  backdrop-filter: blur(2px);
  background-color: rgba(120, 146, 177, 0.226);
+ color: rgb(169, 192, 197);
  border-radius: 26px;
+ transition: box-shadow 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
  box-shadow: 35px 35px 68px 0px rgba(111, 145, 191, 0.5),
   inset -3px -3px 16px 0px rgba(111, 145, 191, 0.6),
   inset 0px 11px 28px 0px rgba(192, 192, 192, 0.507);
 }
 
 .claymophismdark {
+ transition: background 1s;
  backdrop-filter: blur(2px);
  background-color: rgba(45, 86, 114, 0.1);
  border-radius: 26px;
+ transition: box-shadow 0.5s ease-in-out;
  box-shadow: 35px 35px 68px 0px rgba(36, 52, 76, 0.5),
   inset -3px -3px 16px 0px rgba(36, 52, 76, 0.6),
   inset 0px 11px 28px 0px rgb(0, 0, 0);

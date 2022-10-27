@@ -28,7 +28,9 @@ const LinkButton = ({
                     group-hover:translate-y-0 
                     group-hover:translate-x-0
                     `}
-     ></span>
+                 >
+                     
+     </span>
      <span
       style={
        secondSpanSx

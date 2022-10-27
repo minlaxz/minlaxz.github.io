@@ -1,41 +1,126 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "app/features/toggleDark";
+import { useSpring, animated } from "react-spring";
+
+const properties = {
+ dark: {
+  r: 9,
+  transform: "rotate(40deg)",
+  cx: 12,
+  cy: 4,
+  opacity: 0,
+ },
+ light: {
+  r: 5,
+  transform: "rotate(90deg)",
+  cx: 30,
+  cy: 0,
+  opacity: 1,
+ },
+ springConfig: { mass: 4, tension: 250, friction: 35 },
+};
 
 const Toggler = () => {
  const dispatch = useDispatch();
  const { isDarkModeEnabled } = useSelector((state) => state.darkmodeReducer);
+ const { r, transform, cx, cy, opacity } =
+  properties[isDarkModeEnabled ? "dark" : "light"];
+ const svgContainerProps = useSpring({
+  transform,
+  config: properties.springConfig,
+ });
+ const centerCircleProps = useSpring({ r, config: properties.springConfig });
+ const maskedCircleProps = useSpring({
+  cx,
+  cy,
+  config: properties.springConfig,
+ });
+ const linesProps = useSpring({ opacity, config: properties.springConfig });
 
  return (
-  <button
-   onClick={() => {
-    dispatch(toggleDarkMode(null));
-   }}
-   style={{ verticalAlign: "middle", marginBottom: 20 }}
-  >
+  <div style={{ verticalAlign: "middle", marginBottom: 20 }}>
    {isDarkModeEnabled ? (
-    <svg
+    <animated.svg
      xmlns="http://www.w3.org/2000/svg"
+     width="24"
+     height="24"
      viewBox="0 0 24 24"
-     fill="currentColor"
-     className="w-6 h-6"
+     fill="none"
+     strokeWidth="2"
+     strokeLinecap="round"
+     strokeLinejoin="round"
+     stroke="currentColor"
+     onClick={() => dispatch(toggleDarkMode(null))}
+     style={{
+      cursor: "pointer",
+      ...svgContainerProps,
+     }}
     >
-     <path d="M20.798 11.012l-3.188 3.416L9.462 6.28l4.24-4.542a.75.75 0 011.272.71L12.982 9.75h7.268a.75.75 0 01.548 1.262zM3.202 12.988L6.39 9.572l8.148 8.148-4.24 4.542a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262zM3.53 2.47a.75.75 0 00-1.06 1.06l18 18a.75.75 0 101.06-1.06l-18-18z" />
-    </svg>
-   ) : (
-    <svg
-     xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 24 24"
-     fill="currentColor"
-     className="w-6 h-6"
-    >
-     <path
-      fillRule="evenodd"
-      d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
-      clipRule="evenodd"
+     <mask id="myMask2">
+      <rect x="0" y="0" width="100%" height="100%" fill="white" />
+      <animated.circle style={maskedCircleProps} r="9" fill="black" />
+     </mask>
+
+     <animated.circle
+      cx="12"
+      cy="12"
+      style={centerCircleProps}
+      fill="black"
+      mask="url(#myMask2)"
      />
-    </svg>
+     {/* <animated.g stroke="currentColor" style={linesProps}>
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </animated.g> */}
+    </animated.svg>
+   ) : (
+    <animated.svg
+     xmlns="http://www.w3.org/2000/svg"
+     width="24"
+     height="24"
+     viewBox="0 0 24 24"
+     fill="none"
+     strokeWidth="2"
+     strokeLinecap="round"
+     strokeLinejoin="round"
+     stroke="currentColor"
+     onClick={() => dispatch(toggleDarkMode(null))}
+     style={{
+      cursor: "pointer",
+      ...svgContainerProps,
+     }}
+    >
+     <mask id="myMask2">
+      <rect x="0" y="0" width="100%" height="100%" fill="white" />
+      <animated.circle style={maskedCircleProps} r="9" fill="black" />
+     </mask>
+
+     <animated.circle
+      cx="12"
+      cy="12"
+      style={centerCircleProps}
+      fill="black"
+      mask="url(#myMask2)"
+     />
+     <animated.g stroke="currentColor" style={linesProps}>
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+     </animated.g>
+    </animated.svg>
    )}
-  </button>
+  </div>
  );
 };
 
