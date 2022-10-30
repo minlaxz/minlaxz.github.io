@@ -38,7 +38,10 @@ const Toggler = () => {
  const linesProps = useSpring({ opacity, config: properties.springConfig });
 
  return (
-  <div style={{ verticalAlign: "middle", marginBottom: 20 }}>
+  <button
+   onClick={() => dispatch(toggleDarkMode(null))}
+   style={{ verticalAlign: "middle", marginBottom: 20 }}
+  >
    {isDarkModeEnabled ? (
     <animated.svg
      xmlns="http://www.w3.org/2000/svg"
@@ -50,9 +53,9 @@ const Toggler = () => {
      strokeLinecap="round"
      strokeLinejoin="round"
      stroke="currentColor"
-     onClick={() => dispatch(toggleDarkMode(null))}
+     //  onClick={() => dispatch(toggleDarkMode(null))}
      style={{
-      cursor: "pointer",
+      // cursor: "pointer",
       ...svgContainerProps,
      }}
     >
@@ -90,9 +93,9 @@ const Toggler = () => {
      strokeLinecap="round"
      strokeLinejoin="round"
      stroke="currentColor"
-     onClick={() => dispatch(toggleDarkMode(null))}
+     //  onClick={() => dispatch(toggleDarkMode(null))}
      style={{
-      cursor: "pointer",
+      // cursor: "pointer",
       ...svgContainerProps,
      }}
     >
@@ -120,7 +123,7 @@ const Toggler = () => {
      </animated.g>
     </animated.svg>
    )}
-  </div>
+  </button>
  );
 };
 
