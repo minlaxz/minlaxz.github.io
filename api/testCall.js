@@ -9,9 +9,12 @@ export const testCall = () => async dispatch => {
         });
         dispatch(testCallSuccess(response.data));
     } catch (error) {
+        console.log(error)
+        console.log(error.response);
         dispatch(testCallFailure({
             name: error.name,
             message: error.message,
+            code: error?.response?.status,
         }));
     }
 }

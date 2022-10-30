@@ -79,7 +79,7 @@ export function ServerQuote() {
     ) : response ? (
      `${response.message}`
     ) : (
-     <span>Backend Not Ready Yet!</span>
+     <span> Code: {error?.code} </span>
     )}
    </b>
   </small>
@@ -87,63 +87,74 @@ export function ServerQuote() {
 }
 
 const Quote = () => (
-  <code
-      style={{
-          fontFamily: "Monolisa, Regular",
-          fontSize: "13px",
-          fontWeight: "bold",
-      }}>
-      <br />
-      <span style={{
-          color: 'palegoldenrod'
-      }}>
-          Welcome to my portfolio.
-      </span><br /><br />
-      I used to create stuffs 🚀  by reading documentations 🗒️ and fixed bugs 🐛 by following fair discussions and thoughts 💭
-  </code>
-)
+ <code
+  style={{
+   fontFamily: "Monolisa, Regular",
+   fontSize: "13px",
+   fontWeight: "bold",
+  }}
+ >
+  <br />
+  <span
+   style={{
+    color: "palegoldenrod",
+   }}
+  >
+   Welcome to my portfolio.
+  </span>
+  <br />
+  <br />I used to create stuffs 🚀 by reading documentations 🗒️ and fixed bugs
+  🐛 by following fair discussions and thoughts 💭
+ </code>
+);
 
 export function HomeQuote(props) {
-  return (
-      <>
-          <section className={props.styles?.headingMd}>
-              <p
-                  style={{
-                      fontFamily: 'Sora',
-                      fontSize: '13px',
-                  }}>
-                  Hi, I am a developer {' '}
-                  <span
-                      style={{
-                          fontSize: "14px",
-                          color: '#1E75BC'
-                      }}>
-                      @
-                      <a
-                          target={`_blank`}
-                          rel='noopener noreferrer'
-                          href='https://engineerforce.io'
-                      >
-                          engineerforce.io &#8599;
-                      </a>
-                  </span>
-              </p>
-          </section>
-          <code
-              style={{
-                  fontFamily: "Monolisa, Regular",
-                  fontSize: "13px",
-                  fontWeight: "bold",
-              }}>
-              <span style={{
-                  color: 'palegoldenrod'
-              }}>
-                  Welcome to my portfolio.
-              </span><br />
-              I used to create stuffs 🚀  by reading documentations 🗒️ and fixed bugs 🐛 by following fair discussions and thoughts 💭
-          </code>
-      </>
-  )
+ return (
+  <>
+   <section className={props.styles?.headingMd}>
+    <p
+     style={{
+      fontFamily: "Sora",
+      fontSize: "13px",
+     }}
+    >
+     Hi, I am a developer{" "}
+     <span
+      style={{
+       fontSize: "14px",
+       color: "#1E75BC",
+      }}
+     >
+      @
+      <a
+       target={`_blank`}
+       rel="noopener noreferrer"
+       href="https://engineerforce.io"
+      >
+       engineerforce.io &#8599;
+      </a>
+     </span>
+    </p>
+   </section>
+   <code
+    style={{
+     fontFamily: "Monolisa, Regular",
+     fontSize: "13px",
+     fontWeight: "bold",
+    }}
+   >
+    <span
+     style={{
+      color: "palegoldenrod",
+     }}
+    >
+     Welcome to my portfolio.
+    </span>
+    <br />I used to create stuffs 🚀 by reading documentations 🗒️ and fixed bugs
+    🐛 by following fair discussions and thoughts 💭
+   </code>
+  </>
+ );
 }
 
-export {Quote};
+export { Quote };
