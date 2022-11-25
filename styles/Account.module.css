@@ -1,0 +1,4 @@
+.rowFieldBox{
+  display: "flex";
+  justify-content: "space-around";
+}

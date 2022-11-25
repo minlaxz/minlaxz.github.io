@@ -81,7 +81,7 @@ Not to mention that I am from Myanmar who cares more about errors and validation
 
 Nice to meet you all, thank you for reading to the end.
                 </pre>
-                <Link href={`/tech`}>
+                {/* <Link href={`/tech`}>
                     <a
                         style={{
                             color: 'var(--primary-color)',
@@ -92,7 +92,7 @@ Nice to meet you all, thank you for reading to the end.
                     >
                         some tech →
                     </a>
-                </Link>
+                </Link> */}
             </Layout>
         </div>
     )

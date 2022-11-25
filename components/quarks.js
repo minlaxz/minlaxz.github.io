@@ -79,7 +79,7 @@ export function ServerQuote() {
     ) : response ? (
      `${response.message}`
     ) : (
-     <span> Code: {error?.code} </span>
+     <span> Oops, failed! {error?.code} </span>
     )}
    </b>
   </small>

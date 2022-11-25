@@ -6,21 +6,36 @@ import homeStyles from "@/styles/Home.module.css";
 import { Footer, GPG_SourceCode, ServerQuote, HomeQuote } from "@/components";
 import { useDispatch, useSelector } from "react-redux";
 import Linkbutton from "@/components/linkbutton";
-import { testCall } from "@/api/testCall";
+// import { testCall } from "@/api/testCall";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 export default function Home() {
-  const { isDarkModeEnabled } = useSelector(state => state.darkmodeReducer)
-  const isDesktop = useMediaQuery("(min-width: 960px)");
+ const { isDarkModeEnabled } = useSelector((state) => state.darkmodeReducer);
+ const isDesktop = useMediaQuery("(min-width: 960px)");
 
  const dispatch = useDispatch();
 
+ const getServerMessage = async () => {
+  let res = await fetch("/api/testcall", {
+   method: "GET",
+  });
+  if (res.ok) {
+   console.log(res);
+  } else {
+  }
+ };
+
  React.useEffect(() => {
-  dispatch(testCall());
+  getServerMessage();
  }, [dispatch]);
 
  return (
-  <div className={isDarkModeEnabled ? homeStyles.claymophismdark: homeStyles.claymophism} style={{padding: isDesktop ? "3em 2em 1em 2em" : "3em 1em 1.5em 1em"}}>
+  <div
+   className={
+    isDarkModeEnabled ? homeStyles.claymophismdark : homeStyles.claymophism
+   }
+   style={{ padding: isDesktop ? "3em 2em 1em 2em" : "3em 1em 1.5em 1em" }}
+  >
    <Layout home>
     <Head>
      <title>{siteTitle}</title>
@@ -34,9 +49,7 @@ export default function Home() {
     <br />
     <small style={{ marginTop: "10px" }}>
      I know the design is terrible, but this actually
-     <br />
-     <b>included some design which can&apos;t be seen.</b>
-     &nbsp; FYI: this is totally detaching from Heroku.
+     <b> included some design which can&apos;t be seen.</b>
     </small>
     <div
      style={{
@@ -84,7 +97,7 @@ export default function Home() {
       alignContent: "flex-start",
       margin: "0.5em",
       marginBottom: "3ch",
-      height: "15vh",
+      height: "20vh",
      }}
     >
      <Linkbutton
@@ -99,6 +112,19 @@ export default function Home() {
        borderRadius: "0.2rem",
       }}
       firstSpanBg={`bg-cyan-600`}
+     />
+     <Linkbutton
+      isExternal={false}
+      href="/account"
+      text="Account &#8594;"
+      firstSpanSx={{
+       borderRadius: "0.2rem",
+      }}
+      secondSpanSx={{
+       padding: "0.2rem 0.4rem",
+       borderRadius: "0.2rem",
+      }}
+      firstSpanBg={`bg-yellow-600`}
      />
      <Linkbutton
       isExternal={false}
