@@ -25,6 +25,7 @@
     "react-hook-form": "^7.39.1",
     "react-redux": "^7.2.6",
     "react-spring": "^9.5.5",
+    "react-use-websocket": "^4.2.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "sharp": "^0.29.3",

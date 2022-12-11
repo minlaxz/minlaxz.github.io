@@ -4,9 +4,8 @@ import { testCallRequest, testCallSuccess, testCallFailure } from '@/app/feature
 export const testCall = () => async dispatch => {
     dispatch(testCallRequest());
     const prodUrl = 'https://super-duper-laxz-69.fly.dev/api/test/';
-    const devUrl = 'http://localhost:8000/api/test/';
     try {
-        const response = await axios.get(devUrl, {
+        const response = await axios.get(prodUrl, {
             withCredentials: true,
             timeout: 5000,
         });

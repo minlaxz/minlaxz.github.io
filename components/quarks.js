@@ -74,13 +74,13 @@ export function ServerQuote() {
    </a>{" "}
    which give me an ID of =&gt; &nbsp;
    <b style={{ color: "red" }}>
-    {loading ? (
-     <span> Loading ... </span>
-    ) : response ? (
-     `${response.message}`
-    ) : (
-     <span> Oops, failed! {error?.code} </span>
-    )}
+       {
+         loading
+           ? (<span> Loading ... </span>)
+           : response
+             ? (`${response.message}`)
+             : (<span> Oops, failed! {error?.code} </span>)
+       }
    </b>
   </small>
  );
