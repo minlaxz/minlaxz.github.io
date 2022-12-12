@@ -13,7 +13,7 @@ export default function App() {
 
 
 
- const { readyState, sendJsonMessage } = useWebSocket("ws://127.0.0.1:8000/", {
+ const { readyState, sendJsonMessage } = useWebSocket("wss://super-duper-laxz-69.fly.dev/", {
   onOpen: () => {
    console.log("Connected!");
   },
