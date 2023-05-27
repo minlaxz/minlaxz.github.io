@@ -1,15 +1,38 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
+    <>
+      <main className={styles.main}>
+        {/* <div className={styles.center}>
+        <Image
+          className={styles.logo}
+          src="/next.svg"
+          alt="Next.js Logo"
+          width={180}
+          height={37}
+          priority
+        />
+      </div> */}
+        <h3 className={styles.center}>
+          This is&nbsp;<b style={{ color: "slategray" }}>Min</b> &nbsp;who likes systems.
+        </h3>
+        <div className={styles.description}>
+          <Link href="about">
+            <p className={styles.code} style={{ color: "while" }}>&nbsp;about/</p>
+          </Link>
+          <Link href="blog">
+            <p className={styles.code} style={{ color: "purple" }}>&nbsp;blog/</p>
+          </Link>
+          <Link href="certs">
+            <p className={styles.code} style={{ color: "gold" }}>&nbsp;certs/</p>
+          </Link>
+          <Link href="https://github.com/minlaxz/minlaxz.github.io" target='_blank'>
+            <p className={styles.code} style={{ color: "silver" }}>&nbsp;source-code/</p>
+          </Link>
+          {/* <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
@@ -25,21 +48,11 @@ export default function Home() {
               priority
             />
           </a>
+        </div> */}
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
 
-      <div className={styles.grid}>
+        {/* <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
@@ -89,7 +102,19 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
-    </main>
+      </div> */}
+      </main>
+      <footer style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+        <pre>
+          <i>
+            last committed: 10:10:10
+          </i>
+          <br></br>
+          <i>
+            latest hash: 1b696969
+          </i>
+        </pre>
+      </footer>
+    </>
   )
 }
