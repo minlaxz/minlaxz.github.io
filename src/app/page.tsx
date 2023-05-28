@@ -21,16 +21,16 @@ export default function Home() {
         </h3>
         <div className={styles.description}>
           <Link href="about">
-            <p className={styles.code} style={{ color: "while" }}>&nbsp;about/</p>
+            <p className={styles.code} style={{ color: "while" }}>/&nbsp;about/</p>
           </Link>
           <Link href="blog">
-            <p className={styles.code} style={{ color: "purple" }}>&nbsp;blog/</p>
+            <p className={styles.code} style={{ color: "purple" }}>/&nbsp;blog/</p>
           </Link>
           <Link href="certs">
-            <p className={styles.code} style={{ color: "gold" }}>&nbsp;certs/</p>
+            <p className={styles.code} style={{ color: "gold" }}>/&nbsp;certs/</p>
           </Link>
           <Link href="https://github.com/minlaxz/minlaxz.github.io" target='_blank'>
-            <p className={styles.code} style={{ color: "silver" }}>&nbsp;source-code/</p>
+            <p className={styles.code} style={{ color: "silver" }}>/&nbsp;github/</p>
           </Link>
           {/* <div>
           <a
@@ -104,14 +104,10 @@ export default function Home() {
         </a>
       </div> */}
       </main>
-      <footer style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+      <footer style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", padding: "1rem" }}>
         <pre>
           <i>
-            last committed: 10:10:10
-          </i>
-          <br></br>
-          <i>
-            latest hash: 1b696969
+            latest commit: 1b696969/10:10:10
           </i>
         </pre>
       </footer>

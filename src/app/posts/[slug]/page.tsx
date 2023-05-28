@@ -13,9 +13,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <main>
         <div className="w-full h-16  text-white">
           <p className="text-2xl">{post.title}</p>
-          <p className="text-gray-400">{post.author.name}</p>
+          {/* <p className="text-gray-400">{post.author?.name}</p> */}
           {
-            JSON.stringify(post?.meta?.tag || "No Tag")
+            // JSON.stringify(post?.meta?.tag || "No Tag")
           }
           <div
             className={markdownStyles["markdown"]}
