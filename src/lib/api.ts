@@ -8,6 +8,11 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
+interface Author {
+  name: string;
+  image: string;
+}
+
 export function getPostBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
@@ -15,7 +20,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const { data, content } = matter(fileContents);
 
   type Items = {
-    [key: string]: string;
+    [key: string]: string // | Author;
   };
 
   const items: Items = {};
